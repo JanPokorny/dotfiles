@@ -18,3 +18,5 @@ brew "ranger"
 brew "ripgrep"
 brew "thefuck"
 brew "viu"
+brew "zoxide"
+
