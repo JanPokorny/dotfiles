@@ -2,11 +2,10 @@
 
 # FROM: https://github.com/nagygergo/jetbrains-toolbox-install/blob/master/jetbrains-toolbox.sh
 
+[ $(id -u) != "0" ] && exec sudo "$0" "$@"
+
 echo ""
 echo "### JETBRAINS TOOLBOX ###"
-
-[ $(id -u) != "0" ] && exec sudo "$0" "$@"
-echo -e " \e[94mInstalling Jetbrains Toolbox\e[39m"
 echo ""
 
 function getLatestUrl() {
