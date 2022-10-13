@@ -22,5 +22,6 @@ function jira-checkout -a issue_key
         string replace --all --regex '^-+|-+$' '' |
         string lower
     )
-    git branch --switch "$issue_key-$issue_slug" origin/master
+    git branch "$issue_key-$issue_slug" origin/master
+    git checkout "$issue_key-$issue_slug"
 end
