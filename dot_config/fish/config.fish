@@ -3,11 +3,6 @@ status is-interactive || return
 # Disable greeting
 set fish_greeting
 
-# Load fundle
-if not set -q __fundle
-    set -g __fundle (curl -sL https://git.io/fundle-install | fish)
-end
-
 # Load fundle plugins
 fundle plugin edc/bass
 fundle plugin gazorby/fish-abbreviation-tips
