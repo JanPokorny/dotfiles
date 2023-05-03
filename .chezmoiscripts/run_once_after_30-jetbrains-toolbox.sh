@@ -45,4 +45,5 @@ ln -s ${DIR}/jetbrains-toolbox /usr/local/bin/jetbrains-toolbox
 chmod -R +rwx /usr/local/bin/jetbrains-toolbox
 echo ""
 rm ${DEST}
-echo  -e "\e[32mDone.\e[39m"
+echo  -e "\e[32mDone. Running for the first time to set-up.\e[39m"
+jetbrains-toolbox
