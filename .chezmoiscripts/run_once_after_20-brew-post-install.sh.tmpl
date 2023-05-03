@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo ""
+echo "### BREW POST-INSTALL ###"
+# {{ include ".brew/Brewfile" | sha256sum }}
+
+echo "# Set-up fzf bindings"
+/home/linuxbrew/.linuxbrew/opt/fzf/install
