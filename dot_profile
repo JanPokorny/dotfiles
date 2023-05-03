@@ -13,3 +13,9 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Disable tpm2-software warning https://github.com/tpm2-software/tpm2-pkcs11/issues/792
 export TPM2_PKCS11_LOG_LEVEL=0
+
+# Added by Toolbox App
+export PATH="$PATH:/home/jp/.local/share/JetBrains/Toolbox/scripts"
+
+# Add docker plugins to PATH
+export PATH="$PATH:/usr/libexec/docker/cli-plugins"
