@@ -1,6 +1,6 @@
 status is-interactive || return
 
-# No greeting
+# Disable greeting
 set fish_greeting
 
 # Load fundle
@@ -9,7 +9,6 @@ if not set -q __fundle
 end
 
 # Load fundle plugins
-fundle plugin IlanCosman/tide
 fundle plugin edc/bass
 fundle plugin gazorby/fish-abbreviation-tips
 fundle plugin nickeb96/puffer-fish
@@ -21,13 +20,13 @@ fundle plugin kidonng/zoxide.fish
 fundle plugin lig/fish-gitmoji --url https://codeberg.org/lig/fish-gitmoji.git
 fundle init
 
-# Configure tide
-set -gx tide_git_truncation_length 50
-
 # Configure fzf
 set -gx FZF_DEFAULT_COMMAND 'find . -type d \( -name .git -o -name node_modules -o -iname "*cache*" \) -prune -o -print'
 
-# Common aliases
+# Load starship
+starship init fish | source
+
+# Define common aliases
 alias cat 'bat'
 alias ls 'exa --oneline --icons --group-directories-first'
 alias clip 'xsel --clipboard'
