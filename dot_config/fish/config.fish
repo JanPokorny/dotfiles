@@ -13,7 +13,7 @@ fundle plugin oh-my-fish/plugin-direnv
 fundle plugin decors/fish-colored-man
 fundle plugin kidonng/zoxide.fish
 fundle plugin lig/fish-gitmoji --url https://codeberg.org/lig/fish-gitmoji.git
-fungle plugin acomagu/fish-async-prompt
+fundle plugin acomagu/fish-async-prompt
 fundle init
 
 # Configure fzf
