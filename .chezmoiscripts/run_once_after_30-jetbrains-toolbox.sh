@@ -6,6 +6,11 @@ echo ""
 echo "### JETBRAINS TOOLBOX ###"
 echo ""
 
+if [ -e "/usr/local/bin/jetbrains-toolbox" ]; then
+  echo "Already installed!"
+  exit 0
+fi
+
 [ $(id -u) != "0" ] && exec sudo "$0" "$@"
 
 function getLatestUrl() {
