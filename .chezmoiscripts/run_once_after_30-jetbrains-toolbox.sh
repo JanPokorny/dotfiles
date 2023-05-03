@@ -2,11 +2,11 @@
 
 # FROM: https://github.com/nagygergo/jetbrains-toolbox-install/blob/master/jetbrains-toolbox.sh
 
-[ $(id -u) != "0" ] && exec sudo "$0" "$@"
-
 echo ""
 echo "### JETBRAINS TOOLBOX ###"
 echo ""
+
+[ $(id -u) != "0" ] && exec sudo "$0" "$@"
 
 function getLatestUrl() {
 USER_AGENT=('User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36')
