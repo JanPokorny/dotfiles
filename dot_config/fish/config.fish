@@ -7,7 +7,7 @@ set fish_greeting
 set -gx tide_git_truncation_length 50
 
 # fzf config
-set -x FZF_DEFAULT_COMMAND 'find . -type d \( -name .git -o -name node_modules -o -iname "*cache*" \) -prune -o -print'
+set -gx FZF_DEFAULT_COMMAND 'find . -type d \( -name .git -o -name node_modules -o -iname "*cache*" \) -prune -o -print'
 
 # Common aliases
 alias cat 'bat'
