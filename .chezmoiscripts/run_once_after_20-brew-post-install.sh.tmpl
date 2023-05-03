@@ -11,4 +11,5 @@ echo "# Install broot alias"
 broot --print-shell-function fish >~/.config/fish/functions/br.fish
 
 echo "# Set fish as the default shell"
+echo /home/linuxbrew/.linuxbrew/bin/fish | sudo tee -a /etc/shells
 chsh -s /home/linuxbrew/.linuxbrew/bin/fish
