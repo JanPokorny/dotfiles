@@ -22,6 +22,6 @@ set -gx FZF_DEFAULT_COMMAND 'find . -type d \( -name .git -o -name node_modules 
 starship init fish | source
 
 # Define common aliases
-alias cat 'bat'
+alias cat 'bat --plain'
 alias ls 'exa --oneline --icons --group-directories-first'
 alias clip 'xsel --clipboard'
