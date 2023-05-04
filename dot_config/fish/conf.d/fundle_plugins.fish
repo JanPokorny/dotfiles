@@ -1,3 +1,5 @@
+status is-interactive || exit 0
+
 fundle plugin edc/bass
 fundle plugin gazorby/fish-abbreviation-tips
 fundle plugin nickeb96/puffer-fish
