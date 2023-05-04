@@ -1,8 +1,5 @@
 # Set PATH so it includes user's private bin
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-    
-# Add docker plugins to PATH
-export PATH="$PATH:/usr/libexec/docker/cli-plugins"
 
 # Add Brew to PATH
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
