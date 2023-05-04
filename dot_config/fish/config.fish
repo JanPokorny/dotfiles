@@ -1,4 +1,4 @@
-status is-interactive || return
+status is-interactive || exit 0
 
 # Disable greeting
 set fish_greeting
