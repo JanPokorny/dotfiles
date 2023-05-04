@@ -1,7 +1,0 @@
-#!/bin/sh
-
-echo ""
-echo "### BREW INSTALL ###"
-# {{ include ".brew/Brewfile" | sha256sum }}
-brew bundle install --file {{ joinPath .chezmoi.sourceDir ".brew/Brewfile" | quote }}
-
