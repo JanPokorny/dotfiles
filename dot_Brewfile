@@ -1,6 +1,4 @@
 tap "ankitpokhrel/jira-cli"
-tap "homebrew/bundle"
-tap "homebrew/core"
 tap "isacikgoz/taps"
 brew "bat"
 brew "broot"
