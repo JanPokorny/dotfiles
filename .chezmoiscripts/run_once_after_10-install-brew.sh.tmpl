@@ -3,4 +3,4 @@
 echo ""
 echo "### INSTALL BREW ###"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew bundle install --global # {{ include ".Brewfile" | sha256sum }}
+brew bundle install --global # {{ include "dot_Brewfile" | sha256sum }}
