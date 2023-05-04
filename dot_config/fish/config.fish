@@ -8,5 +8,5 @@ set -gx FZF_DEFAULT_COMMAND 'find . -type d \( -name .git -o -name node_modules 
 
 # Define common aliases
 alias cat 'bat --plain --pager=never'
-alias ls 'exa --oneline --icons --group-directories-first'
+alias ls 'lsd'
 alias clip 'xsel --clipboard'
