@@ -9,6 +9,5 @@ fundle plugin oh-my-fish/plugin-direnv
 fundle plugin decors/fish-colored-man
 fundle plugin lig/fish-gitmoji --url https://codeberg.org/lig/fish-gitmoji.git
 fundle plugin wfxr/forgit
-fundle plugin meaningful-ooo/sponge
 
 fundle init
