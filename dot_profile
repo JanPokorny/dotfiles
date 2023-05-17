@@ -4,5 +4,8 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # Add Brew to PATH
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# Set micro as default editor
+export EDITOR="$(which micro)"
+
 # Added by Toolbox App
 export PATH="$PATH:/home/jp/.local/share/JetBrains/Toolbox/scripts"
