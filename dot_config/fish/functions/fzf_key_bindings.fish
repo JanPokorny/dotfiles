@@ -1,4 +1,4 @@
-# fzf key bindings with experimental highlighting support for CTRL+R
+# fzf key bindings without CTRL-R
 
 #     ____      ____
 #    / __/___  / __/
@@ -9,7 +9,6 @@
 # - $FZF_TMUX_OPTS
 # - $FZF_CTRL_T_COMMAND
 # - $FZF_CTRL_T_OPTS
-# - $FZF_CTRL_R_OPTS
 # - $FZF_ALT_C_COMMAND
 # - $FZF_ALT_C_OPTS
 
@@ -48,28 +47,6 @@ function fzf_key_bindings
       commandline -it -- $prefix
       commandline -it -- (string escape $i)
       commandline -it -- ' '
-    end
-    commandline -f repaint
-  end
-
-  function fzf-history-widget -d "Show command history"
-    test -n "$FZF_TMUX_HEIGHT"; or set FZF_TMUX_HEIGHT 40%
-    begin
-      set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT $FZF_DEFAULT_OPTS --scheme=history --bind=ctrl-r:toggle-sort,ctrl-z:ignore $FZF_CTRL_R_OPTS +m"
-
-      set -l FISH_MAJOR (echo $version | cut -f1 -d.)
-      set -l FISH_MINOR (echo $version | cut -f2 -d.)
-
-      # history's -z flag is needed for multi-line support.
-      # history's -z flag was added in fish 2.4.0, so don't use it for versions
-      # before 2.4.0.
-      if [ "$FISH_MAJOR" -gt 2 -o \( "$FISH_MAJOR" -eq 2 -a "$FISH_MINOR" -ge 4 \) ];
-        history -z | string replace --all '\\' '\\\\' | while read -lz field; echo -en "$field\t$(echo $field | fish_indent --ansi --no-indent | tr '\n' ' ')\0"; end | fzf --read0 --delimiter='\t' --with-nth=2 --nth=1 --ansi | cut -d \t -f 2 | read -l result
-        and commandline -- $result
-      else
-        history | eval (__fzfcmd) -q '(commandline)' | read -l result
-        and commandline -- $result
-      end
     end
     commandline -f repaint
   end
@@ -113,12 +90,10 @@ function fzf_key_bindings
   end
 
   bind \ct fzf-file-widget
-  bind \cr fzf-history-widget
   bind \ec fzf-cd-widget
 
   if bind -M insert > /dev/null 2>&1
     bind -M insert \ct fzf-file-widget
-    bind -M insert \cr fzf-history-widget
     bind -M insert \ec fzf-cd-widget
   end
 
