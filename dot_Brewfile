@@ -1,5 +1,5 @@
-tap "ankitpokhrel/jira-cli"
-tap "isacikgoz/taps"
+# tap "ankitpokhrel/jira-cli"
+# tap "isacikgoz/taps"
 brew "asdf"
 brew "bat"
 brew "chezmoi"
@@ -36,3 +36,6 @@ brew "viu"
 brew "zoxide"
 brew "ankitpokhrel/jira-cli/jira-cli"
 brew "isacikgoz/taps/tldr"
+
+# Ruby
+brew "puma/puma/puma-dev"
