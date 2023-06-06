@@ -9,3 +9,6 @@ export EDITOR="$(which micro)"
 
 # Added by Toolbox App
 export PATH="$PATH:/home/jp/.local/share/JetBrains/Toolbox/scripts"
+
+# Add asdf to PATH
+source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
