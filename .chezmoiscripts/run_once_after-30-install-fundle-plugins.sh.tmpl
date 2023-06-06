@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo ""
+echo "### INSTALL FUNDLE PLUGINS ###"
+/home/linuxbrew/.linuxbrew/bin/fish -ic 'fundle install' # {{ include "dot_config/fish/conf.d/10_fundle_plugins.fish" | sha256sum }}
