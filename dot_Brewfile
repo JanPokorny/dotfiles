@@ -10,7 +10,6 @@ brew "fzf"
 brew "grc"
 brew "hadolint"
 brew "hexyl"
-brew "howdoi"
 brew "httpie"
 brew "lazydocker"
 brew "lsd"
@@ -22,11 +21,13 @@ brew "ranger"
 brew "ripgrep"
 brew "speedtest-cli"
 brew "starship"
-brew "thefuck"
 brew "viu"
 brew "zoxide"
-brew "ankitpokhrel/jira-cli/jira-cli"
-brew "isacikgoz/taps/tldr"
+
+# Help
+brew "howdoi"
+brew "thefuck"
+brew "tldr"
 
 # Git
 brew "gh"
@@ -41,4 +42,5 @@ brew "kubernetes-cli"
 brew "kubectx"
 
 # Ruby
+tap "puma/puma"
 brew "puma/puma/puma-dev"
