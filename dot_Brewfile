@@ -44,3 +44,6 @@ brew "kubectx"
 # Ruby
 tap "puma/puma"
 brew "puma/puma/puma-dev"
+
+# Deploying
+brew 'flyctl'
