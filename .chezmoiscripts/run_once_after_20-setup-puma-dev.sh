@@ -14,4 +14,4 @@ sudo cp ~/.puma-dev-ssl/cert.pem /usr/local/share/ca-certificates/puma-dev-pem.c
 sudo update-ca-certificates
 
 # Enable binding to low-number ports
-sudo setcap CAP\_NET\_BIND\_SERVICE=+eip /home/linuxbrew/.linuxbrew/bin/puma-dev
+sudo setcap CAP\_NET\_BIND\_SERVICE=+eip $(realpath /home/linuxbrew/.linuxbrew/bin/puma-dev)
