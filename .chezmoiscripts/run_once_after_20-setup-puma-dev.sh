@@ -4,7 +4,7 @@ echo
 echo "### SETUP PUMA-DEV ###"
 
 # Run puma-dev to make it generate the certificate
-puma-dev &
+/home/linuxbrew/.linuxbrew/bin/puma-dev &
 sleep 10
 kill %1
 
