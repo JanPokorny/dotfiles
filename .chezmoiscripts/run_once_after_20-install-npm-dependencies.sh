@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "### INSTALL NPM DEPENDENCIES ###"
-npm install -g @githubnext/github-copilot-cli
+/home/linuxbrew/.linuxbrew/bin/npm install -g @githubnext/github-copilot-cli
