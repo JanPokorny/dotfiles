@@ -1,0 +1,2 @@
+#!/bin/bash
+cd "$(xcwd)" && x-terminal-emulator
