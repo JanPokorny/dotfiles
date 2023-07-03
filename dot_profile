@@ -1,5 +1,5 @@
 # Set PATH so it includes user's private bin
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH:$HOME/go/bin"
 
 # Add Brew to PATH
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
