@@ -4,6 +4,7 @@ brew "bat"
 brew "chezmoi"
 brew "clipboard"
 brew "direnv"
+brew "eget"
 brew "fd"
 brew "fish"
 brew "fzf"
@@ -48,4 +49,4 @@ tap "puma/puma"
 brew "puma/puma/puma-dev"
 
 # Deploying
-brew 'flyctl'
+brew "flyctl"
