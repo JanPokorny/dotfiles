@@ -40,13 +40,12 @@ brew "glab"
 brew "lazygit"
 brew "ungit"
 
-# Kubernetes
-brew "kubernetes-cli"
-brew "kubectx"
-
 # Ruby
 tap "puma/puma"
 brew "puma/puma/puma-dev"
 
-# Deploying
+# DevOps
 brew "flyctl"
+brew "kubernetes-cli"
+brew "kubectx"
+brew "terraform"
