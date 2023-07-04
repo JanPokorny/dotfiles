@@ -11,5 +11,8 @@
     required = true
     clean = git-lfs clean -- %f
 
+[alias]
+    uncommit = reset --soft HEAD~1
+
 [includeIf "gitdir:~/ghq/github.com/BetterStackHQ/"]
     path = .gitconfig-betterstack
