@@ -1,0 +1,15 @@
+[user]
+    name = Jan Pokorný
+    email = jenompokorny@gmail.com
+
+[init]
+    defaultBranch = main
+
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+
+[includeIf "gitdir:~/ghq/github.com/BetterStackHQ/"]
+    path = .gitconfig-betterstack
