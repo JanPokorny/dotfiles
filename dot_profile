@@ -15,3 +15,6 @@ source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
 
 # Configure overmind
 export OVERMIND_NO_PORT=1
+
+# Make Python use system trusted SSL certificates
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
