@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Get the debounce count
+N=10
+
+# Generate a unique identifier for the command
+command_id=$(echo "$@" | md5sum | awk '{ print $1 }')
+
+# File to store the count
+count_file="/tmp/debounce_count_$command_id.txt"
+
+# Function to check if the file is older than 300 milliseconds
+is_file_old() {
+    local file=$1
+    local current_seconds=$(date +%s)
+    local file_seconds=$(stat -c %Y "$file")
+
+    if ((current_seconds > file_seconds)); then
+    	echo "file old"
+        return 0
+    else
+    	echo "file young"
+        return 1
+    fi
+}
+
+# Acquire a lock on the count file
+exec 9>>"$count_file"
+flock -n 9 || exit 1
+
+# Initialize count file if it doesn't exist or is older than 1s
+if [[ ! -f $count_file ]] || is_file_old "$count_file"; then
+    echo 1 > "$count_file"
+fi
+
+# Read the count from the file
+count=$(cat "$count_file")
+
+# Execute the command if the counter is divisible by N
+if ((count % N == 0)); then
+    eval "$@"
+fi
+
+# Increment the counter
+((count++))
+
+# Update the count in the file
+echo $count > "$count_file"
+
+# Release the lock on the count file
+exec 9>&-
