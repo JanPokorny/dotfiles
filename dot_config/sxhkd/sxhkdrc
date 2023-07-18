@@ -1,0 +1,11 @@
+button8
+    touch "/tmp/mouse-mod-down"
+
+@button8
+    rm "/tmp/mouse-mod-down" && test -f /tmp/mouse-mod-used && rm /tmp/mouse-mod-used || xte "keydown Alt_L" "key Left" "keyup Alt_L"
+
+button4
+    test -f /tmp/mouse-mod-down && touch /tmp/mouse-mod-used && xte "keydown Super_L" "key Page_Up" "keyup Super_L"
+
+button5
+    test -f /tmp/mouse-mod-down && touch /tmp/mouse-mod-used && xte "keydown Super_L" "key Page_Down" "keyup Super_L"
