@@ -1,5 +1,5 @@
-# Set PATH so it includes user's private bin
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH:$HOME/go/bin"
+# Set up PATH
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH:$HOME/go/bin"
 
 # Add Brew to PATH
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -12,9 +12,6 @@ export PATH="$PATH:/home/jp/.local/share/JetBrains/Toolbox/scripts"
 
 # Add asdf to PATH
 source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
-
-# Configure overmind
-export OVERMIND_NO_PORT=1
 
 # Make Python use system trusted SSL certificates
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
