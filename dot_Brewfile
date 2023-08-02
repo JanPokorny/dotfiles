@@ -27,6 +27,16 @@ brew "starship"
 brew "viu"
 brew "zoxide"
 
+# Data
+brew "dasel"
+brew "fq"
+brew "gron"
+brew "htmlq"
+brew "jc"
+brew "jo"
+brew "jq"
+brew "yq"
+
 # Help
 brew "howdoi"
 brew "thefuck"
