@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
 echo
@@ -11,3 +12,4 @@ sudo apt install appimagelauncher
 
 # Simple X HotKey Deamon
 sudo apt install sxhkd
+{{ end -}}
