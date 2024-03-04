@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ $(uname) == "Darwin" ]]; then
+  brew install --cask jetbrains-toolbox
+  exit 0
+fi
+
 set -e
 set -o pipefail
 
