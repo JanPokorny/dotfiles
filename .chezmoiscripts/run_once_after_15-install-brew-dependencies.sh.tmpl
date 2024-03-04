@@ -2,4 +2,11 @@
 
 echo ""
 echo "### INSTALL BREW DEPENDENCIES ###"
-/home/linuxbrew/.linuxbrew/bin/brew bundle install --global # {{ include "dot_Brewfile" | sha256sum }}
+
+if [[ $(uname) == "Darwin" ]]; then
+  BREW_PATH="/opt/homebrew/bin/brew"
+else
+  BREW_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
+fi
+
+$BREW_PATH bundle install --global # {{ include "dot_Brewfile" | sha256sum }}
