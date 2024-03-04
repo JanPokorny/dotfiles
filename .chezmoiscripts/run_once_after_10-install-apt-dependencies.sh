@@ -1,5 +1,6 @@
-{{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
+
+[[ $(uname) == "Darwin" ]] && exit 0
 
 echo
 echo "### INSTALL APT DEPENDENCIES ###"
@@ -12,4 +13,3 @@ sudo apt install appimagelauncher
 
 # Simple X HotKey Deamon
 sudo apt install sxhkd
-{{ end -}}
