@@ -1,25 +1,16 @@
+test $(uname) = Darwin && export HOMEBREW_PREFIX="/opt/homebrew" || export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+
 # Set up PATH
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH:$HOME/go/bin"
 
 # Add Brew to PATH
-if [[ $(uname) == "Darwin" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
+eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 
 # Set micro as the default editor
 export EDITOR="$(which micro)"
 
-# Added by Toolbox App
-export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
-
 # Add asdf to PATH
-if [[ $(uname) == "Darwin" ]]; then
-  eval "$(/opt/homebrew/bin/asdf shellenv)"
-else
-  source "/home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh"
-fi
+source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish" || source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh"
 
 # Make Python use system trusted SSL certificates
-export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+test $(uname) = Linux && export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt || true
