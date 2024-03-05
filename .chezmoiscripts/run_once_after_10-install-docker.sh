@@ -1,9 +1,8 @@
 #!/bin/bash
 
+[[ $(uname) == "Darwin" ]] && exit 0
+
 echo ""
 echo "### INSTALL DOCKER ###"
 curl -fsSL https://get.docker.com | sudo sh
-
-if [[ $(uname) == "Linux" ]]; then
-  sudo usermod -aG docker $(whoami)
-fi
+sudo usermod -aG docker $(whoami)
