@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $(uname) == "Darwin" ]]; then
-  brew install --cask jetbrains-toolbox
+  /opt/homebrew/bin/brew install --cask jetbrains-toolbox
   exit 0
 fi
 
