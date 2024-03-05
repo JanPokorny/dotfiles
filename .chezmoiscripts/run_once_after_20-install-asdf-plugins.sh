@@ -4,13 +4,13 @@ echo
 echo "### INSTALL ASDF PLUGINS ###"
 
 if [[ $(uname) == "Darwin" ]]; then
-  BREW_PATH="/opt/homebrew/bin/brew"
+  ASDF_PATH="/opt/homebrew/bin/asdf"
 else
-  BREW_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
+  ASDF_PATH="/home/linuxbrew/.linuxbrew/bin/asdf"
 fi
 
 echo "# NodeJS"
-$BREW_PATH plugin-add nodejs || true
+$ASDF_PATH plugin-add nodejs || true
 
 echo "# Python"
-$BREW_PATH plugin-add python || true
+$ASDF_PATH plugin-add python || true
