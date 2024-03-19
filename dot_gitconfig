@@ -2,6 +2,9 @@
     name = Jan Pokorný
     email = jenompokorny@gmail.com
 
+[core]
+    excludesfile = ~/.gitignore
+
 [init]
     defaultBranch = main
 
