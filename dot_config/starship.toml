@@ -9,6 +9,10 @@ symbol = " "
 [c]
 symbol = " "
 
+[cmd_duration]
+show_milliseconds = true
+show_notifications = true
+
 [conda]
 symbol = " "
 
@@ -56,6 +60,9 @@ symbol = " "
 
 [julia]
 symbol = " "
+
+[kubernetes]
+disabled = false
 
 [lua]
 symbol = " "
