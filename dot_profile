@@ -10,7 +10,10 @@ eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 export EDITOR="$(which micro)"
 
 # Add asdf to PATH
-source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish" || source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh"
+source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish" 2>/dev/null || source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh"
 
 # Make Python use system trusted SSL certificates
 test $(uname) = Linux && export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt || true
+
+# Fix Dive with Colima
+export DOCKER_HOST=unix://$HOME/.colima/docker.sock
