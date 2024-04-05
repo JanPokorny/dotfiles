@@ -10,6 +10,8 @@ symbol = " "
 symbol = " "
 
 [cmd_duration]
+min_time = 0
+min_time_to_notify = 10_000
 show_milliseconds = true
 show_notifications = true
 
