@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[[ $(uname -r) =~ "WSL" ]] && exit 0;
+
 if [[ $(uname) == "Darwin" ]]; then
   /opt/homebrew/bin/brew install --cask jetbrains-toolbox
   exit 0
