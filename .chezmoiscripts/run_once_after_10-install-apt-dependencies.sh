@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[[ $(uname) == "Darwin" ]] && exit 0
+[[ $(uname) == "Darwin" ]] || [[ $(uname -r) =~ "WSL" ]] && exit 0
 
 echo
 echo "### INSTALL APT DEPENDENCIES ###"
