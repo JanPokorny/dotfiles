@@ -24,7 +24,9 @@ brew "speedtest-cli"
 brew "starship"
 brew "viu"
 brew "zoxide"
+tap "peterldowns/tap"
 brew "peterldowns/tap/localias"
+tap "pkgxdev/made"
 brew "pkgxdev/made/pkgx"
 
 # Data
@@ -70,6 +72,6 @@ brew "deno"
 brew "pillow"
 brew "pipx"
 brew "poetry"
+brew "python"
+tap "nat-n/poethepoet"
 brew "nat-n/poethepoet/poethepoet"
-
-brew "python@3.11"
