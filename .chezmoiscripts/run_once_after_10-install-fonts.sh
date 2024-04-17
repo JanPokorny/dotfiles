@@ -3,6 +3,8 @@
 echo ""
 echo "### INSTALL FONTS ###"
 
+[[ $(uname -r) =~ "WSL" ]] && exit 0;
+
 if [[ $(uname) == "Darwin" ]]; then
   FONT_FOLDER="$HOME/Library/Fonts"
 else
