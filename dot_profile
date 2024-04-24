@@ -1,19 +1,18 @@
-test $(uname) = Darwin && export HOMEBREW_PREFIX="/opt/homebrew" || export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+test -z $DOT_PROFILE_SOURCED && export DOT_PROFILE_SOURCED=1 || exit 0
 
-# Set up PATH
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH:$HOME/go/bin"
+test $(uname) = Darwin &&\
+    export HOMEBREW_PREFIX="/opt/homebrew" ||\
+    export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
 
-# Add Brew to PATH
-eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX"
+export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
 
-# Set micro as the default editor
-export EDITOR="$(which micro)"
+export PATH="$HOME/.asdf/shims:$HOME/.local/bin:$HOME/.rd/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
+export MANPATH="/opt/homebrew/share/man:$MANPATH"
+export INFOPATH="/opt/homebrew/share/info:$INFOPATH"
 
-# Add asdf to PATH
-source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish" 2>/dev/null || source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh"
+export EDITOR="$(which micro || which nano || which vim || which vi)"
 
-# Make Python use system trusted SSL certificates
-test $(uname) = Linux && export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt || true
-
-# Fix Dive with Colima
-export DOCKER_HOST=unix://$HOME/.colima/docker.sock
+test $(uname) = Linux &&\
+    export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ||\
+    true
