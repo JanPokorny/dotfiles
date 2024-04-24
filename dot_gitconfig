@@ -16,7 +16,11 @@
 
 [alias]
     uncommit = reset --soft HEAD~1
-    main-branch = "!test -f .git/refs/remotes/origin/HEAD && sed -e 's/^.*\\///' < .git/refs/remotes/origin/HEAD || basename .git/refs/remotes/origin/ma*"
+    main-branch = "!test -f .git/refs/remotes/origin/HEAD && sed -e 's/^.*\\///' < .git/refs/remotes/origin/HEAD || basename .git/refs/remotes/origin/main || basename .git/refs/remotes/origin/master"
+
+[sequence]
+    editor = interactive-rebase-tool
 
 [include]
     path = .gitconfig-extra
+
