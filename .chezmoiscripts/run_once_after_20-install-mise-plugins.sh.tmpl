@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo
+echo "### INSTALL MISE PLUGINS ###"
+
+if [[ $(uname) == "Darwin" ]]; then
+  MISE_PATH="/opt/homebrew/bin/mise"
+else
+  MISE_PATH="/home/linuxbrew/.linuxbrew/bin/mise"
+fi
+
+mise up  # {{ include "dot_config/mise/config.toml" | sha256sum }}
