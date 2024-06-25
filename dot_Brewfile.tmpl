@@ -21,6 +21,7 @@ brew "ranger"
 brew "ripgrep"
 brew "speedtest-cli"
 brew "starship"
+brew "tldr"
 brew "viu"
 brew "zoxide"
 tap "peterldowns/tap"
@@ -36,10 +37,6 @@ brew "jo"
 brew "jq"
 brew "yq"
 
-# Help
-brew "thefuck"
-brew "tldr"
-
 # Git
 brew "gh"
 brew "ghq"
@@ -50,10 +47,6 @@ brew "lazygit"
 brew "ungit"
 
 # DevOps
-brew "docker"
-brew "docker-buildx"
-brew "docker-credential-helper"
-brew "docker-compose"
 brew "flyctl"
 brew "hadolint"
 brew "helm"
@@ -70,28 +63,29 @@ tap "nat-n/poethepoet"
 brew "nat-n/poethepoet/poethepoet"
 
 {{- if eq .chezmoi.os "darwin" -}}
+
+# Docker
+brew "colima"
+brew "docker"
+brew "docker-buildx"
+brew "docker-compose"
+brew "docker-credential-helper"
+
 # Casks
-
-## Programming
-cask "iterm2"
-cask "jetbrains-toolbox"
-cask "visual-studio-code"
-cask "rancher"
-
-## Tools
 cask "boop"
-cask "hoppscotch"
-cask "mark-text"
-
-## Utilities
 cask "caffeine"
 cask "flameshot"
+cask "hoppscotch"
+cask "iterm2"
+cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "latest"
+cask "mark-text"
 cask "meetingbar"
 cask "monitorcontrol"
 cask "mos"
 cask "rectangle"
 cask "ukelele"
+cask "visual-studio-code"
 
 {{- end -}}
