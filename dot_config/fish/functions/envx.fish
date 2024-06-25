@@ -1,3 +1,3 @@
-function env
+function envx
     bass source (pkgx "$argv" | psub)
 end
