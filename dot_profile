@@ -11,6 +11,10 @@ export INFOPATH="/opt/homebrew/share/info:$INFOPATH"
 
 export EDITOR="$(which micro || which nano || which vim || which vi)"
 
+test -e "$HOME/.colima/default/docker.sock" &&\
+    export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock" ||\
+    true
+
 test $(uname) = Linux &&\
     export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ||\
     true
