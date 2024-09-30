@@ -61,6 +61,11 @@ symbol = " "
 [julia]
 symbol = " "
 
+[kubernetes]
+disabled = false
+style = 'cyan'
+format = "[$symbol$namespace]($style)( on [$cluster]($style)) in "
+
 [lua]
 symbol = " "
 
