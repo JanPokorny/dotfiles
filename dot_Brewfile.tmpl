@@ -18,13 +18,14 @@ brew "micro"
 brew "mise"
 brew "ranger"
 brew "ripgrep"
-brew "speedtest-cli"
 brew "starship"
 brew "tldr"
 brew "viu"
 brew "zoxide"
 tap "peterldowns/tap"
 brew "peterldowns/tap/localias"
+tap "teamookla/speedtest"
+brew "teamookla/speedtest/speedtest"
 
 # Data
 brew "dasel"
@@ -46,27 +47,20 @@ brew "lazygit"
 brew "ungit"
 
 # DevOps
-brew "flyctl"
 brew "hadolint"
 brew "helm"
 brew "kubernetes-cli"
 brew "kubectx"
 brew "lazydocker"
-brew "terraform"
 
 # Python
-brew "pillow"
 brew "pipx"
-brew "poetry"
-tap "nat-n/poethepoet"
-brew "nat-n/poethepoet/poethepoet"
 
 {{- if eq .chezmoi.os "darwin" -}}
 
 # Casks
 cask "boop"
 cask "caffeine"
-cask "flameshot"
 cask "hoppscotch"
 cask "iterm2"
 cask "jetbrains-toolbox"
@@ -77,7 +71,7 @@ cask "meetingbar"
 cask "monitorcontrol"
 cask "mos"
 cask "rancher"
-cask "rectangle"
+cask "shottr"
 cask "ukelele"
 cask "visual-studio-code"
 

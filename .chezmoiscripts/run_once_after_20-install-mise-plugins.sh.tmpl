@@ -9,4 +9,4 @@ else
   MISE_PATH="/home/linuxbrew/.linuxbrew/bin/mise"
 fi
 
-mise up  # {{ include "dot_config/mise/config.toml" | sha256sum }}
+$MISE_PATH up  # {{ include "dot_config/mise/config.toml" | sha256sum }}
