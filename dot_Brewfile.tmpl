@@ -57,9 +57,16 @@ brew "pipx"
 
 {{- if eq .chezmoi.os "darwin" -}}
 
+# Docker
+brew "colima"
+brew "docker"
+brew "docker-buildx"
+brew "docker-compose"
+brew "docker-credential-helper"
+brew "docker-completion"
+
 # Casks
 cask "boop"
-cask "caffeine"
 cask "hoppscotch"
 cask "iterm2"
 cask "jetbrains-toolbox"
@@ -69,7 +76,6 @@ cask "mark-text"
 cask "meetingbar"
 cask "monitorcontrol"
 cask "mos"
-cask "rancher"
 cask "shottr"
 cask "ukelele"
 cask "visual-studio-code"

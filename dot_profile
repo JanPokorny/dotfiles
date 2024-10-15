@@ -3,12 +3,13 @@ test $(uname) = Darwin &&\
     export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
 
 test $(uname) = Darwin &&\
-    export DOCKER_HOST="unix://$HOME/.rd/docker.sock"
+    export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock" ||\
+    true
 
 export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX"
 export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
 
-export PATH="$HOME/.local/bin:$HOME/.venv/bin:$HOME/.rd/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.local/bin:$HOME/.venv/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPATH="$HOMEBREW_PREFIX/share/man:$MANPATH"
 export INFOPATH="$HOMEBREW_PREFIX/share/info:$INFOPATH"
 
