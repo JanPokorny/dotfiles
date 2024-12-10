@@ -1,6 +1,6 @@
 [user]
     name = Jan Pokorný
-    email = jenompokorny@gmail.com
+    email = JenomPokorny@gmail.com
 
 [core]
     excludesfile = ~/.gitignore
@@ -23,4 +23,3 @@
 
 [include]
     path = .gitconfig-extra
-
