@@ -1,31 +1,24 @@
-# Common
-brew "bat"
-brew "chafa"
-brew "chezmoi"
+# Utilities
 brew "clipboard"
-brew "direnv"
-brew "eza"
 brew "fd"
-brew "fish"
-brew "foreman"
 brew "fzf"
-brew "grc"
 brew "hexyl"
 brew "htop"
 brew "httpie"
 brew "magic-wormhole"
-brew "mcfly"
 brew "micro"
-brew "mise"
-brew "ranger"
 brew "ripgrep"
+brew "speedtest-cli"
+
+# Shell
+brew "bat"
+brew "chafa"
+brew "eza"
+brew "fish"
+brew "grc"
+brew "mcfly"
 brew "starship"
-brew "tldr"
 brew "zoxide"
-tap "peterldowns/tap"
-brew "peterldowns/tap/localias"
-tap "teamookla/speedtest"
-brew "teamookla/speedtest/speedtest"
 
 # Data
 brew "dasel"
@@ -41,19 +34,16 @@ brew "yq"
 brew "gh"
 brew "ghq"
 brew "git-interactive-rebase-tool"
-brew "gitbatch"
-brew "glab"
-brew "lazygit"
 brew "ungit"
 
 # DevOps
 brew "hadolint"
 brew "helm"
 brew "kubernetes-cli"
-brew "lazydocker"
 
-# Python
-brew "pipx"
+# Programming
+brew "mise"
+brew "uv"
 
 {{- if eq .chezmoi.os "darwin" -}}
 
