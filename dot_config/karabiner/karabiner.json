@@ -194,18 +194,18 @@
                 },
                 {
                     "identifiers": {
+                        "is_keyboard": true,
                         "is_pointing_device": true,
-                        "product_id": 50475,
+                        "product_id": 45913,
                         "vendor_id": 1133
                     },
                     "ignore": false
                 },
                 {
                     "identifiers": {
-                        "is_keyboard": true,
                         "is_pointing_device": true,
-                        "product_id": 45913,
-                        "vendor_id": 1133
+                        "product_id": 100,
+                        "vendor_id": 7847
                     },
                     "ignore": false
                 }
