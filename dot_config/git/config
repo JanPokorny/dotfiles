@@ -1,0 +1,76 @@
+[user]
+    name = Jan Pokorný
+    email = JenomPokorny@gmail.com
+
+[column]
+    ui = auto
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
+[help]
+    autocorrect = prompt
+
+[commit]
+    verbose = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[pull]
+    rebase = true
+
+[init]
+    defaultBranch = main
+
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+
+[alias]
+    uncommit = reset --soft HEAD~1
+    main-branch = "!test -f .git/refs/remotes/origin/HEAD && sed -e 's/^.*\\///' < .git/refs/remotes/origin/HEAD || basename .git/refs/remotes/origin/main || basename .git/refs/remotes/origin/master"
+
+[sequence]
+    editor = interactive-rebase-tool
+
+[include]
+    path = extra
+
+[credential "https://github.com"]
+    helper = 
+    helper = !/opt/homebrew/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+    helper = 
+    helper = !/opt/homebrew/bin/gh auth git-credential
