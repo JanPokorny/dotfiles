@@ -1,7 +1,5 @@
 [tools]
 usage = "latest"
-"pipx:poetry" = "latest"
-"pipx:poethepoet" = "latest"
 
 [settings]
 experimental = true
