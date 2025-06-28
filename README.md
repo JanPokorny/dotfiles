@@ -1,3 +1,3 @@
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply JanPokorny
+BINDIR=~/.local/bin sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply JanPokorny
 ```
