@@ -1,5 +1,4 @@
 function ai
-    echo -n "⌛"
-    commandline -f repaint
+    echo "⌛"
     commandline (aichat -e $argv)
 end
