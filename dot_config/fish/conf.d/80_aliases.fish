@@ -15,3 +15,7 @@ abbr gl 'git log --oneline'
 
 ## Kubectl
 abbr kc 'kubectl config use-context'
+
+## Functions
+abbr p preview
+abbr n navigate
