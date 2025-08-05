@@ -17,7 +17,7 @@
 		<key>TISInputSourceID</key>
 		<string>org.sil.ukelele.keyboardlayout.czech_blasphemous.czechblasphemous</string>
 		<key>TISIntendedLanguage</key>
-		<string>cs</string>
+		<string>cs-CZ</string>
 	</dict>
 </dict>
 </plist>
