@@ -2,11 +2,5 @@
 
 echo ""
 echo "### INSTALL BREW DEPENDENCIES ###"
-
-if [[ $(uname) == "Darwin" ]]; then
-  BREW_PATH="/opt/homebrew/bin/brew"
-else
-  BREW_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
-fi
-
-$BREW_PATH bundle install --global # {{ include "dot_Brewfile.tmpl" | sha256sum }}
+source ~/.profile
+brew bundle install --global # {{ include "dot_Brewfile.tmpl" | sha256sum }}

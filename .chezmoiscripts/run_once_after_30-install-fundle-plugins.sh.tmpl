@@ -2,11 +2,5 @@
 
 echo ""
 echo "### INSTALL FUNDLE PLUGINS ###"
-
-if [[ $(uname) == "Darwin" ]]; then
-  FISH_PATH="/opt/homebrew/bin/fish"
-else
-  FISH_PATH="/home/linuxbrew/.linuxbrew/bin/fish"
-fi
-
-$FISH_PATH -ic 'fundle install' # {{ include "dot_config/fish/conf.d/10_fundle_plugins.fish" | sha256sum }}
+source ~/.profile
+fish -ic 'fundle install' # {{ include "dot_config/fish/conf.d/10_fundle_plugins.fish" | sha256sum }}
