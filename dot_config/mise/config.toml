@@ -1,6 +1,3 @@
-[tools]
-"npm:@google/gemini-cli" = "latest"
-
 [settings]
 experimental = true
 python.uv_venv_auto = true
