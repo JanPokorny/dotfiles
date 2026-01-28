@@ -46,7 +46,7 @@ function fish_prompt
                 echo -n " "
                 
                 set -l git_branch (git symbolic-ref --short HEAD 2>/dev/null || git log -1 --pretty=format:'%h' 2>/dev/null)
-                test "$git_branch" = "main" -o "$git_branch" = "master" || echo -n " 󰘬 $git_branch"
+                test "$git_branch" = "main" -o "$git_branch" = "master" || echo -n "󰘬 $git_branch"
                 
                 test -n "$(git status --porcelain 2>/dev/null)" && echo -n ""
 
