@@ -10,6 +10,7 @@
                 "rules": [
                     {
                         "description": "Switch desktops by holding down thumb buttons",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": { "pointing_button": "button4" },
@@ -169,14 +170,6 @@
             "devices": [
                 {
                     "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 5,
-                        "vendor_id": 7119
-                    },
-                    "ignore": false
-                },
-                {
-                    "identifiers": {
                         "is_keyboard": true,
                         "product_id": 50475,
                         "vendor_id": 1133
@@ -193,21 +186,8 @@
                     ]
                 },
                 {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 45913,
-                        "vendor_id": 1133
-                    },
-                    "ignore": false
-                },
-                {
-                    "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 100,
-                        "vendor_id": 7847
-                    },
-                    "ignore": false
+                    "identifiers": { "is_keyboard": true },
+                    "ignore": true
                 }
             ],
             "name": "Default profile",
