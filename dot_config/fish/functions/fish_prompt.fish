@@ -34,6 +34,8 @@ function fish_prompt
     if string match -q "$HOME/ghq/*" "$PWD"
         set_color e15432
         echo -n "󰊢 "
+        set_color --dim black
+        echo -n "https://"
         set_color --dim white
         set -l i 1
         for part in (string split / (string replace "$HOME/ghq/" "" "$PWD"))
@@ -73,6 +75,6 @@ function fish_prompt
     # prompt
     set_color normal
     set_color brgreen
-    echo -n "❯ "
+    echo -n (string repeat (math $SHLVL - 1) ❯) ''
     set_color normal
 end
