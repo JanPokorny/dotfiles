@@ -14,7 +14,7 @@ function fish_prompt
 
     # duration
     if test $last_duration -ge 3000
-        test $last_status = 0 && echo -n "󱞩 "
+        test $last_status -eq 0 && echo -n "󱞩 "
         set_color yellow --dim
         echo -n " "
         set -l hours (math -s0 "$last_duration / 3600000")
