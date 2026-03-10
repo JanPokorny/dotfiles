@@ -34,8 +34,6 @@ function fish_prompt
     if string match -q "$HOME/ghq/*" "$PWD"
         set_color e15432
         echo -n "󰊢 "
-        set_color --dim black
-        echo -n "https://"
         set_color --dim white
         set -l i 1
         for part in (string split / (string replace "$HOME/ghq/" "" "$PWD"))
@@ -50,10 +48,12 @@ function fish_prompt
                 
                 test -n "$(git status --porcelain 2>/dev/null)" && echo -n ""
 
-                set -l upstream (git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)
+                set -l upstream (git rev-parse --abbrev-ref --symbolic-full-name origin 2>/dev/null)
                 if test -n "$upstream"
-                    test (git rev-list --count $upstream..HEAD 2>/dev/null) -gt 0 && echo -n ""
-                    test (git rev-list --count HEAD..$upstream 2>/dev/null) -gt 0 && echo -n ""
+                    set -l ahead (git rev-list --count $upstream..HEAD 2>/dev/null; or echo 0)
+                    test "$ahead" -gt 0 && echo -n ""
+                    set -l behind (git rev-list --count HEAD..$upstream 2>/dev/null; or echo 0)
+                    test "$behind" -gt 0 && echo -n ""
                 end
 
                 set_color --dim cyan
@@ -75,6 +75,6 @@ function fish_prompt
     # prompt
     set_color normal
     set_color brgreen
-    echo -n (string repeat (math $SHLVL - 1) ❯) ''
+    echo -n (string repeat $SHLVL ❯) ''
     set_color normal
 end
