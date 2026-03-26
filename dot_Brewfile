@@ -1,0 +1,18 @@
+# Docker
+brew "colima"
+brew "docker"
+brew "docker-buildx"
+brew "docker-compose"
+brew "docker-credential-helper"
+brew "docker-completion"
+
+# Casks
+cask "deskpad"
+cask "ghostty"
+cask "karabiner-elements"
+cask "mac-mouse-fix"
+cask "meetingbar"
+cask "mitmproxy"
+cask "monitorcontrol"
+cask "shottr"
+cask "visual-studio-code"

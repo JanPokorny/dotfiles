@@ -2,3 +2,29 @@
 experimental = true
 python.uv_venv_auto = true
 idiomatic_version_file_enable_tools = []
+
+[tools]
+"aqua:fish-shell/fish-shell" = "latest"
+"bat" = "latest"
+"croc" = "latest"
+"claude" = "latest"
+"eza" = "latest"
+"fd" = "latest"
+"fzf" = "latest"
+"gh" = "latest"
+"ghq" = "latest"
+"github:FredrikNoren/ungit" = "latest"
+"github:micro-editor/micro" = "latest"
+"github:MitMaro/git-interactive-rebase-tool" = "latest"
+"gron" = "latest"
+"helm" = "latest"
+"hexyl" = "latest"
+"htmlq" = "latest"
+"jc" = "latest"
+"jq" = "latest"
+"kubectl" = "latest"
+"ripgrep" = "latest"
+"usage" = "latest"
+"uv" = "latest"
+"yq" = "latest"
+"zoxide" = "latest"
