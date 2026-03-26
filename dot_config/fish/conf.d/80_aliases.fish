@@ -21,5 +21,4 @@ abbr prv 'gh pr view --web'
 abbr kc 'kubectl config use-context'
 
 ## Functions
-abbr p preview
 abbr n navigate
