@@ -48,7 +48,7 @@ function fish_prompt
                 
                 test -n "$(git status --porcelain 2>/dev/null)" && echo -n ""
 
-                set -l upstream (git rev-parse --abbrev-ref --symbolic-full-name origin 2>/dev/null)
+                set -l upstream (git rev-parse --abbrev-ref --symbolic-full-name '@{upstream}' 2>/dev/null)
                 if test -n "$upstream"
                     set -l ahead (git rev-list --count $upstream..HEAD 2>/dev/null; or echo 0)
                     test "$ahead" -gt 0 && echo -n ""
