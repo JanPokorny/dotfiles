@@ -31,12 +31,12 @@ function fish_prompt
 
     # working dir
     set_color normal
-    if string match -q "$HOME/ghq/*" "$PWD"
+    if string match -q "$HOME/git/*" "$PWD"
         set_color e15432
         echo -n "󰊢 "
         set_color --dim white
         set -l i 1
-        for part in (string split / (string replace "$HOME/ghq/" "" "$PWD"))
+        for part in (string split / (string replace "$HOME/git/" "" "$PWD"))
             echo -n "$part"
             if test $i = 3
                 # git info
