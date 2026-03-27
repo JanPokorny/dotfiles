@@ -62,7 +62,7 @@
     stash-keep = "!git stash store $(git stash create)"
 
 [sequence]
-    editor = interactive-rebase-tool
+    editor = git-interactive-rebase-tool
 
 [include]
     path = extra
