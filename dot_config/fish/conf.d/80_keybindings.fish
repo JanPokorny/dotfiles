@@ -1,2 +1,2 @@
 # Select file
-bind ctrl-s 'commandline --insert (select)'
+bind ctrl-s 'commandline --insert (tv)'

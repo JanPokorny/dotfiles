@@ -75,6 +75,6 @@ function fish_prompt
     # prompt
     set_color normal
     set_color brgreen
-    echo -n (string repeat $SHLVL ❯) ''
+    echo -n ❯ ''
     set_color normal
 end
