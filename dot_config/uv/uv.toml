@@ -1,1 +1,2 @@
 exclude-newer = "7 days"
+exclude-newer-package = { kagenti-cli = false, kagenti-adk = false }
