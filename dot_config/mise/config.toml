@@ -13,7 +13,6 @@ idiomatic_version_file_enable_tools = []
 "fzf" = "latest"
 "gh" = "latest"
 "github:FredrikNoren/ungit" = "latest"
-"github:micro-editor/micro" = "latest"
 "github:MitMaro/git-interactive-rebase-tool" = "latest"
 "gron" = "latest"
 "helm" = "latest"
