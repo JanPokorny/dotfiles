@@ -7,7 +7,7 @@ alias ls 'eza --icons --group-directories-first'
 # Abbrs
 abbr c 'clear'
 abbr n 'cd (tv dirs)'
-abbr g 'printf \'%s\\n\' ~/git/*/*/* | tv'
+abbr g 'cd (printf \'%s\\n\' ~/git/*/*/* | tv)'
 
 ## Git
 abbr gcm 'git checkout (git main-branch) && git pull'
