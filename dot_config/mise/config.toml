@@ -4,6 +4,7 @@ python.uv_venv_auto = true
 idiomatic_version_file_enable_tools = []
 
 [tools]
+"1password" = "latest"
 "aqua:fish-shell/fish-shell" = "latest"
 "bat" = "latest"
 "croc" = "latest"
