@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euxo pipefail
 
 [[ $(uname) == "Darwin" ]] || [[ $(uname -r) =~ "WSL" ]] && exit 0
 

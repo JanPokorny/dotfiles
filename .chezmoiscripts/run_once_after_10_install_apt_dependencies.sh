@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euxo pipefail
 
 command -v apt || exit 0
 
