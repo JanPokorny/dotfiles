@@ -1,0 +1,1 @@
+yq completion fish | source

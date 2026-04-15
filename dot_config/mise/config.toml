@@ -26,4 +26,3 @@ idiomatic_version_file_enable_tools = []
 "usage" = "latest"
 "uv" = "latest"
 "yq" = "latest"
-"zoxide" = "latest"
