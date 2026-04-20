@@ -36,12 +36,11 @@ bind ctrl-s 'commandline --insert (tv)'
 
 # Colorized man output
 
-set -gx LESS_TERMCAP_mb (set_color -o red)
-set -gx LESS_TERMCAP_md (set_color -o 5fafd7)
-set -gx LESS_TERMCAP_me (printf "\e[0m")
-set -gx LESS_TERMCAP_so (set_color 949494)
-set -gx LESS_TERMCAP_se (printf "\e[0m")
-set -gx LESS_TERMCAP_us (set_color -u afafd7)
-set -gx LESS_TERMCAP_ue (printf "\e[0m")
+set -gx LESS_TERMCAP_mb (set_color --bold red)
+set -gx LESS_TERMCAP_md (set_color --bold cyan)
+set -gx LESS_TERMCAP_me (set_color --reset)
+set -gx LESS_TERMCAP_so (set_color --background=white black)
+set -gx LESS_TERMCAP_se (set_color --reset)
+set -gx LESS_TERMCAP_us (set_color --underline brblue)
+set -gx LESS_TERMCAP_ue (set_color --reset)
 set -gx LESS '-R -s'
-
