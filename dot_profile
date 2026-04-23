@@ -1,9 +1,11 @@
 export HOMEBREW_REPOSITORY="/opt/homebrew"
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
-export PATH="$HOME/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.local/share/mise/shims:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPATH="/opt/homebrew/share/man:$MANPATH"
 export INFOPATH="/opt/homebrew/share/info:$INFOPATH"
 export XDG_CONFIG_HOME=$HOME/.config
+export ANDROID_HOME="/opt/homebrew/share/android-commandlinetools"
+export ANDROID_USER_HOME="$XDG_CONFIG_HOME/.android"                                                                                          
+export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin:$HOME/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.local/share/mise/shims:/usr/bin:/bin:/usr/sbin:/sbin"
 
 test $(uname) = Darwin &&\
     export DOCKER_HOST="unix://$XDG_CONFIG_HOME/colima/default/docker.sock" ||\
