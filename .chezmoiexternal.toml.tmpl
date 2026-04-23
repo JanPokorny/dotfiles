@@ -1,0 +1,28 @@
+{{- $fontDir := "" -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $fontDir = "Library/Fonts" -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{-   if not (.chezmoi.kernel.osrelease | contains "WSL") -}}
+{{-     $fontDir = ".local/share/fonts" -}}
+{{-   end -}}
+{{- end -}}
+
+{{- if $fontDir }}
+
+["{{ $fontDir }}/JetBrainsMonoNerdFont-Medium.ttf"]
+type = "file"
+url = "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/JetBrainsMono/Ligatures/Medium/JetBrainsMonoNerdFont-Medium.ttf"
+
+["{{ $fontDir }}/JetBrainsMonoNerdFontMono-Medium.ttf"]
+type = "file"
+url = "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/JetBrainsMono/Ligatures/Medium/JetBrainsMonoNerdFontMono-Medium.ttf"
+
+["{{ $fontDir }}/JetBrainsMonoNerdFont-Bold.ttf"]
+type = "file"
+url = "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/JetBrainsMono/Ligatures/Bold/JetBrainsMonoNerdFont-Bold.ttf"
+
+["{{ $fontDir }}/JetBrainsMonoNerdFontMono-Bold.ttf"]
+type = "file"
+url = "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/JetBrainsMono/Ligatures/Bold/JetBrainsMonoNerdFontMono-Bold.ttf"
+
+{{- end }}
