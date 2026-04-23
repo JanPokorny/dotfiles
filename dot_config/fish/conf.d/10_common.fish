@@ -30,10 +30,6 @@ if command -v pbcopy &>/dev/null
     abbr cbp pbpaste
 end
 
-# Keybindings
-
-bind ctrl-s 'commandline --insert (tv)'
-
 # Colorized man output
 
 set -gx LESS_TERMCAP_mb (set_color --bold red)
