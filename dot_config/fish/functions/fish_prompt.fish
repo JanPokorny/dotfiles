@@ -43,17 +43,19 @@ function fish_prompt
                 set_color normal
                 echo -n " "
                 
-                set -l git_branch (git symbolic-ref --short HEAD 2>/dev/null || git log -1 --pretty=format:'%h' 2>/dev/null)
-                test "$git_branch" = "main" -o "$git_branch" = "master" || echo -n "󰘬 $git_branch"
+                set -l git_info (git status --porcelain=v2 --branch 2>/dev/null)
+                set -l git_branch (string match -r '# branch\.head (.+)' $git_info)[2]
+                if test "$git_branch" = "(detached)"
+                    set git_branch (string sub -l 7 (string match -r '# branch\.oid (.+)' $git_info)[2])
+                end
+                test "$git_branch" != main -a "$git_branch" != master && echo -n "󰘬 $git_branch"
                 
-                test -n "$(git status --porcelain 2>/dev/null)" && echo -n ""
+                string match -qrv '^#' $git_info && echo -n ""
 
-                set -l upstream (git rev-parse --abbrev-ref --symbolic-full-name '@{upstream}' 2>/dev/null)
-                if test -n "$upstream"
-                    set -l ahead (git rev-list --count $upstream..HEAD 2>/dev/null; or echo 0)
-                    test "$ahead" -gt 0 && echo -n ""
-                    set -l behind (git rev-list --count HEAD..$upstream 2>/dev/null; or echo 0)
-                    test "$behind" -gt 0 && echo -n ""
+                set -l git_ab (string match -r '# branch\.ab \+(\d+) -(\d+)' $git_info)                                                          
+                if set -q git_ab[2]
+                    test "$git_ab[2]" -gt 0 && echo -n ""
+                    test "$git_ab[3]" -gt 0 && echo -n ""
                 end
 
                 set_color --dim cyan
