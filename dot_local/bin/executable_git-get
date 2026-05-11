@@ -12,7 +12,13 @@ fi
 input="$1"
 
 # Parse the input into host/owner/repo
-if [[ "$input" =~ ^git@([^:]+):(.+)\.git$ ]]; then
+if [[ "$input" =~ ^https?://([^/]+)/(.+)\.git$ ]]; then
+  host="${BASH_REMATCH[1]}"
+  path="${BASH_REMATCH[2]}"
+elif [[ "$input" =~ ^https?://([^/]+)/(.+)$ ]]; then
+  host="${BASH_REMATCH[1]}"
+  path="${BASH_REMATCH[2]}"
+elif [[ "$input" =~ ^git@([^:]+):(.+)\.git$ ]]; then
   host="${BASH_REMATCH[1]}"
   path="${BASH_REMATCH[2]}"
 elif [[ "$input" =~ ^git@([^:]+):(.+)$ ]]; then
