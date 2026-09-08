@@ -8,7 +8,6 @@ idiomatic_version_file_enable_tools = []
 "~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git", exclude = ["karabiner"] }
 "~/.claude" = { source = "home/.claude", mode = "symlink-each", manifest = "git", exclude = ["settings.json"] }
 "~/.local/bin" = { source = "home/.local/bin", mode = "symlink-each", manifest = "git" }
-"~/.profile" = "home/.profile"
 "~/.npmrc" = "home/.npmrc"
 "~/.yarnrc.yml" = "home/.yarnrc.yml"
 # copy: Claude Code rewrites this file itself
@@ -77,3 +76,6 @@ mkdir -p ~/.docker/cli-plugins
 ln -sf ~/.local/share/mise/shims/docker-buildx ~/.docker/cli-plugins/docker-buildx
 ln -sf ~/.local/share/mise/shims/docker-compose ~/.docker/cli-plugins/docker-compose
 """
+
+[env]
+XDG_CONFIG_HOME = "{{ env.HOME }}/.config"

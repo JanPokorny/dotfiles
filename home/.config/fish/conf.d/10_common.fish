@@ -1,8 +1,6 @@
 set fish_greeting
 
-source ~/.profile
-
-mise activate fish | source
+~/.local/bin/mise activate fish | source
 
 # Aliases
 
