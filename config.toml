@@ -21,7 +21,6 @@ adopt = true
 "brew:fish" = { os = "macos" }
 "dnf:fish" = { os = "linux" }
 "brew-cask:font-jetbrains-mono-nerd-font" = "latest"
-"brew-cask:android-commandlinetools" = { os = "macos" }
 "brew-cask:arc" = { os = "macos" }
 "brew-cask:bettercapture" = { os = "macos" }
 "brew-cask:deskpad" = { os = "macos" }
