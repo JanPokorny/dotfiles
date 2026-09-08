@@ -3,7 +3,6 @@ experimental = true
 python.uv_venv_auto = true
 idiomatic_version_file_enable_tools = []
 
-# narrow targets on purpose: a single "~" entry walks all of $HOME (45s, TCC prompts)
 [dotfiles]
 "~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git", exclude = ["karabiner"] }
 "~/.local/bin" = { source = "home/.local/bin", mode = "symlink-each", manifest = "git" }
