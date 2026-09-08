@@ -1,0 +1,81 @@
+[settings]
+experimental = true
+python.uv_venv_auto = true
+idiomatic_version_file_enable_tools = []
+
+# narrow targets on purpose: a single "~" entry walks all of $HOME (45s, TCC prompts)
+[dotfiles]
+"~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git", exclude = ["karabiner"] }
+"~/.claude" = { source = "home/.claude", mode = "symlink-each", manifest = "git", exclude = ["settings.json"] }
+"~/.local/bin" = { source = "home/.local/bin", mode = "symlink-each", manifest = "git" }
+"~/.profile" = "home/.profile"
+"~/.npmrc" = "home/.npmrc"
+"~/.yarnrc.yml" = "home/.yarnrc.yml"
+# copy: Claude Code rewrites this file itself
+"~/.claude/settings.json" = { source = "home/.claude/settings.json", mode = "copy" }
+
+[bootstrap.brew]
+adopt = true
+
+[bootstrap.packages]
+"brew:fish" = { os = "macos" }
+"dnf:fish" = { os = "linux" }
+"brew-cask:font-jetbrains-mono-nerd-font" = "latest"
+"brew-cask:android-commandlinetools" = { os = "macos" }
+"brew-cask:arc" = { os = "macos" }
+"brew-cask:bettercapture" = { os = "macos" }
+"brew-cask:deskpad" = { os = "macos" }
+"brew-cask:ghostty" = { os = "macos" }
+"brew-cask:gimp" = { os = "macos" }
+"brew-cask:heynote" = { os = "macos" }
+"brew-cask:inkscape" = { os = "macos" }
+"brew-cask:karabiner-elements" = { os = "macos" }
+"brew-cask:mac-mouse-fix" = { os = "macos" }
+"brew-cask:meetingbar" = { os = "macos" }
+"brew-cask:mitmproxy" = { os = "macos" }
+"brew-cask:monitorcontrol" = { os = "macos" }
+"brew-cask:temurin" = { os = "macos" }
+"brew-cask:zed" = { os = "macos" }
+
+[tools]
+"1password" = "latest"
+"aqua:vercel-labs/agent-browser" = "0.28.0"
+"bat" = "latest"
+"claude" = "latest"
+"colima" = "latest"
+"croc" = "latest"
+"docker-cli" = "latest"
+"eza" = "0.23.4"
+"fd" = "latest"
+"gh" = "latest"
+"github:alexpasmantier/television" = "latest"
+"github:docker/buildx" = { version = "latest", rename_exe = "docker-buildx" }
+"github:docker/compose" = { version = "latest", rename_exe = "docker-compose" }
+"github:docker/docker-credential-helpers" = { version = "latest", matching = "osxkeychain-v", rename_exe = "docker-credential-osxkeychain", os = ["macos"] }
+"github:FredrikNoren/ungit" = "latest"
+"github:justrach/kuri" = "latest"
+"github:MitMaro/git-interactive-rebase-tool" = "latest"
+"github:wagoodman/dive" = "latest"
+"gron" = "latest"
+"helm" = "latest"
+"hexyl" = "latest"
+"htmlq" = "latest"
+"http:ibmcloud" = { version = "latest", url = "https://download.clis.cloud.ibm.com/ibm-cloud-cli-dn/2.43.1/binaries/IBM_Cloud_CLI_2.43.1_macos_arm64.tgz", os = ["macos"] }
+"jq" = "latest"
+"kubectl" = "latest"
+"lima" = "latest"
+"node" = "24"
+"oc" = { version = "latest", bin = "oc", checksum_url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/sha256sum.txt", platforms = { linux-arm64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-linux-arm64-{{ version }}.tar.gz" }, linux-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-linux-{{ version }}.tar.gz" }, macos-arm64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-mac-arm64-{{ version }}.tar.gz" }, macos-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-mac-{{ version }}.tar.gz" }, windows-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-windows-{{ version }}.zip" } }, version_expr = "sortVersions(versions)", version_list_url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/", version_regex = 'href="(\d+\.\d+\.\d+)/"' }
+"ripgrep" = "latest"
+"sd" = "latest"
+"usage" = "latest"
+"uv" = "latest"
+"yq" = "latest"
+
+# docker looks for plugins here; runs after tools so the shims exist
+[tasks.bootstrap]
+run = """
+mkdir -p ~/.docker/cli-plugins
+ln -sf ~/.local/share/mise/shims/docker-buildx ~/.docker/cli-plugins/docker-buildx
+ln -sf ~/.local/share/mise/shims/docker-compose ~/.docker/cli-plugins/docker-compose
+"""

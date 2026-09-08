@@ -1,0 +1,5 @@
+[bootstrap.user]
+login_shell = "/usr/bin/fish"
+
+[bootstrap.hooks]
+post-packages = "fc-cache -f ~/.local/share/fonts"

@@ -1,4 +1,0 @@
-{{- if ne .chezmoi.os "darwin" -}}
-Library
-**/*_mac_*
-{{- end -}}

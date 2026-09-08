@@ -1,0 +1,7 @@
+[bootstrap.user]
+login_shell = "/opt/homebrew/bin/fish"
+
+[dotfiles]
+"~/Library/Keyboard Layouts" = { source = "home/Library/Keyboard Layouts", mode = "symlink-each", manifest = "git" }
+# copy: Karabiner rewrites its config via temp-file rename, which breaks symlinks
+"~/.config/karabiner" = { source = "home/.config/karabiner", mode = "copy" }

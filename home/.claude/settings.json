@@ -6,9 +6,14 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "claude-fable-5[1m]",
+  "model": "claude-fable-5-1[1m]",
   "disableClaudeAiConnectors": true,
-  "effortLevel": "low",
+  "effortLevel": "high",
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "high"
+    }
+  },
   "tui": "fullscreen",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,

@@ -1,6 +1,6 @@
 # Dotfiles
 
-Managed with [chezmoi](https://www.chezmoi.io/).
+Managed with [mise bootstrap](https://mise.jdx.dev/bootstrap.html). This repo is checked out as `~/.config/mise`.
 
 ## What's inside
 
@@ -9,12 +9,23 @@ Managed with [chezmoi](https://www.chezmoi.io/).
 - **Ghostty** terminal config
 - **Karabiner Elements** keyboard remapping
 - **Mise** for CLI tools
-- **Homebrew** for macOS graphical apps (casks only)
+- **Homebrew casks** for macOS graphical apps (installed by mise, no `brew` needed)
 - **Custom scripts** in `~/.local/bin` (e.g. `git-get` for cloning repos into organized paths)
 - **JetBrains Mono Nerd Font** auto-installation
 
 ## Bootstrap
 
 ```sh
-BINDIR=~/.local/bin sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply JanPokorny
+curl https://mise.run | sh
+~/.local/bin/mise bootstrap --adopt JanPokorny/dotfiles --yes
 ```
+
+## Daily use
+
+```sh
+mise bootstrap status          # what differs
+mise bootstrap                 # apply everything (idempotent)
+mise bootstrap dotfiles add ~/.claude/settings.json   # capture edits to a copy-mode file
+```
+
+Files under `home/` are symlinked into `~` one by one (`symlink-each`), only if tracked by git. To add a dotfile, move it under `home/`, `git add` it, and run `mise bootstrap`.

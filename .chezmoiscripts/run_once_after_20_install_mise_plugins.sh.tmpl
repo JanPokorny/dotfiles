@@ -1,7 +1,0 @@
-#!/bin/bash
-set -exo pipefail
-
-echo
-echo "### INSTALL MISE PLUGINS ###"
-source ~/.profile
-mise up  # {{ include "dot_config/mise/config.toml.tmpl" | sha256sum }}

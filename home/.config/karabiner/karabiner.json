@@ -1,5 +1,7 @@
 {
-    "global": { "show_in_menu_bar": false },
+    "global": {
+        "show_in_menu_bar": false
+    },
     "profiles": [
         {
             "complex_modifications": {
@@ -9,45 +11,25 @@
                 },
                 "rules": [
                     {
-                        "description": "Switch desktops by holding down thumb buttons",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": { "pointing_button": "button4" },
-                                "to_if_alone": [{ "pointing_button": "button4" }],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": { "pointing_button": "button5" },
-                                "to_if_alone": [{ "pointing_button": "button5" }],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Win+T terminal",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "t",
                                     "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["any"]
+                                        "mandatory": [
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
-                                "to": [{ "shell_command": "open -a ghostty" }],
+                                "to": [
+                                    {
+                                        "shell_command": "open -a ghostty"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -66,12 +48,18 @@
                                 ],
                                 "from": {
                                     "key_code": "delete_forward",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "delete_or_backspace",
-                                        "modifiers": ["left_command"]
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -84,12 +72,19 @@
                             {
                                 "from": {
                                     "key_code": "period",
-                                    "modifiers": { "mandatory": ["left_control"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "spacebar",
-                                        "modifiers": ["left_command", "left_control"]
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -102,7 +97,11 @@
                             {
                                 "from": {
                                     "key_code": "left_control",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -113,7 +112,9 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "spacebar",
-                                        "modifiers": ["left_command"]
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -158,9 +159,18 @@
                                 ],
                                 "from": {
                                     "key_code": "escape",
-                                    "modifiers": { "mandatory": ["command", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{ "shell_command": "open -a 'Activity Monitor.app'" }],
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Activity Monitor.app'"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -176,23 +186,39 @@
                     },
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_control" }]
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_control"
+                                }
+                            ]
                         },
                         {
-                            "from": { "key_code": "left_control" },
-                            "to": [{ "key_code": "left_command" }]
+                            "from": {
+                                "key_code": "left_control"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_command"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "identifiers": { "is_keyboard": true },
+                    "identifiers": {
+                        "is_keyboard": true
+                    },
                     "ignore": true
                 }
             ],
             "name": "Default profile",
             "selected": true,
-            "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
+            "virtual_hid_keyboard": {
+                "keyboard_type_v2": "iso"
+            }
         }
     ]
 }
