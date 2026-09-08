@@ -2,10 +2,11 @@
 login_shell = "/usr/bin/fish"
 
 [bootstrap.hooks]
-post-packages = "fc-cache -f ~/.local/share/fonts"
+post-packages = "command -v fc-cache >/dev/null && fc-cache -f ~/.local/share/fonts || true"
 
 [env]
 REQUESTS_CA_BUNDLE = "/etc/ssl/certs/ca-certificates.crt"
 
 [bootstrap.packages]
+"apt:fish" = "latest"
 "dnf:fish" = "latest"

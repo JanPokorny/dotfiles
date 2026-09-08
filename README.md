@@ -16,7 +16,7 @@ Managed with [mise bootstrap](https://mise.jdx.dev/bootstrap.html). This repo is
 ## Bootstrap
 
 ```sh
-curl https://mise.run | sh
+curl https://mise.run | sh   # Linux: install git first
 ~/.local/bin/mise bootstrap --adopt JanPokorny/dotfiles --yes
 ```
 
