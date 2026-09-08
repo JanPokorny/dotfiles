@@ -60,7 +60,6 @@ adopt = true
 "helm" = "latest"
 "hexyl" = "latest"
 "htmlq" = "latest"
-"http:ibmcloud" = { version = "latest", url = "https://download.clis.cloud.ibm.com/ibm-cloud-cli-dn/2.43.1/binaries/IBM_Cloud_CLI_2.43.1_macos_arm64.tgz", os = ["macos"] }
 "jq" = "latest"
 "kubectl" = "latest"
 "lima" = "latest"
