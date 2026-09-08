@@ -6,3 +6,6 @@ post-packages = "fc-cache -f ~/.local/share/fonts"
 
 [env]
 REQUESTS_CA_BUNDLE = "/etc/ssl/certs/ca-certificates.crt"
+
+[bootstrap.packages]
+"dnf:fish" = "latest"

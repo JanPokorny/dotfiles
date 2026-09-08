@@ -13,3 +13,20 @@ post-packages = "codesign --force --sign - /opt/homebrew/Cellar/fish/*/bin/fish"
 [env]
 DOCKER_HOST = "unix://{{ env.HOME }}/.config/colima/default/docker.sock"
 _.path = ["/opt/homebrew/bin", "/opt/homebrew/sbin"]
+
+[bootstrap.packages]
+"brew:fish" = "latest"
+"brew-cask:arc" = "latest"
+"brew-cask:bettercapture" = "latest"
+"brew-cask:deskpad" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:gimp" = "latest"
+"brew-cask:heynote" = "latest"
+"brew-cask:inkscape" = "latest"
+"brew-cask:karabiner-elements" = "latest"
+"brew-cask:mac-mouse-fix" = "latest"
+"brew-cask:meetingbar" = "latest"
+"brew-cask:mitmproxy" = "latest"
+"brew-cask:monitorcontrol" = "latest"
+"brew-cask:temurin" = "latest"
+"brew-cask:zed" = "latest"

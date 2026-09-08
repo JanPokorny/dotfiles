@@ -17,23 +17,7 @@ idiomatic_version_file_enable_tools = []
 adopt = true
 
 [bootstrap.packages]
-"brew:fish" = { os = "macos" }
-"dnf:fish" = { os = "linux" }
 "brew-cask:font-jetbrains-mono-nerd-font" = "latest"
-"brew-cask:arc" = { os = "macos" }
-"brew-cask:bettercapture" = { os = "macos" }
-"brew-cask:deskpad" = { os = "macos" }
-"brew-cask:ghostty" = { os = "macos" }
-"brew-cask:gimp" = { os = "macos" }
-"brew-cask:heynote" = { os = "macos" }
-"brew-cask:inkscape" = { os = "macos" }
-"brew-cask:karabiner-elements" = { os = "macos" }
-"brew-cask:mac-mouse-fix" = { os = "macos" }
-"brew-cask:meetingbar" = { os = "macos" }
-"brew-cask:mitmproxy" = { os = "macos" }
-"brew-cask:monitorcontrol" = { os = "macos" }
-"brew-cask:temurin" = { os = "macos" }
-"brew-cask:zed" = { os = "macos" }
 
 [tools]
 "1password" = "latest"
