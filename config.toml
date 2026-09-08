@@ -51,7 +51,6 @@ adopt = true
 "uv" = "latest"
 "yq" = "latest"
 
-# docker looks for plugins here; runs after tools so the shims exist
 [tasks.bootstrap]
 run = """
 mkdir -p ~/.docker/cli-plugins
