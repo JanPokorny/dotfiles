@@ -6,12 +6,11 @@ idiomatic_version_file_enable_tools = []
 # narrow targets on purpose: a single "~" entry walks all of $HOME (45s, TCC prompts)
 [dotfiles]
 "~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git", exclude = ["karabiner"] }
-"~/.claude" = { source = "home/.claude", mode = "symlink-each", manifest = "git", exclude = ["settings.json"] }
 "~/.local/bin" = { source = "home/.local/bin", mode = "symlink-each", manifest = "git" }
+"~/.claude" = { source = "home/.claude", mode = "symlink-each", manifest = "git", exclude = ["settings.json"] }
+"~/.claude/settings.json" = { source = "home/.claude/settings.json", mode = "copy" }
 "~/.npmrc" = "home/.npmrc"
 "~/.yarnrc.yml" = "home/.yarnrc.yml"
-# copy: Claude Code rewrites this file itself
-"~/.claude/settings.json" = { source = "home/.claude/settings.json", mode = "copy" }
 
 [bootstrap.brew]
 adopt = true
