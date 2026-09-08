@@ -6,6 +6,7 @@ login_shell = "/opt/homebrew/bin/fish"
 "~/.config/karabiner" = { source = "home/.config/karabiner", mode = "copy" }
 
 # workaround: mise breaks the ad-hoc signature when relocating the fish bottle (bug reported); drop once fixed
+# TODO: report bug in Mise
 [bootstrap.hooks]
 post-packages = "codesign --force --sign - /opt/homebrew/Cellar/fish/*/bin/fish"
 
@@ -22,10 +23,9 @@ _.path = ["/opt/homebrew/bin", "/opt/homebrew/sbin"]
 "brew-cask:gimp" = "latest"
 "brew-cask:heynote" = "latest"
 "brew-cask:inkscape" = "latest"
-"brew-cask:karabiner-elements" = "latest"
+# "brew-cask:karabiner-elements" = "latest" # TODO: report bug in Mise
 "brew-cask:mac-mouse-fix" = "latest"
 "brew-cask:meetingbar" = "latest"
 "brew-cask:mitmproxy" = "latest"
 "brew-cask:monitorcontrol" = "latest"
-"brew-cask:temurin" = "latest"
 "brew-cask:zed" = "latest"
