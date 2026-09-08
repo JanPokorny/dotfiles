@@ -20,6 +20,8 @@ curl https://mise.run | sh   # Linux: install git first
 ~/.local/bin/mise bootstrap --adopt JanPokorny/dotfiles --yes
 ```
 
+The login-shell step runs `chsh`, which asks for your password on Linux. For a passwordless user (VMs, containers) run `sudo env HOME=$HOME PATH=$PATH mise bootstrap user apply` instead.
+
 ## Daily use
 
 ```sh
