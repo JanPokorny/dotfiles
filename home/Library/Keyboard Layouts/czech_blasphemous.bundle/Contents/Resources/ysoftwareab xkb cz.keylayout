@@ -48,7 +48,7 @@
             <key code="7" action="x"/>
             <key code="8" action="c"/>
             <key code="9" action="v"/>
-            <key code="10" output=";"/>
+            <key code="10" output="\"/>
             <key code="11" action="b"/>
             <key code="12" output="q"/>
             <key code="13" action="w"/>
@@ -88,7 +88,7 @@
             <key code="47" output="."/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output="\"/>
+            <key code="50" output=";"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="65" output="."/>
@@ -146,7 +146,7 @@
             <key code="7" action="X"/>
             <key code="8" action="C"/>
             <key code="9" action="V"/>
-            <key code="10" action="dead:abovering"/>
+            <key code="10" output="|"/>
             <key code="11" action="B"/>
             <key code="12" output="Q"/>
             <key code="13" action="W"/>
@@ -186,7 +186,7 @@
             <key code="47" output=":"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output="|"/>
+            <key code="50" action="dead:abovering"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="65" output="."/>
@@ -244,7 +244,7 @@
             <key code="7" output="#"/>
             <key code="8" output="&#x0026;"/>
             <key code="9" output="@"/>
-            <key code="10" output="`"/>
+            <key code="10" output="/"/>
             <key code="11" output="{"/>
             <key code="12" output="\"/>
             <key code="13" output="|"/>
@@ -284,7 +284,7 @@
             <key code="47" output="&#x003E;"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output="/"/>
+            <key code="50" output="`"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="65" output="."/>
@@ -342,7 +342,7 @@
             <key code="7" output="&#x003E;"/>
             <key code="8" output="©"/>
             <key code="9" output="‘"/>
-            <key code="10" output="~"/>
+            <key code="10" output="/"/>
             <key code="11" output="’"/>
             <key code="12" output="Ω"/>
             <key code="13" output="Ł"/>
@@ -382,7 +382,7 @@
             <key code="47" output="÷"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output="/"/>
+            <key code="50" output="~"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="65" output="."/>
@@ -440,7 +440,7 @@
             <key code="7" action="X"/>
             <key code="8" action="C"/>
             <key code="9" action="V"/>
-            <key code="10" output=";"/>
+            <key code="10" output="\"/>
             <key code="11" action="B"/>
             <key code="12" output="Q"/>
             <key code="13" action="W"/>
@@ -480,7 +480,7 @@
             <key code="47" output="."/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output="\"/>
+            <key code="50" output=";"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="65" output="."/>
@@ -538,7 +538,7 @@
             <key code="7" action="x"/>
             <key code="8" action="c"/>
             <key code="9" action="v"/>
-            <key code="10" action="dead:abovering"/>
+            <key code="10" output="|"/>
             <key code="11" action="b"/>
             <key code="12" output="q"/>
             <key code="13" action="w"/>
@@ -578,7 +578,7 @@
             <key code="47" output=":"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output="|"/>
+            <key code="50" action="dead:abovering"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="65" output="."/>
@@ -636,7 +636,7 @@
             <key code="7" output="&#x003E;"/>
             <key code="8" output="©"/>
             <key code="9" output="‘"/>
-            <key code="10" output="`"/>
+            <key code="10" output="/"/>
             <key code="11" output="’"/>
             <key code="12" output="Ω"/>
             <key code="13" output="Ł"/>
@@ -676,7 +676,7 @@
             <key code="47" output="&#x003E;"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output="/"/>
+            <key code="50" output="`"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="65" output="."/>
@@ -734,7 +734,7 @@
             <key code="7" output="#"/>
             <key code="8" output="&#x0026;"/>
             <key code="9" output="@"/>
-            <key code="10" output="~"/>
+            <key code="10" output="/"/>
             <key code="11" output="{"/>
             <key code="12" output="\"/>
             <key code="13" output="|"/>
@@ -774,7 +774,7 @@
             <key code="47" output="÷"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output="/"/>
+            <key code="50" output="~"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="65" output="."/>
