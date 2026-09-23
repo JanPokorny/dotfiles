@@ -2,6 +2,8 @@
 experimental = true
 python.uv_venv_auto = true
 idiomatic_version_file_enable_tools = []
+minimum_release_age = "0"
+github.credential_command = "gh auth token"
 
 [dotfiles]
 "~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git", exclude = ["karabiner"] }
@@ -19,13 +21,13 @@ adopt = true
 
 [tools]
 "1password" = "latest"
-"aqua:vercel-labs/agent-browser" = "0.28.0"
+"aqua:vercel-labs/agent-browser" = "latest"
 "bat" = "latest"
 "claude" = "latest"
 "colima" = "latest"
 "croc" = "latest"
 "docker-cli" = "latest"
-"eza" = "0.23.4"
+eza = "latest"
 "fd" = "latest"
 "gh" = "latest"
 "github:alexpasmantier/television" = "latest"
@@ -43,7 +45,7 @@ adopt = true
 "jq" = "latest"
 "kubectl" = "latest"
 "lima" = "latest"
-"node" = "24"
+"node" = "26"
 "oc" = { version = "latest", bin = "oc", checksum_url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/sha256sum.txt", platforms = { linux-arm64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-linux-arm64-{{ version }}.tar.gz" }, linux-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-linux-{{ version }}.tar.gz" }, macos-arm64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-mac-arm64-{{ version }}.tar.gz" }, macos-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-mac-{{ version }}.tar.gz" }, windows-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-windows-{{ version }}.zip" } }, version_expr = "sortVersions(versions)", version_list_url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/", version_regex = 'href="(\d+\.\d+\.\d+)/"' }
 "ripgrep" = "latest"
 "sd" = "latest"
