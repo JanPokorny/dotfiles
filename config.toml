@@ -35,7 +35,6 @@ eza = "latest"
 "github:docker/compose" = { version = "latest", rename_exe = "docker-compose" }
 "github:docker/docker-credential-helpers" = { version = "latest", matching = "osxkeychain-v", rename_exe = "docker-credential-osxkeychain", os = ["macos"] }
 "github:FredrikNoren/ungit" = "latest"
-"github:justrach/kuri" = "latest"
 "github:MitMaro/git-interactive-rebase-tool" = "latest"
 "github:wagoodman/dive" = "latest"
 "gron" = "latest"
