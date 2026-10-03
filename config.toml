@@ -51,6 +51,7 @@ eza = "latest"
 "usage" = "latest"
 "uv" = "latest"
 "yq" = "latest"
+pi = "latest"
 
 [tasks.bootstrap]
 run = """
