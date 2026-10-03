@@ -1,3 +1,5 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+
 [settings]
 experimental = true
 python.uv_venv_auto = true
@@ -22,7 +24,7 @@ adopt = true
 "1password" = "latest"
 "aqua:vercel-labs/agent-browser" = "latest"
 "bat" = "latest"
-"claude" = "latest"
+"claude" = { version = "latest", minimum_release_age = "0s" }
 "colima" = "latest"
 "croc" = "latest"
 "docker-cli" = "latest"
