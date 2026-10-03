@@ -21,7 +21,7 @@
     "light": "Material Icon Theme",
     "dark": "Material Icon Theme",
   },
-  "diff_view_style": "split",
+  "diff_view_style": "unified",
   "project_panel": {
     "dock": "left",
   },
