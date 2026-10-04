@@ -11,7 +11,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Win+T terminal",
+                        "description": "Win+T quick terminal",
                         "manipulators": [
                             {
                                 "from": {
@@ -27,7 +27,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a ghostty"
+                                        "shell_command": "osascript -e 'tell application \"Ghostty\" to perform action \"toggle_quick_terminal\" on terminal 1' || open -a ghostty"
                                     }
                                 ],
                                 "type": "basic"
