@@ -7,6 +7,13 @@
     "defaultMode": "auto"
   },
   "disableClaudeAiConnectors": true,
+  "enabledPlugins": {
+    "cc-plugin-you-should-know@builtin": true,
+    "cc-plugin-agents-md@builtin": true,
+    "cc-plugin-telemetry@builtin": false,
+    "cc-plugin-sec-default@builtin": false,
+    "cc-plugin-plugin-authoring@builtin": false
+  },
   "effortLevel": "high",
   "modelSettings": {
     "claude-fable-5-1": {
