@@ -9,8 +9,8 @@ github.credential_command = "gh auth token"
 [dotfiles]
 "~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git", exclude = ["karabiner"] }
 "~/.local/bin" = { source = "home/.local/bin", mode = "symlink-each", manifest = "git" }
-"~/.claude" = { source = "home/.claude", mode = "symlink-each", manifest = "git", exclude = ["settings.json"] }
-"~/.claude/settings.json" = { source = "home/.claude/settings.json", mode = "copy" }
+"~/.config/claude" = { source = "home/.claude", mode = "symlink-each", manifest = "git", exclude = ["settings.json"] }
+"~/.config/claude/settings.json" = { source = "home/.claude/settings.json", mode = "copy" }
 "~/.npmrc" = "home/.npmrc"
 "~/.yarnrc.yml" = "home/.yarnrc.yml"
 
@@ -63,3 +63,4 @@ ln -sf ~/.local/share/mise/shims/docker-compose ~/.docker/cli-plugins/docker-com
 
 [env]
 XDG_CONFIG_HOME = "{{ env.HOME }}/.config"
+CLAUDE_CONFIG_DIR = "{{ env.HOME }}/.config/claude"
