@@ -9,8 +9,6 @@ github.credential_command = "gh auth token"
 [dotfiles]
 "~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git", exclude = ["karabiner"] }
 "~/.local/bin" = { source = "home/.local/bin", mode = "symlink-each", manifest = "git" }
-"~/.config/claude" = { source = "home/.claude", mode = "symlink-each", manifest = "git", exclude = ["settings.json"] }
-"~/.config/claude/settings.json" = { source = "home/.claude/settings.json", mode = "copy" }
 "~/.npmrc" = "home/.npmrc"
 "~/.yarnrc.yml" = "home/.yarnrc.yml"
 
@@ -28,15 +26,14 @@ adopt = true
 "colima" = "latest"
 "croc" = "latest"
 "docker-cli" = "latest"
-eza = "latest"
+"eza" = "latest"
 "fd" = "latest"
 "gh" = "latest"
+"github:FredrikNoren/ungit" = "latest"
+"github:MitMaro/git-interactive-rebase-tool" = "latest"
 "github:alexpasmantier/television" = "latest"
 "github:docker/buildx" = { version = "latest", rename_exe = "docker-buildx" }
 "github:docker/compose" = { version = "latest", rename_exe = "docker-compose" }
-"github:docker/docker-credential-helpers" = { version = "latest", matching = "osxkeychain-v", rename_exe = "docker-credential-osxkeychain", os = ["macos"] }
-"github:FredrikNoren/ungit" = "latest"
-"github:MitMaro/git-interactive-rebase-tool" = "latest"
 "github:wagoodman/dive" = "latest"
 "gron" = "latest"
 "helm" = "latest"
@@ -46,13 +43,13 @@ eza = "latest"
 "kubectl" = "latest"
 "lima" = "latest"
 "node" = "26"
-"oc" = { version = "latest", bin = "oc", checksum_url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/sha256sum.txt", platforms = { linux-arm64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-linux-arm64-{{ version }}.tar.gz" }, linux-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-linux-{{ version }}.tar.gz" }, macos-arm64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-mac-arm64-{{ version }}.tar.gz" }, macos-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-mac-{{ version }}.tar.gz" }, windows-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-windows-{{ version }}.zip" } }, version_expr = "sortVersions(versions)", version_list_url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/", version_regex = 'href="(\d+\.\d+\.\d+)/"' }
+"oc" = { version = "latest", bin = "oc", checksum_url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/sha256sum.txt", platforms = { linux-arm64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-linux-arm64-{{ version }}.tar.gz" }, linux-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-linux-{{ version }}.tar.gz" }, macos-arm64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-mac-arm64-{{ version }}.tar.gz" } }, version_expr = "sortVersions(versions)", version_list_url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/", version_regex = 'href="(\d+\.\d+\.\d+)/"' }
+"pi" = "latest"
 "ripgrep" = "latest"
 "sd" = "latest"
 "usage" = "latest"
 "uv" = "latest"
 "yq" = "latest"
-pi = "latest"
 
 [tasks.bootstrap]
 run = """
