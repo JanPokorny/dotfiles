@@ -1,7 +1,5 @@
 {
-    "global": {
-        "show_in_menu_bar": false
-    },
+    "global": { "show_in_menu_bar": false },
     "profiles": [
         {
             "complex_modifications": {
@@ -17,19 +15,11 @@
                                 "from": {
                                     "key_code": "t",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "osascript -e 'tell application \"Ghostty\" to perform action \"toggle_quick_terminal\" on terminal 1' || open -a ghostty"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "osascript -e 'tell application \"Ghostty\" to perform action \"toggle_quick_terminal\" on terminal 1' || open -a ghostty" }],
                                 "type": "basic"
                             }
                         ]
@@ -48,18 +38,12 @@
                                 ],
                                 "from": {
                                     "key_code": "delete_forward",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "delete_or_backspace",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -72,19 +56,12 @@
                             {
                                 "from": {
                                     "key_code": "period",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["left_control"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "spacebar",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_control"
-                                        ]
+                                        "modifiers": ["left_command", "left_control"]
                                     }
                                 ],
                                 "type": "basic"
@@ -97,11 +74,7 @@
                             {
                                 "from": {
                                     "key_code": "left_control",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
@@ -112,9 +85,7 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "spacebar",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -159,18 +130,9 @@
                                 ],
                                 "from": {
                                     "key_code": "escape",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["command", "shift"] }
                                 },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Activity Monitor.app'"
-                                    }
-                                ],
+                                "to": [{ "shell_command": "open -a 'Activity Monitor.app'" }],
                                 "type": "basic"
                             }
                         ]
@@ -186,39 +148,23 @@
                     },
                     "simple_modifications": [
                         {
-                            "from": {
-                                "key_code": "left_command"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_control"
-                                }
-                            ]
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_control" }]
                         },
                         {
-                            "from": {
-                                "key_code": "left_control"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_command"
-                                }
-                            ]
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "key_code": "left_command" }]
                         }
                     ]
                 },
                 {
-                    "identifiers": {
-                        "is_keyboard": true
-                    },
-                    "ignore": true
+                    "identifiers": { "is_keyboard": true },
+                    "ignore": false
                 }
             ],
             "name": "Default profile",
             "selected": true,
-            "virtual_hid_keyboard": {
-                "keyboard_type_v2": "iso"
-            }
+            "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
         }
     ]
 }
