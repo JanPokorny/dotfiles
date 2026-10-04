@@ -28,3 +28,6 @@ _.path = ["/opt/homebrew/bin", "/opt/homebrew/sbin"]
 "brew-cask:mitmproxy" = "latest"
 "brew-cask:monitorcontrol" = "latest"
 "brew-cask:zed" = "latest"
+
+[tools]
+"github:docker/docker-credential-helpers" = { version = "latest", matching = "osxkeychain-v", rename_exe = "docker-credential-osxkeychain" }
