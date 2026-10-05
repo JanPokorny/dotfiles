@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>local.mise-env</string>
+  <!-- exposes mise [env] to GUI apps; MANPATH skipped as it pins tool versions -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/sh</string>
+    <string>-c</string>
+    <string>~/.local/bin/mise env -C ~ -D -q | grep -v ^MANPATH= | while IFS== read -r k v; do launchctl setenv "$k" "$v"; done</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+</dict>
+</plist>
