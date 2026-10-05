@@ -33,8 +33,7 @@ _.path = ["/opt/homebrew/bin", "/opt/homebrew/sbin"]
 [tools]
 "github:docker/docker-credential-helpers" = { version = "latest", matching = "osxkeychain-v", rename_exe = "docker-credential-osxkeychain" }
 
-# exposes mise [env] to GUI apps; MANPATH skipped as it pins tool versions
 [bootstrap.macos.launchd.agents.env]
 program = "/bin/sh"
-args = ["-c", "~/.local/bin/mise env -C ~ -D -q | grep -v ^MANPATH= | while IFS== read -r k v; do launchctl setenv \"$k\" \"$v\"; done"]
+args = ["-c", '{{ mise_bin }} env -D | while IFS== read -r k v; do launchctl setenv "$k" "$v"; done']
 run_at_load = true
