@@ -57,7 +57,7 @@
 
 [alias]
     uncommit = "!git log -1 --pretty=%B && git reset --soft HEAD~1"
-    main-branch = "!git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's|.*/||' || echo main"
+    main-branch = "!b=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null) && echo ${b#origin/} || echo main"
     branch-commit = "!f() { msg=\"$1\"; kebab=$(echo \"$msg\" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g' | sed -E 's/^-|-$//g'); git switch -c janpokorny/$kebab && git commit --signoff -m \"$msg\"; }; f"
     stash-keep = "!f() { ref=$(git stash create); [ -n \"$ref\" ] && git stash store \"$ref\" || echo 'Nothing to stash.'; }; f"
 
