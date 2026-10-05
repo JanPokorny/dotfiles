@@ -67,11 +67,5 @@
 [include]
     path = extra
 
-[credential "https://github.com"]
-    helper = !gh auth git-credential
-
-[credential "https://gist.github.com"]
-    helper = !gh auth git-credential
-
-[credential "https://github.ibm.com"]
+[credential]
     helper = !gh auth git-credential
