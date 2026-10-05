@@ -7,7 +7,7 @@ idiomatic_version_file_enable_tools = []
 github.credential_command = "gh auth token"
 
 [dotfiles]
-"~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git", exclude = ["karabiner"] }
+"~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git" }
 "~/.local/bin" = { source = "home/.local/bin", mode = "symlink-each", manifest = "git" }
 
 [bootstrap.brew]

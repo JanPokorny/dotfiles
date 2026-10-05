@@ -4,8 +4,7 @@
 login_shell = "/opt/homebrew/bin/fish"
 
 [dotfiles]
-"~/Library/Keyboard Layouts" = { source = "home/Library/Keyboard Layouts", mode = "symlink-each", manifest = "git" }
-"~/.config/karabiner" = { source = "home/.config/karabiner", mode = "copy" }
+"~/Library" = { source = "home/Library/", mode = "symlink-each", manifest = "git" }
 
 # workaround: mise breaks the ad-hoc signature when relocating the fish bottle
 # TODO: report bug in Mise
