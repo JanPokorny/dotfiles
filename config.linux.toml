@@ -5,7 +5,7 @@ login_shell = "/usr/bin/fish"
 post-packages = "command -v fc-cache >/dev/null && fc-cache -f ~/.local/share/fonts || true"
 
 [env]
-REQUESTS_CA_BUNDLE = "/etc/ssl/certs/ca-certificates.crt"
+REQUESTS_CA_BUNDLE = "/etc/ssl/certs"
 
 [bootstrap.packages]
 "apt:fish" = "latest"
