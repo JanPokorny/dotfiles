@@ -6,11 +6,6 @@ login_shell = "/opt/homebrew/bin/fish"
 [dotfiles]
 "~/Library" = { source = "home/Library/", mode = "symlink-each", manifest = "git" }
 
-# workaround: mise breaks the ad-hoc signature when relocating the fish bottle
-# TODO: report bug in Mise
-[bootstrap.hooks]
-post-packages = "codesign --force --sign - /opt/homebrew/Cellar/fish/*/bin/fish"
-
 [env]
 DOCKER_HOST = "unix://{{ env.HOME }}/.config/colima/default/docker.sock"
 _.path = ["/opt/homebrew/bin", "/opt/homebrew/sbin"]
