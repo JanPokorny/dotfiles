@@ -62,6 +62,7 @@ ln -sf ~/.local/share/mise/shims/docker-compose ~/.docker/cli-plugins/docker-com
 XDG_CONFIG_HOME = "{{ env.HOME }}/.config"
 CLAUDE_CONFIG_DIR = "{{ env.HOME }}/.config/claude"
 npm_config_min_release_age = "7"
+npm_config_min_release_age_exclude = "@dam-agents/cli"
 YARN_NPM_MINIMAL_AGE_GATE = "10080"
 pnpm_config_minimum_release_age = "10080"
 UV_EXCLUDE_NEWER = "7 days"
