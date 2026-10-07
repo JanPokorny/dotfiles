@@ -27,6 +27,7 @@ adopt = true
 "eza" = "latest"
 "fd" = "latest"
 "gh" = "latest"
+"git-lfs" = "latest"
 "github:FredrikNoren/ungit" = "latest"
 "github:MitMaro/git-interactive-rebase-tool" = "latest"
 "github:alexpasmantier/television" = "latest"
@@ -43,6 +44,7 @@ adopt = true
 "node" = "26"
 "oc" = { version = "latest", bin = "oc", checksum_url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/sha256sum.txt", platforms = { linux-arm64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-linux-arm64-{{ version }}.tar.gz" }, linux-x64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-linux-{{ version }}.tar.gz" }, macos-arm64 = { url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{ version }}/openshift-client-mac-arm64-{{ version }}.tar.gz" } }, version_expr = "sortVersions(versions)", version_list_url = "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/", version_regex = 'href="(\d+\.\d+\.\d+)/"' }
 "pi" = "latest"
+"pitchfork" = "latest"
 "ripgrep" = "latest"
 "sd" = "latest"
 "usage" = "latest"

@@ -3,13 +3,6 @@
 [bootstrap.user]
 login_shell = "/opt/homebrew/bin/fish"
 
-[dotfiles]
-"~/Library" = { source = "home/Library/", mode = "symlink-each", manifest = "git" }
-
-[env]
-DOCKER_HOST = "unix://{{ env.HOME }}/.config/colima/default/docker.sock"
-_.path = ["/opt/homebrew/bin", "/opt/homebrew/sbin"]
-
 [bootstrap.packages]
 "brew:fish" = "latest"
 "brew-cask:arc" = "latest"
@@ -25,10 +18,17 @@ _.path = ["/opt/homebrew/bin", "/opt/homebrew/sbin"]
 "brew-cask:monitorcontrol" = "latest"
 "brew-cask:zed" = "latest"
 
-[tools]
-"github:docker/docker-credential-helpers" = { version = "latest", matching = "osxkeychain-v", rename_exe = "docker-credential-osxkeychain" }
-
 [bootstrap.macos.launchd.agents.env]
 program = "/bin/sh"
 args = ["-c", '{{ mise_bin }} env -D | while IFS== read -r k v; do launchctl setenv "$k" "$v"; done']
 run_at_load = true
+
+[dotfiles]
+"~/Library" = { source = "home/Library/", mode = "symlink-each", manifest = "git" }
+
+[env]
+DOCKER_HOST = "unix://{{ env.HOME }}/.config/colima/default/docker.sock"
+_.path = ["/opt/homebrew/bin", "/opt/homebrew/sbin"]
+
+[tools]
+"github:docker/docker-credential-helpers" = { version = "latest", matching = "osxkeychain-v", rename_exe = "docker-credential-osxkeychain" }
