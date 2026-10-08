@@ -1,5 +1,5 @@
 function up
     mise self-update
-    mise upgrade -C /
+    mise upgrade --prune --cd /
     mise bootstrap packages upgrade --yes
 end
