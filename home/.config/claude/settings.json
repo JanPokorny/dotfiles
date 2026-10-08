@@ -7,6 +7,17 @@
     "defaultMode": "auto"
   },
   "disableClaudeAiConnectors": true,
+  "skillOverrides": {
+    "anthropic-skills:docs": "off",
+    "anthropic-skills:google-workspace": "off",
+    "anthropic-skills:docx": "off",
+    "anthropic-skills:import-memory": "off",
+    "anthropic-skills:morning": "off",
+    "anthropic-skills:pdf": "off",
+    "anthropic-skills:pptx": "off",
+    "anthropic-skills:skill-creator": "off",
+    "anthropic-skills:xlsx": "off"
+  },
   "enabledPlugins": {
     "cc-plugin-you-should-know@builtin": true,
     "cc-plugin-agents-md@builtin": true,
@@ -20,19 +31,9 @@
       "effortLevel": "high"
     }
   },
+  "advisorModel": "opus",
   "tui": "fullscreen",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "skillOverrides": {
-    "anthropic-skills:docs": "off",
-    "anthropic-skills:google-workspace": "off",
-    "anthropic-skills:docx": "off",
-    "anthropic-skills:import-memory": "off",
-    "anthropic-skills:morning": "off",
-    "anthropic-skills:pdf": "off",
-    "anthropic-skills:pptx": "off",
-    "anthropic-skills:skill-creator": "off",
-    "anthropic-skills:xlsx": "off"
-  }
+  "skipAutoPermissionPrompt": true
 }
