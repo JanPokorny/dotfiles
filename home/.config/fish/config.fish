@@ -5,7 +5,7 @@ set fish_greeting
 # Aliases
 
 alias cat 'bat --plain --pager=never'
-alias ls 'eza --icons --group-directories-first'
+alias ls 'lsd --group-directories-first'
 
 # Abbrs
 
