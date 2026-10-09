@@ -12,7 +12,7 @@ Before writing any code, go through this checklist:
 - Is this hard to implement, and at the same time solvable by a well-maintained new dependency? Use it.
 - Only then: write the minimum code that works, preferring a concise, ideally one-line solution.
 
-# Rules
+## Rules for software development
 
 - As few abstractions as possible. Only add abstractions as their need arises from the code, not preemptively.
 - No boilerplate nobody asked for.
@@ -27,7 +27,12 @@ Before writing any code, go through this checklist:
 - Mark intentional simplifications with a comment. If the shortcut has a known ceiling (global lock, O(n²) scan, naive heuristic), the comment names the ceiling and the upgrade path.
 - Not lazy about: input validation at trust boundaries, error handling that prevents data loss, security, accessibility, the calibration real hardware needs (the platform is never the spec ideal, a clock drifts, a sensor reads off), anything explicitly requested. Lazy code without its check is unfinished: non-trivial logic leaves a single runnable check behind, the smallest thing that fails if the logic breaks (an assert-based demo/self-check or one small test file; no frameworks, no fixtures). Trivial one-liners need no test.
 
-# Git repos
+## Rules for communication
+
+- When editing a feature with UI, use `agent-browser` to capture screenshots. Present new screenshots as a list with their absolute paths in your turn-end answer.
+- If there are open PRs related to this conversation, always end your turn-end message with a bullet list of their URLs, preceded by heading "###  PRs:"
+
+## Git repos
 
 - Repository clones use this layout:
   - `~/git/<host>/<owner>/<repo>` (default branch checkout)
@@ -36,7 +41,7 @@ Before writing any code, go through this checklist:
   - `git worktree add -b feature/example .wt/feature/example` for a new branch
   - `git worktree add .wt/feature/example feature/example` for an existing branch
 
-# Shortcuts
+## Shortcuts
 
 - `.`: continue: resuming after a process interruption, continue on with the task
 - `r`: refactor:
