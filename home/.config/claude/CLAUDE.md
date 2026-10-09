@@ -27,6 +27,15 @@ Before writing any code, go through this checklist:
 - Mark intentional simplifications with a comment. If the shortcut has a known ceiling (global lock, O(n²) scan, naive heuristic), the comment names the ceiling and the upgrade path.
 - Not lazy about: input validation at trust boundaries, error handling that prevents data loss, security, accessibility, the calibration real hardware needs (the platform is never the spec ideal, a clock drifts, a sensor reads off), anything explicitly requested. Lazy code without its check is unfinished: non-trivial logic leaves a single runnable check behind, the smallest thing that fails if the logic breaks (an assert-based demo/self-check or one small test file; no frameworks, no fixtures). Trivial one-liners need no test.
 
+# Git repos
+
+- Repository clones use this layout:
+  - `~/git/<host>/<owner>/<repo>` (default branch checkout)
+  - `~/git/<host>/<owner>/<repo>/.wt/<branch-name>` (branch worktree, branch name may name nested folders if it has slashes)
+- Do not make changes or checkout a different branch in the root checkout. Always create a worktree:
+  - `git worktree add -b feature/example .wt/feature/example` for a new branch
+  - `git worktree add .wt/feature/example feature/example` for an existing branch
+
 # Shortcuts
 
 - `.`: continue: resuming after a process interruption, continue on with the task
