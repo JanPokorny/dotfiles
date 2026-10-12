@@ -25,12 +25,6 @@
     "cc-plugin-sec-default@builtin": false,
     "cc-plugin-plugin-authoring@builtin": false
   },
-  "effortLevel": "high",
-  "modelSettings": {
-    "claude-fable-5-1": {
-      "effortLevel": "high"
-    }
-  },
   "advisorModel": "opus",
   "tui": "fullscreen",
   "inputNeededNotifEnabled": true,
