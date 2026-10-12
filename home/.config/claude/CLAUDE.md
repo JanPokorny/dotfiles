@@ -27,9 +27,22 @@ Before writing any code, go through this checklist:
 - Mark intentional simplifications with a comment. If the shortcut has a known ceiling (global lock, O(n²) scan, naive heuristic), the comment names the ceiling and the upgrade path.
 - Not lazy about: input validation at trust boundaries, error handling that prevents data loss, security, accessibility, the calibration real hardware needs (the platform is never the spec ideal, a clock drifts, a sensor reads off), anything explicitly requested. Lazy code without its check is unfinished: non-trivial logic leaves a single runnable check behind, the smallest thing that fails if the logic breaks (an assert-based demo/self-check or one small test file; no frameworks, no fixtures). Trivial one-liners need no test.
 
+## Useful tools
+- `bat`, `dive`, `fd`, `gh`, `gron`, `htmlq`, `jq`, `lsd`, `pitchfork`, `rg`, `tv`, `yq`: you know how to use these
+- `uv` and `node` (v26) are available globally, any other runtime is available with Mise, e.g. `mise x python@3.15 -- python -m http.server`
+- `agent-browser`: Use to QA websites and take screenshots. Always `export AGENT_BROWSER_SESSION=<branch-name>` first to avoid cross-agent collisions.
+- `heredit`: Use for search-replace of code blocks in files with checked number of occurrences.
+  ```
+  heredit (replace | insert-before | insert-after) <file> [-n N=1] 3<<EOFA 4<<EOFB
+  text to find
+  EOFA
+  text to replace/insert around (leave a blank line at start/end for it to start/end with newline)
+  EOFB
+  ```
+
 ## Rules for communication
 
-- When editing a feature with UI, use `agent-browser` to capture screenshots. Present new screenshots as a list with their absolute paths in your turn-end answer.
+- When editing a feature with UI, present screenshots of changes as a list with their absolute paths in your turn-end answer.
 - If there are open PRs related to this conversation, always end your turn-end message with a bullet list of their URLs, preceded by heading "###  PRs:"
 
 ## Git repos

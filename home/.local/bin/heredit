@@ -1,0 +1,47 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# ///
+"""
+  heredit (replace | insert-before | insert-after) <file> [-n N=1] 3<<EOFA 4<<EOFB
+  text to find
+  EOFA
+  text to replace/insert (leave a blank line at start/end for it to start/end with newline)
+  EOFB
+"""
+
+import argparse
+import os
+import sys
+
+p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+p.add_argument("mode", choices=["replace", "insert-before", "insert-after"])
+p.add_argument("file")
+p.add_argument("-n", type=int, default=1, help="expected number of occurrences (default 1)")
+args = p.parse_args()
+
+
+def read_fd(fd):
+    try:
+        with open(fd, encoding="utf-8", newline="") as f:
+            return f.read().removesuffix("\n")
+    except OSError:
+        sys.exit(f"heredit: fd {fd} not provided")
+
+
+find, new = read_fd(3), read_fd(4)
+if not find:
+    sys.exit("heredit: find text is empty")
+
+with open(args.file, encoding="utf-8", newline="") as f:
+    text = f.read()
+
+if (count := text.count(find)) != args.n:
+    sys.exit(f"heredit: expected {args.n} occurrence(s) in {args.file}, found {count}")
+
+new = {"replace": new, "insert-before": new + find, "insert-after": find + new}[args.mode]
+tmp = f"{args.file}.heredit.tmp"
+with open(tmp, "w", encoding="utf-8", newline="") as f:
+    f.write(text.replace(find, new))
+os.chmod(tmp, os.stat(args.file).st_mode)
+os.replace(tmp, args.file)
