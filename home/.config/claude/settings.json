@@ -1,4 +1,5 @@
 {
+  "syncClaudeAiSkills": false,
   "attribution": {
     "commit": "",
     "pr": ""
@@ -7,8 +8,6 @@
     "defaultMode": "auto"
   },
   "disableClaudeAiConnectors": true,
-  "syncClaudeAiSkills": false,
-  "disableBundledSkills": true,
   "skillOverrides": {
     "anthropic-skills:docs": "off",
     "anthropic-skills:google-workspace": "off",
@@ -20,6 +19,7 @@
     "anthropic-skills:skill-creator": "off",
     "anthropic-skills:xlsx": "off"
   },
+  "disableBundledSkills": true,
   "enabledPlugins": {
     "cc-plugin-you-should-know@builtin": true,
     "cc-plugin-agents-md@builtin": true,
@@ -27,10 +27,9 @@
     "cc-plugin-sec-default@builtin": false,
     "cc-plugin-plugin-authoring@builtin": false
   },
-  "advisorModel": "opus",
+  "outputStyle": "Concise",
   "tui": "fullscreen",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "outputStyle": "Concise"
+  "skipAutoPermissionPrompt": true
 }
