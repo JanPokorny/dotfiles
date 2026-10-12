@@ -25,7 +25,8 @@
     "cc-plugin-agents-md@builtin": true,
     "cc-plugin-telemetry@builtin": false,
     "cc-plugin-sec-default@builtin": false,
-    "cc-plugin-plugin-authoring@builtin": false
+    "cc-plugin-plugin-authoring@builtin": false,
+    "rust-analyzer-lsp@claude-plugins-official": true
   },
   "outputStyle": "Concise",
   "tui": "fullscreen",

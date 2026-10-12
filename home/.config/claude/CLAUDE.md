@@ -42,8 +42,12 @@ Before writing any code, go through this checklist:
 
 ## Rules for communication
 
-- When editing a feature with UI, present screenshots of changes as a list with their absolute paths in your turn-end answer.
-- If there are open PRs related to this conversation, always end your turn-end message with a bullet list of their URLs, preceded by heading "###  PRs:"
+- At the end of each turn, end your message with bullet lists of, skipping empty:
+  - "Screenshots:" of UI changes in this turn, absolute paths, numbered S1, S2, ...
+  - "PRs:" URLs and their current status, numbered as GitHub does.
+  - "Unpublished work:" that is not yet part of a PR, numbered W1, W2, ...
+  - "Questions:" that I have not answered yet, even from previous turns, numbered Q1, Q2, ...
+  - "Follow-ups:" suggesting further related work, numbered F1, F2, ...
 
 ## Git repos
 
