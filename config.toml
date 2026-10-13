@@ -9,6 +9,7 @@ github.credential_command = "gh auth token"
 [dotfiles]
 "~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git" }
 "~/.local/bin" = { source = "home/.local/bin", mode = "symlink-each", manifest = "git" }
+"~/.dirac" = { source = "home/.dirac", mode = "symlink-each", manifest = "git" }
 
 [bootstrap.brew]
 adopt = true
@@ -23,6 +24,7 @@ bat = "latest"
 claude = { version = "latest", minimum_release_age = "0s" }
 colima = "latest"
 croc = "latest"
+"npm:dirac-cli" = "latest"
 dive = "latest"
 docker-cli = "latest"
 fd = "latest"

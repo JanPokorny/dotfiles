@@ -2,6 +2,6 @@
   "lastChangelogVersion": "1.1.0",
   "theme": "dark",
   "defaultProvider": "ete-litellm",
-  "defaultModel": "azure/gpt-6-astra",
+  "defaultModel": "aws/claude-opus-5-5",
   "packages": []
 }
