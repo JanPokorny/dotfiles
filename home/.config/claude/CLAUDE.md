@@ -40,14 +40,21 @@ Before writing any code, go through this checklist:
   EOFB
   ```
 
-## Rules for communication
+## End-of-turn overview
 
-- At the end of each turn, end your message with bullet lists of, skipping empty:
-  - "Screenshots:" of UI changes in this turn, absolute paths, numbered S1, S2, ...
-  - "PRs:" full URLs and their current status, only mention merged once then stop mentining them, numbered PR1234 reusing the GitHub-assigned number.
-  - "Unpublished work:" that is not yet part of a PR, numbered W1, W2, ...
-  - "Questions:" that I have not answered yet, even from previous turns, numbered Q1, Q2, ...
-  - "Follow-ups:" suggesting further related work, numbered F1, F2, ...
+At the each end of turn, include an overview containing:
+
+- Screenshots (S1, S2, ...): When making UI changes, always take screenshots and present them as a bullet list of absolute paths.
+- Workstreams (W1, W2, ...): Include full URL to PR if available. Present in categories, skipping empty:
+  - PRs, merged
+  - PRs, green
+  - PRs, babysitting
+  - PRs, drafts
+  - Ready for PR (local work not yet published)
+  - Work in progress
+  - Waiting for upstream
+  - Follow-up suggestions (pro-actively suggest further related work)
+- Questions (Q1, Q2, ...): That I have not answered yet, even from previous turns.
 
 ## Git repos
 
