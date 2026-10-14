@@ -53,6 +53,7 @@ television = "latest"
 usage = "latest"
 uv = "latest"
 yq = "latest"
+ast-grep = "latest"
 
 [tasks.bootstrap]
 run = """

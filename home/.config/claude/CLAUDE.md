@@ -39,22 +39,24 @@ Before writing any code, go through this checklist:
   text to replace/insert around (leave a blank line at start/end for it to start/end with newline)
   EOFB
   ```
+- `ast-grep` for more complex, syntax-aware grepping
 
 ## End-of-turn overview
 
-At the each end of turn, include an overview containing:
+At the each end of turn, include an overview with these bullet points:
 
 - Screenshots (S1, S2, ...): When making UI changes, always take screenshots and present them as a bullet list of absolute paths.
-- Workstreams (W1, W2, ...): Include full URL to PR if available. Present in categories, skipping empty:
-  - PRs, merged
-  - PRs, green
-  - PRs, babysitting
-  - PRs, drafts
-  - Ready for PR (local work not yet published)
-  - Work in progress
-  - Waiting for upstream
-  - Follow-up suggestions (pro-actively suggest further related work)
-- Questions (Q1, Q2, ...): That I have not answered yet, even from previous turns.
+- Workstreams (W1, W2, ...): Include full URL to PR if available.
+  - Present in categories, skipping empty:
+    - PRs, merged
+    - PRs, green
+    - PRs, babysitting
+    - PRs, drafts
+    - Ready for PR (local work not yet published)
+    - Work in progress
+    - Waiting for upstream
+    - Follow-up suggestions (pro-actively suggest further related work)
+  - Questions (W1Q1, W1Q2, ...) related to this workstream that remain to be decided.
 
 ## Git repos
 
