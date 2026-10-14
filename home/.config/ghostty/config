@@ -1,1 +1,2 @@
 theme = Dark Modern
+command = /usr/bin/env PATH=/opt/homebrew/bin:/usr/bin fish

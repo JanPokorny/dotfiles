@@ -20,7 +20,10 @@
   },
   "terminal": {
     "shell": {
-      "program": "fish",
+      "with_arguments": {
+        "program": "/usr/bin/env",
+        "args": ["PATH=/opt/homebrew/bin:/usr/bin", "fish"]
+      }
     },
     "font_family": "JetBrainsMono Nerd Font",
     "max_scroll_history_lines": 100000,

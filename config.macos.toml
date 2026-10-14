@@ -1,7 +1,7 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [bootstrap.user]
-login_shell = "/opt/homebrew/bin/fish"
+login_shell = "/bin/bash"  # so Claude uses bash -- fish is set in editors/terminals directly: /usr/bin/env PATH=/opt/homebrew/bin:/usr/bin fish
 
 [bootstrap.packages]
 "brew:fish" = "latest"
