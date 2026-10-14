@@ -1,9 +1,10 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [bootstrap.user]
-login_shell = "/bin/bash"  # so Claude uses bash -- fish is set in editors/terminals directly: /usr/bin/env PATH=/opt/homebrew/bin:/usr/bin fish
+login_shell = "/opt/homebrew/bin/fish"
 
 [bootstrap.packages]
+"brew:bash" = "latest"
 "brew:fish" = "latest"
 "brew-cask:arc" = "latest"
 "brew-cask:bettercapture" = "latest"
@@ -29,6 +30,7 @@ run_at_load = true
 "~/Library" = { source = "home/Library/", mode = "symlink-each", manifest = "git" }
 
 [env]
+CLAUDE_CODE_SHELL = "/opt/homebrew/bin/bash"
 DOCKER_HOST = "unix://{{ env.HOME }}/.config/colima/default/docker.sock"
 _.path = ["/opt/homebrew/bin", "/opt/homebrew/sbin"]
 
