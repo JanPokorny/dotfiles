@@ -5,6 +5,7 @@ experimental = true
 python.uv_venv_auto = "create|source"
 idiomatic_version_file_enable_tools = []
 github.credential_command = "gh auth token"
+install_layout = "identity"
 
 [dotfiles]
 "~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git" }

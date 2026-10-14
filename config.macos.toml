@@ -16,7 +16,9 @@ login_shell = "/opt/homebrew/bin/fish"
 "brew-cask:mac-mouse-fix" = "latest"
 "brew-cask:mitmproxy" = "latest"
 "brew-cask:monitorcontrol" = "latest"
+"brew-cask:puremac" = "latest"
 "brew-cask:zed" = "latest"
+# todo: https://github.com/adileo/squirreldisk
 
 [bootstrap.macos.launchd.agents.env]
 program = "/bin/sh"
