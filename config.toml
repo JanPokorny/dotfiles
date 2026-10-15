@@ -34,6 +34,7 @@ git-lfs = "latest"
 "github:MitMaro/git-interactive-rebase-tool" = "latest"
 "github:docker/buildx" = { version = "latest", rename_exe = "docker-buildx" }
 "github:docker/compose" = { version = "latest", rename_exe = "docker-compose" }
+"github:OleksandrChekhovskyi/hax" = { version = "latest", minimum_release_age = "0s" }
 gron = "latest"
 helm = "latest"
 hexyl = "latest"
