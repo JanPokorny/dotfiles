@@ -41,3 +41,6 @@ fast_mode = false
 ultrafast_mode = false
 guardian_approval = false
 shell_snapshot = false
+
+[tui]
+screen_reader_detection_done = true
