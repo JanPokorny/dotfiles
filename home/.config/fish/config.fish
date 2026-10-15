@@ -5,6 +5,7 @@ set fish_greeting
 # Aliases
 
 alias cat 'bat --plain --pager=never'
+alias claude 'claude --allow-dangerously-skip-permissions'
 alias ls 'lsd --group-directories-first'
 
 # Abbrs
@@ -26,6 +27,7 @@ abbr kc 'kubectl config use-context'
 if command -v pbcopy &>/dev/null
     abbr cbc pbcopy
     abbr cbp pbpaste
+    alias cwd "pwd | tr -d '\n' | pbcopy"
 end
 
 # Colorized man output

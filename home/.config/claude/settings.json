@@ -33,5 +33,11 @@
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "disableAgentView": true,
+  "disableRemoteControl": true,
+  "crossSessionInbound": "refuse",
+  "env": {
+    "CLAUDE_CODE_HARBOR_KITE": "0"
+  }
 }
