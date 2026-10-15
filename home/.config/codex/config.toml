@@ -1,0 +1,43 @@
+model = "azure/gpt-6-astra"
+model_provider = "ete-litellm"
+model_reasoning_effort = "high"
+model_context_window = 1000000
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+check_for_update_on_startup = false
+
+[model_providers.ete-litellm]
+name = "ETE LiteLLM"
+base_url = "https://ete-litellm.ai-models.vpc.res.ibm.com/v1"
+wire_api = "responses"
+auth = { command = "op", args = ["read", "op://rsjz2rywqgfp4o3wmwks7qizea/gf5pvk7rveqittwbpwj3sfhccq/credential", "--account", "ibm.ent.1password.com"] }
+
+[analytics]
+enabled = false
+
+[feedback]
+enabled = false
+
+[features]
+daemon_auto_start = false
+apps = false
+plugins = false
+remote_plugin = false
+browser_use = false
+browser_use_external = false
+computer_use = false
+image_generation = false
+in_app_browser = false
+in_app_chat = false
+in_app_dictation = false
+in_app_local_automation = false
+in_app_updates = false
+in_app_voice = false
+realtime_conversation = false
+multi_agent = false
+tool_suggest = false
+skill_mcp_dependency_install = false
+fast_mode = false
+ultrafast_mode = false
+guardian_approval = false
+shell_snapshot = false
