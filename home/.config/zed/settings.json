@@ -27,6 +27,7 @@
     "metrics": false,
   },
   "git": {
+    "diff_base": "default_branch",
     "inline_blame": {
       "enabled": true,
     },
