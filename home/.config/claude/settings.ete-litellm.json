@@ -5,7 +5,7 @@
     "ANTHROPIC_BASE_URL": "https://ete-litellm.ai-models.vpc.res.ibm.com",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "aws/claude-opus-5-5",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "aws/claude-sonnet-5-5",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "aws/claude-haiku-5-5",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "aws/claude-sonnet-5-5",
     "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000"
   }
 }

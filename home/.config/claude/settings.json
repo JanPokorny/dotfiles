@@ -1,5 +1,8 @@
 {
   "syncClaudeAiSkills": false,
+  "env": {
+    "CLAUDE_CODE_HARBOR_KITE": "0"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
@@ -20,6 +23,8 @@
     "anthropic-skills:xlsx": "off"
   },
   "disableBundledSkills": true,
+  "disableAgentView": true,
+  "disableRemoteControl": true,
   "enabledPlugins": {
     "cc-plugin-you-should-know@builtin": true,
     "cc-plugin-agents-md@builtin": true,
@@ -30,14 +35,10 @@
   },
   "outputStyle": "Concise",
   "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "crossSessionInbound": "refuse",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "skipDangerousModePermissionPrompt": true,
-  "disableAgentView": true,
-  "disableRemoteControl": true,
-  "crossSessionInbound": "refuse",
-  "env": {
-    "CLAUDE_CODE_HARBOR_KITE": "0"
-  }
+  "model": "opus"
 }
