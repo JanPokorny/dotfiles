@@ -1,0 +1,16 @@
+{
+	admin off
+	auto_https off
+}
+http://127.0.0.1:47918 {
+	reverse_proxy https://127.0.0.1:47917 {
+		header_up Authorization "Bearer {env.DSV41_KEY}"
+		header_up -x-api-key
+		header_up Host {$DSV41_TLS_NAME}
+		transport http {
+			tls_server_name {$DSV41_TLS_NAME}
+			tls_trust_pool file {$DSV41_CA}
+		}
+		flush_interval -1
+	}
+}

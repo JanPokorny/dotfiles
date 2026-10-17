@@ -40,5 +40,84 @@
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "model": "opus"
+  "model": "opus",
+  "hooks" : {
+    "PermissionRequest" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' awaiting \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "PostToolUse" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' processing \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "PreToolUse" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' processing \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "SessionStart" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' idle \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "Stop" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' idle \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "StopFailure" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' error \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' processing \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ]
+  }
 }

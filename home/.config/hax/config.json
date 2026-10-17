@@ -1,21 +1,26 @@
 {
-  "provider": "ete-litellm",
-  "model": "aws/claude-opus-5-5",
+  "provider": "local",
+  "model": "ete/aws/claude-opus-5-5",
   "providers": {
-    "ete-litellm": {
-      "display_name": "ETE LiteLLM",
-      "api": "anthropic-messages",
-      "base_url": "https://ete-litellm.ai-models.vpc.res.ibm.com/v1",
-      "api_key_env": "ETE_LITELLM_API_KEY",
+    "local": {
+      "display_name": "Local gateway",
+      "api": "openai-responses",
+      "base_url": "http://127.0.0.1:47900/v1",
+      "api_key": "local",
+      "model_apis": {
+        "ete/aws/claude-*": "anthropic-messages",
+        "cb/*": "openai-completions"
+      },
       "thinking_mode": "adaptive"
     }
   },
   "catalog": {
     "models": {
-      "ete-litellm": {
-        "aws/claude-opus-5-5": { "limit": { "context": 1000000, "output": 32000 } },
-        "aws/claude-sonnet-5-5": { "limit": { "context": 1000000, "output": 32000 } },
-        "aws/claude-haiku-5-5": { "limit": { "context": 200000, "output": 32000 } }
+      "local": {
+        "ete/aws/claude-opus-5-5": { "limit": { "context": 1000000, "output": 32000 } },
+        "ete/aws/claude-sonnet-5-5": { "limit": { "context": 1000000, "output": 32000 } },
+        "ete/azure/gpt-6-astra": { "limit": { "context": 1000000, "output": 100000 } },
+        "dam-dev/deepseek-v4.1-flash": { "limit": { "context": 262144, "output": 32000 } }
       }
     }
   }

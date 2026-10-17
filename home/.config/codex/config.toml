@@ -1,16 +1,16 @@
-model = "azure/gpt-6-astra"
-model_provider = "ete-litellm"
+model = "ete/azure/gpt-6-astra"
+model_provider = "local"
 model_reasoning_effort = "high"
 model_context_window = 1000000
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
 check_for_update_on_startup = false
 
-[model_providers.ete-litellm]
-name = "ETE LiteLLM"
-base_url = "https://ete-litellm.ai-models.vpc.res.ibm.com/v1"
+# llama-swap on 127.0.0.1:47900 (~/.config/llama-swap) holds the upstream keys.
+[model_providers.local]
+name = "Local gateway"
+base_url = "http://127.0.0.1:47900/v1"
 wire_api = "responses"
-auth = { command = "op", args = ["read", "op://rsjz2rywqgfp4o3wmwks7qizea/gf5pvk7rveqittwbpwj3sfhccq/credential", "--account", "ibm.ent.1password.com"] }
 
 [analytics]
 enabled = false
@@ -19,6 +19,7 @@ enabled = false
 enabled = false
 
 [features]
+hooks = true
 daemon_auto_start = false
 apps = false
 plugins = false

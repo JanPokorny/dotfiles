@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "1.2.0",
   "theme": "dark",
-  "defaultProvider": "ete-litellm",
-  "defaultModel": "aws/claude-opus-5-5",
+  "defaultProvider": "local",
+  "defaultModel": "ete/aws/claude-opus-5-5",
   "packages": []
 }

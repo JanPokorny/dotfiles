@@ -57,6 +57,9 @@ yq = "latest"
 ast-grep = "latest"
 codex = "latest"
 "github:dlvhdr/gh-dash" = "latest"
+"github:mostlygeek/llama-swap" = "latest"
+caddy = "latest"
+age = "latest"
 
 [tasks.bootstrap]
 run = """

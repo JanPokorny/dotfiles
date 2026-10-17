@@ -1,0 +1,34 @@
+# Clients reach every upstream at http://127.0.0.1:47900 with any API key,
+# naming models "<peer>/<model>". llama-swap replaces the client's key with
+# the peer's apiKey (sent as both Bearer and x-api-key) and strips the prefix.
+# Started by pitchfork (~/.config/pitchfork/config.toml), which supplies the keys.
+# More peers are merged in from private-peers.yaml.age by llama-swap.sh.
+logLevel: info
+
+peers:
+  ete:
+    proxy: https://ete-litellm.ai-models.vpc.res.ibm.com
+    apiKey: ${env.ETE_LITELLM_API_KEY}
+    # A thinking model can take minutes to send its first byte.
+    timeouts: {responseHeader: 600}
+    models:
+      - aws/claude-opus-5-5
+      - aws/claude-opus-5
+      - aws/claude-opus-4-8
+      - aws/claude-opus-4-5
+      - aws/claude-sonnet-5-5
+      - aws/claude-sonnet-5
+      - aws/claude-sonnet-4-6
+      - azure/gpt-6-astra
+      - azure/gpt-5.6-sol
+      - azure/gpt-5.6-terra
+      - azure/gpt-5.6-luna
+      - azure/gpt-5.5
+      - azure/gpt-5.3-codex
+      - gcp/gemini-3.1-pro-preview
+      - rits/deepseek-ai/DeepSeek-V3.2
+      - rits/moonshotai/Kimi-K2.5
+      - rits/zai-org/glm-5-1-fp8-agentic
+      - Azure/text-embedding-3-large-1
+      - Azure/text-embedding-3-small-1
+

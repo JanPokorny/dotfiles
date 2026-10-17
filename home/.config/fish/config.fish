@@ -11,8 +11,7 @@ alias ls 'lsd --group-directories-first'
 # Abbrs
 
 abbr c 'clear'
-abbr claude-ete 'claude --settings ~/.config/claude/settings.ete-litellm.json'
-abbr codex-ete 'codex -p ete'
+abbr claude-local 'claude --settings ~/.config/claude/settings.local.json'
 
 abbr gcm 'git checkout (git main-branch) && git pull'
 abbr grm 'git fetch origin (git main-branch):(git main-branch) && git rebase (git main-branch)'

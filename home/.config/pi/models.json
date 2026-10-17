@@ -1,27 +1,78 @@
 {
   "providers": {
-    "ete-litellm": {
-      "baseUrl": "https://ete-litellm.ai-models.vpc.res.ibm.com/v1",
+    "local": {
+      "baseUrl": "http://127.0.0.1:47900/v1",
       "api": "openai-responses",
-      "apiKey": "!op read 'op://rsjz2rywqgfp4o3wmwks7qizea/gf5pvk7rveqittwbpwj3sfhccq/credential' --account ibm.ent.1password.com",
+      "apiKey": "local",
       "models": [
         {
-          "id": "azure/gpt-6-astra",
-          "name": "GPT-6 Astra",
+          "id": "ete/azure/gpt-6-astra",
+          "name": "GPT-6 Astra (ETE)",
           "contextWindow": 1000000,
           "maxTokens": 100000,
           "reasoning": true,
-          "input": ["text", "image"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
         },
         {
-          "id": "aws/claude-opus-5-5",
-          "name": "Claude Opus 5.5",
+          "id": "ete/aws/claude-opus-5-5",
+          "name": "Claude Opus 5.5 (ETE)",
+          "api": "anthropic-messages",
+          "baseUrl": "http://127.0.0.1:47900",
           "contextWindow": 1000000,
           "maxTokens": 32000,
           "reasoning": true,
-          "input": ["text", "image"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "cb/rits/zai-org/glm-5-3",
+          "name": "GLM-5.3 (CurveBender)",
+          "api": "openai-completions",
+          "reasoning": true,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "dam-dev/deepseek-v4.1-flash",
+          "name": "DeepSeek-V4.1-Flash-1017 (dam-dev)",
+          "contextWindow": 262144,
+          "maxTokens": 32000,
+          "reasoning": true,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "thinkingLevelMap": {
+            "minimal": "low",
+            "low": "low",
+            "medium": "high",
+            "high": "high",
+            "xhigh": "xhigh",
+            "max": "max"
+          }
         }
       ]
     }
