@@ -10,7 +10,6 @@ install_layout = "identity"
 [dotfiles]
 "~/.config" = { source = "home/.config", mode = "symlink-each", manifest = "git" }
 "~/.local/bin" = { source = "home/.local/bin", mode = "symlink-each", manifest = "git" }
-"~/.dirac" = { source = "home/.dirac", mode = "symlink-each", manifest = "git" }
 
 [bootstrap.brew]
 adopt = true
@@ -25,7 +24,6 @@ bat = "latest"
 claude = { version = "latest", minimum_release_age = "0s" }
 colima = "latest"
 croc = "latest"
-"npm:dirac-cli" = "latest"
 dive = "latest"
 docker-cli = "latest"
 fd = "latest"
@@ -34,7 +32,6 @@ git-lfs = "latest"
 "github:MitMaro/git-interactive-rebase-tool" = "latest"
 "github:docker/buildx" = { version = "latest", rename_exe = "docker-buildx" }
 "github:docker/compose" = { version = "latest", rename_exe = "docker-compose" }
-"github:OleksandrChekhovskyi/hax" = { version = "latest", minimum_release_age = "0s" }
 gron = "latest"
 helm = "latest"
 hexyl = "latest"
@@ -74,7 +71,6 @@ CLAUDE_CONFIG_DIR = "{{ env.HOME }}/.config/claude"
 CLAUDE_CODE_SHELL = "/bin/bash"
 PI_CODING_AGENT_DIR = "{{ env.HOME }}/.config/pi"
 CODEX_HOME = "{{ env.HOME }}/.config/codex"
-DIRAC_DIR = "{{ env.HOME }}/.config/dirac"
 npm_config_min_release_age = "7"
 npm_config_min_release_age_exclude = "@dam-agents/cli"
 YARN_NPM_MINIMAL_AGE_GATE = "10080"
