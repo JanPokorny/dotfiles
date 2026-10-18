@@ -1,5 +1,5 @@
-# Local model gateway: every agent CLI talks to llama-swap on 127.0.0.1:47900,
-# which fronts all upstreams under "<peer>/<model>" ids. See ~/.config/llama-swap/.
+#:schema https://pitchfork.jdx.dev/schema.json
+
 [settings.general]
 mise = true
 

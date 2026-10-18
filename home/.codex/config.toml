@@ -6,9 +6,8 @@ approval_policy = "never"
 sandbox_mode = "danger-full-access"
 check_for_update_on_startup = false
 
-# llama-swap on 127.0.0.1:47900 (~/.config/llama-swap) holds the upstream keys.
-[model_providers.local]
-name = "Local gateway"
+[model_providers.gateway]
+name = "Gateway"
 base_url = "http://127.0.0.1:47900/v1"
 wire_api = "responses"
 

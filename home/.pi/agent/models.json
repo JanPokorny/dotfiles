@@ -55,7 +55,7 @@
         },
         {
           "id": "dam-dev/deepseek-v4.1-flash",
-          "name": "DeepSeek-V4.1-Flash-1017 (dam-dev)",
+          "name": "DeepSeek-V4.1-Flash-1017 (DAM)",
           "contextWindow": 262144,
           "maxTokens": 32000,
           "reasoning": true,

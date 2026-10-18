@@ -18,10 +18,20 @@ adopt = true
 "brew-cask:font-jetbrains-mono-nerd-font" = "latest"
 
 [tools]
+"github:MitMaro/git-interactive-rebase-tool" = "latest"
+"github:dlvhdr/gh-dash" = "latest"
+"github:docker/buildx" = { version = "latest", rename_exe = "docker-buildx" }
+"github:docker/compose" = { version = "latest", rename_exe = "docker-compose" }
+"github:mostlygeek/llama-swap" = "latest"
+"npm:@getpaseo/cli" = "latest"
 1password = "latest"
+age = "latest"
 agent-browser = "latest"
+ast-grep = "latest"
 bat = "latest"
+caddy = "latest"
 claude = { version = "latest", minimum_release_age = "0s" }
+codex = "latest"
 colima = "latest"
 croc = "latest"
 dive = "latest"
@@ -29,9 +39,6 @@ docker-cli = "latest"
 fd = "latest"
 gh = "latest"
 git-lfs = "latest"
-"github:MitMaro/git-interactive-rebase-tool" = "latest"
-"github:docker/buildx" = { version = "latest", rename_exe = "docker-buildx" }
-"github:docker/compose" = { version = "latest", rename_exe = "docker-compose" }
 gron = "latest"
 helm = "latest"
 hexyl = "latest"
@@ -42,7 +49,6 @@ lima = "latest"
 lsd = "latest"
 node = "26"
 oc = "latest"
-opencode = "latest"
 pi = "latest"
 pitchfork = "latest"
 ripgrep = "latest"
@@ -51,12 +57,6 @@ television = "latest"
 usage = "latest"
 uv = "latest"
 yq = "latest"
-ast-grep = "latest"
-codex = "latest"
-"github:dlvhdr/gh-dash" = "latest"
-"github:mostlygeek/llama-swap" = "latest"
-caddy = "latest"
-age = "latest"
 
 [tasks.bootstrap]
 run = """
@@ -67,10 +67,7 @@ ln -sf ~/.local/share/mise/shims/docker-compose ~/.docker/cli-plugins/docker-com
 
 [env]
 XDG_CONFIG_HOME = "{{ env.HOME }}/.config"
-CLAUDE_CONFIG_DIR = "{{ env.HOME }}/.config/claude"
 CLAUDE_CODE_SHELL = "/bin/bash"
-PI_CODING_AGENT_DIR = "{{ env.HOME }}/.config/pi"
-CODEX_HOME = "{{ env.HOME }}/.config/codex"
 npm_config_min_release_age = "7"
 npm_config_min_release_age_exclude = "@dam-agents/cli"
 YARN_NPM_MINIMAL_AGE_GATE = "10080"
