@@ -6,7 +6,7 @@ approval_policy = "never"
 sandbox_mode = "danger-full-access"
 check_for_update_on_startup = false
 
-[model_providers.gateway]
+[model_providers.local]
 name = "Gateway"
 base_url = "http://127.0.0.1:47900/v1"
 wire_api = "responses"
