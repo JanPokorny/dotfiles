@@ -11,6 +11,7 @@ install_layout = "identity"
 "~" = { source = "home", mode = "copy" }
 "~/.claude/CLAUDE.md" = { source = "AGENTS.md", mode = "copy" }
 "~/.codex/AGENTS.md" = { source = "AGENTS.md", mode = "copy" }
+"~/.paseo/config.json" = { source = "paseo.json", mode = "copy" }
 "~/.pi/agent/AGENTS.md" = { source = "AGENTS.md", mode = "copy" }
 
 [bootstrap.brew]

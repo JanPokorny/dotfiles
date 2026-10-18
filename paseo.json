@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "daemon": {
+    "listen": "127.0.0.1:6767",
+    "mcp": {
+      "injectIntoAgents": true
+    },
+    "browserTools": {
+      "enabled": true
+    },
+    "enableTerminalAgentHooks": true,
+    "terminalProfiles": [
+      {
+        "id": "claude",
+        "name": "Claude Code",
+        "command": "claude",
+        "args": [
+          "{{{prompt}}}"
+        ],
+        "icon": "claude"
+      },
+      {
+        "id": "codex",
+        "name": "Codex",
+        "command": "codex",
+        "args": [
+          "{{{prompt}}}"
+        ],
+        "icon": "codex"
+      },
+      {
+        "id": "pi",
+        "name": "Pi",
+        "command": "pi",
+        "args": [
+          "{{{prompt}}}"
+        ],
+        "icon": "pi"
+      }
+    ],
+    "agentProfiles": [
+      {
+        "id": "agent_profile_mvdx53g6_3ntbc2d2xfp",
+        "name": "Planner",
+        "icon": "feather",
+        "provider": "claude",
+        "model": "claude-opus-5-5",
+        "modeId": "auto",
+        "thinkingOptionId": "high",
+        "notes": "Plan out high-level implementation"
+      },
+      {
+        "id": "agent_profile_mvdo97m3_oz976isg9ha",
+        "name": "Programmer",
+        "icon": "hammer",
+        "color": "blue",
+        "provider": "pi",
+        "model": "local/dam-dev/deepseek-v4.1-flash",
+        "thinkingOptionId": "max",
+        "notes": "Write code"
+      },
+      {
+        "id": "agent_profile_mvdwya0e_qxofyuztqs",
+        "name": "Sleuth",
+        "icon": "search",
+        "color": "blue",
+        "provider": "pi",
+        "model": "local/dam-dev/deepseek-v4.1-flash",
+        "thinkingOptionId": "medium",
+        "notes": "Find where something is implemented"
+      },
+      {
+        "id": "agent_profile_mvdx7a2d_adrow4myort",
+        "name": "Researcher",
+        "icon": "flask",
+        "color": "orange",
+        "provider": "claude",
+        "model": "claude-opus-5-5",
+        "modeId": "auto",
+        "thinkingOptionId": "low",
+        "notes": "Research web for docs and libraries"
+      },
+      {
+        "id": "agent_profile_mvdo8fa8_7f19j60gxl7",
+        "name": "Advisor Claude",
+        "icon": "brain",
+        "color": "orange",
+        "provider": "claude",
+        "model": "claude-opus-5-5",
+        "modeId": "auto",
+        "thinkingOptionId": "xhigh",
+        "notes": "Advice from a smart model"
+      },
+      {
+        "id": "agent_profile_mvdx2o2u_5l6nws5t1rt",
+        "name": "Advisor Codex",
+        "icon": "brain",
+        "color": "emerald",
+        "provider": "codex",
+        "model": "ete/azure/gpt-6-astra",
+        "modeId": "auto-review",
+        "thinkingOptionId": "xhigh",
+        "featureValues": {
+          "plan_mode": false
+        },
+        "notes": "Advice from a smart model"
+      },
+      {
+        "id": "agent_profile_mvdx9skt_v8ikl9eeld7",
+        "name": "Designer",
+        "icon": "sparkles",
+        "color": "orange",
+        "provider": "claude",
+        "model": "claude-opus-5-5",
+        "modeId": "auto",
+        "thinkingOptionId": "medium",
+        "notes": "Visuals and UX"
+      }
+    ],
+    "cors": {
+      "allowedOrigins": [
+        "https://app.paseo.sh"
+      ]
+    },
+    "relay": {
+      "enabled": true
+    }
+  },
+  "app": {
+    "baseUrl": "https://app.paseo.sh"
+  },
+  "pluginsEnabled": true,
+  "plugins": {
+    "progress": {
+      "source": "directory",
+      "path": "/Users/jp/.paseo/plugins/progress/e13bcb0b-8b14-4fb3-b77b-acb3c9b6ee3d/node_modules/@stevecastaneda/paseo-progress",
+      "enabled": true
+    }
+  },
+  "agents": {
+    "providers": {
+      "antigravity": {
+        "enabled": false
+      },
+      "muse": {
+        "enabled": false
+      },
+      "copilot": {
+        "enabled": false
+      },
+      "opencode": {
+        "enabled": false
+      }
+    }
+  },
+  "features": {
+    "dictation": {
+      "enabled": true
+    },
+    "voiceMode": {
+      "enabled": true
+    }
+  }
+}
