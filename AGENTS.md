@@ -27,58 +27,23 @@ Before writing any code, go through this checklist:
 - Mark intentional simplifications with a comment. If the shortcut has a known ceiling (global lock, O(n²) scan, naive heuristic), the comment names the ceiling and the upgrade path.
 - Not lazy about: input validation at trust boundaries, error handling that prevents data loss, security, accessibility, the calibration real hardware needs (the platform is never the spec ideal, a clock drifts, a sensor reads off), anything explicitly requested. Lazy code without its check is unfinished: non-trivial logic leaves a single runnable check behind, the smallest thing that fails if the logic breaks (an assert-based demo/self-check or one small test file; no frameworks, no fixtures). Trivial one-liners need no test.
 
-## Useful tools
-- `bat`, `dive`, `fd`, `gh`, `gron`, `htmlq`, `jq`, `lsd`, `pitchfork`, `rg`, `tv`, `yq`: you know how to use these
-- `uv` and `node` (v26) are available globally, any other runtime is available with Mise, e.g. `mise x python@3.15 -- python -m http.server`
-- `agent-browser`: Use to QA websites and take screenshots. Always `export AGENT_BROWSER_SESSION=<branch-name>` first to avoid cross-agent collisions.
-- `heredit`: Use for search-replace of code blocks in files with checked number of occurrences.
-  ```
-  heredit (replace | insert-before | insert-after) <file> [-n N=1] 3<<EOFA 4<<EOFB
-  text to find
-  EOFA
-  text to replace/insert around (leave a blank line at start/end for it to start/end with newline)
-  EOFB
-  ```
-- `ast-grep` for more complex, syntax-aware grepping
+## Paseo
 
-## End-of-turn overview
+You run inside Paseo. Use its workflows over harness built-ins; the skills hold the details.
 
-At the each end of turn, include an overview with these bullet points:
+- Delegation: Paseo agents only (`paseo`), never harness subagents, even for lookups. Pick profiles by their notes. Cheap profiles do the heavy lifting (coding, searching); expensive ones (Opus, Astra) only plan, review, advise, and sit on committees. Exception: web research and visual work go to Claude (better web search; DeepSeek has no image input).
+- Review: after building, get a review from an advisor of a different provider family (`paseo-advisor`). Stuck or hard planning: `paseo-committee`. Passing work on: `paseo-handoff`.
+- Worktrees: never edit or switch branches in a root checkout (`~/git/<host>/<owner>/<repo>`). One Paseo worktree workspace per PR.
+- Waiting: trust finish notifications; babysit PRs/CI with Paseo heartbeats, never poll.
+- Browser QA and screenshots: Paseo browser tools.
+- Dev servers: Paseo workspace scripts (`paseo.json`).
 
-- Screenshots (S1, S2, ...): When making UI changes, always take screenshots and present them as a bullet list of absolute paths.
-- Workstreams (W1, W2, ...): Include full URL to PR if available.
-  - Present in categories, skipping empty:
-    - PRs, merged
-    - PRs, green
-    - PRs, babysitting
-    - PRs, drafts
-    - Ready for PR (local work not yet published)
-    - Work in progress
-    - Waiting for upstream
-    - Follow-up suggestions (pro-actively suggest further related work)
-  - Questions (W1Q1, W1Q2, ...) related to this workstream that remain to be decided.
+## Reporting
 
-## Git repos
+- `paseo-progress` is the status view for every non-trivial task: PRs as deliverables, blockers as stuck.
+- Questions blocking the immediate work go through the harness's ask-user-question tool; questions about follow-up work go to `paseo-progress`.
+- Screenshots go in chat as absolute paths.
 
-- Repository clones use this layout:
-  - `~/git/<host>/<owner>/<repo>` (default branch checkout)
-  - `~/git/<host>/<owner>/<repo>/.wt/<branch-name>` (branch worktree, branch name may name nested folders if it has slashes)
-- Do not make changes or checkout a different branch in the root checkout. Always create a worktree:
-  - `git worktree add -b feature/example .wt/feature/example` for a new branch
-  - `git worktree add .wt/feature/example feature/example` for an existing branch
+## Tools
 
-## Shortcuts
-
-- `.`: continue: resuming after a process interruption, continue on with the task
-- `r`: refactor:
-  - verify working before and after
-  - low-level sweep: inline variables and functions, condense, make concise, remove comments except important caveats
-  - identify accidental complexity, brittle code, underutilized dependencies, and present to user
-  - based on user input, do high-level refactorings, followed by another round of low-level sweep
-- `q`: question: user wants to know something, answer their question, do not start editing, only suggest
-- `d`: deploy: (re)build and (re)start local server, according to project specifics
-- `t`: test: perform manual and automatic tests in parallel
-    - `tm`: test manually: use REPL, CLI, agent-browser, or other available means to verify added functionality
-    - `ta`: test automatically: ensure new code is covered, then run tests, prefer E2E over mocks and "thing-is-thing" unit tests
-- `c`: clarify: organize user instructions, identify caveats / inconsistencies / unclarity / non-trivial decisions, and use the question tool to ask for clarification 
-- `pls`: grep for comments containing `pls`, act on the instructions there, remove the comments
+`ast-grep`, `bat`, `dive`, `fd`, `gh`, `gron`, `heredit` (checked search-replace, see `--help`), `htmlq`, `jq`, `lsd`, `pitchfork`, `rg`, `tv`, `yq`. `uv` and `node` (v26) are global; other runtimes via Mise, e.g. `mise x python@3.15 -- python -m http.server`.
