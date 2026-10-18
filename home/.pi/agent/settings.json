@@ -4,11 +4,8 @@
   "defaultProvider": "local",
   "defaultModel": "dam-dev/deepseek-v4.1-flash",
   "packages": [
-    "npm:@geoqiao/paseo-btw",
     "npm:@juicesharp/rpiv-todo",
-    "npm:@juicesharp/rpiv-advisor",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:pi-goal-x",
-    "npm:pi-paseo-subagent"
+    "npm:pi-goal-x"
   ]
 }
