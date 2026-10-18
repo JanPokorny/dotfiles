@@ -42,60 +42,7 @@
   "skipAutoPermissionPrompt": true,
   "model": "opus",
   "hooks": {
-    "PermissionRequest": [
-      {
-        "_otty": true,
-        "hooks": [
-          {
-            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' awaiting \"$PPID\"",
-            "type": "command"
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "_otty": true,
-        "hooks": [
-          {
-            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' processing \"$PPID\"",
-            "type": "command"
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
-      {
-        "_otty": true,
-        "hooks": [
-          {
-            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' processing \"$PPID\"",
-            "type": "command"
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "_otty": true,
-        "hooks": [
-          {
-            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' idle \"$PPID\"",
-            "type": "command"
-          }
-        ]
-      }
-    ],
     "Stop": [
-      {
-        "_otty": true,
-        "hooks": [
-          {
-            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' idle \"$PPID\"",
-            "type": "command"
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
@@ -109,15 +56,6 @@
     ],
     "StopFailure": [
       {
-        "_otty": true,
-        "hooks": [
-          {
-            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' error \"$PPID\"",
-            "type": "command"
-          }
-        ]
-      },
-      {
         "matcher": "",
         "hooks": [
           {
@@ -129,15 +67,6 @@
       }
     ],
     "UserPromptSubmit": [
-      {
-        "_otty": true,
-        "hooks": [
-          {
-            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' processing \"$PPID\"",
-            "type": "command"
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
