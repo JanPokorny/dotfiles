@@ -26,9 +26,6 @@ program = "/bin/sh"
 args = ["-c", '{{ mise_bin }} env -D | while IFS== read -r k v; do launchctl setenv "$k" "$v"; done']
 run_at_load = true
 
-[dotfiles]
-"~/Library" = { source = "home/Library/", mode = "symlink-each", manifest = "git" }
-
 [env]
 CLAUDE_CODE_SHELL = "/opt/homebrew/bin/bash"
 DOCKER_HOST = "unix://{{ env.HOME }}/.config/colima/default/docker.sock"
