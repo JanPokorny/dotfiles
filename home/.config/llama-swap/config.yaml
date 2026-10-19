@@ -10,13 +10,26 @@ peers:
     timeouts: {responseHeader: 600}
     models:
       - aws/claude-opus-5-5
+      - aws/claude-sonnet-5
       - aws/claude-sonnet-5-5
       - azure/gpt-6-astra
+  # Same LiteLLM, second key: it serves the newer models but not Astra.
+  ete2:
+    proxy: https://ete-litellm.ai-models.vpc.res.ibm.com
+    apiKey: ${env.ETE_LITELLM_V2_API_KEY}
+    timeouts: {responseHeader: 600}
+    models:
+      - aws/claude-haiku-5-5
+      - azure/gpt-6.1-sol
+      - azure/gpt-6-luna
 
-# Claude Code asks for canonical IDs (aliases resolve to them; the auto-mode classifier hardcodes its own).
-# There is no ete Haiku, so it gets Sonnet.
+# Claude Code and Codex ask for canonical IDs (Claude's auto-mode classifier hardcodes claude-sonnet-5, kept on Sonnet 5 because 5.5 refuses it; Codex's auto-review sub-agent asks for codex-auto-review).
 selectors:
   claude-opus-5-5: {strategy: pin, targets: [ete/aws/claude-opus-5-5], unlisted: true}
   claude-sonnet-5-5: {strategy: pin, targets: [ete/aws/claude-sonnet-5-5], unlisted: true}
-  claude-sonnet-5: {strategy: pin, targets: [ete/aws/claude-sonnet-5-5], unlisted: true}
-  claude-haiku-5-5: {strategy: pin, targets: [ete/aws/claude-sonnet-5-5], unlisted: true}
+  claude-sonnet-5: {strategy: pin, targets: [ete/aws/claude-sonnet-5], unlisted: true}
+  claude-haiku-5-5: {strategy: pin, targets: [ete2/aws/claude-haiku-5-5], unlisted: true}
+  gpt-6.1-sol: {strategy: pin, targets: [ete2/azure/gpt-6.1-sol], unlisted: true}
+  gpt-6-luna: {strategy: pin, targets: [ete2/azure/gpt-6-luna], unlisted: true}
+  gpt-6-astra: {strategy: pin, targets: [ete/azure/gpt-6-astra], unlisted: true}
+  codex-auto-review: {strategy: pin, targets: [ete2/azure/gpt-6.1-sol], unlisted: true}

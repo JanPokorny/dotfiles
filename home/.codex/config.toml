@@ -1,7 +1,7 @@
-model = "ete/azure/gpt-6-astra"
+model = "gpt-6.1-sol"
 model_provider = "local"
 model_reasoning_effort = "high"
-model_context_window = 1000000
+model_context_window = 922000
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
 check_for_update_on_startup = false

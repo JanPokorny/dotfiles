@@ -97,7 +97,7 @@
         "icon": "brain",
         "color": "emerald",
         "provider": "codex",
-        "model": "ete/azure/gpt-6-astra",
+        "model": "gpt-6.1-sol",
         "modeId": "auto-review",
         "thinkingOptionId": "xhigh",
         "featureValues": {
