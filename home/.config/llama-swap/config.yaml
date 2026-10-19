@@ -12,3 +12,11 @@ peers:
       - aws/claude-opus-5-5
       - aws/claude-sonnet-5-5
       - azure/gpt-6-astra
+
+# Claude Code asks for canonical IDs (aliases resolve to them; the auto-mode classifier hardcodes its own).
+# There is no ete Haiku, so it gets Sonnet.
+selectors:
+  claude-opus-5-5: {strategy: pin, targets: [ete/aws/claude-opus-5-5], unlisted: true}
+  claude-sonnet-5-5: {strategy: pin, targets: [ete/aws/claude-sonnet-5-5], unlisted: true}
+  claude-sonnet-5: {strategy: pin, targets: [ete/aws/claude-sonnet-5-5], unlisted: true}
+  claude-haiku-5-5: {strategy: pin, targets: [ete/aws/claude-sonnet-5-5], unlisted: true}
