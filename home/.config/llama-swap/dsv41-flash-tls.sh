@@ -2,7 +2,6 @@
 # Fetches the vLLM key and the cluster's service CA, then serves the Caddy hop.
 set -euo pipefail
 dir=$(cd "$(dirname "$(readlink -f "$0")")" && pwd)
-eval "$("$dir/private.sh" env | sed -n 's/^\([A-Z0-9_]*\)=\(.*\)$/\1="\2"/p')"
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
 k() { kubectl --context "$DSV41_KUBE_CONTEXT" -n "$DSV41_NAMESPACE" "$@"; }

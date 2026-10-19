@@ -3,10 +3,10 @@
 [settings.general]
 mise = true
 
-# Keys come from 1Password at start, so the CLIs never call op themselves.
-# Private peers are age-encrypted in the repo (llama-swap/private.sh).
+# Secrets are age ciphertext in llama-swap/fnox.toml; `fnox exec` decrypts them with the keychain-held age key,
+# so no restart asks 1Password.
 [daemons.llama-swap]
-run = "exec ~/.config/llama-swap/llama-swap.sh"
+run = "exec fnox exec -c ~/.config/llama-swap/fnox.toml -P gateway -- ~/.config/llama-swap/llama-swap.sh"
 ready_http = { url = "http://127.0.0.1:47900/health", timeout = "10m" }
 retry = true
 boot_start = true
@@ -14,8 +14,10 @@ boot_start = true
 # The kube token is short-lived: after a re-login,
 # `pitchfork restart dsv41-flash-forward dsv41-flash-tls`.
 [daemons.dsv41-flash-forward]
-run = "exec ~/.config/llama-swap/dsv41-flash-forward.sh"
+run = "exec fnox exec -c ~/.config/llama-swap/fnox.toml --replace -- ~/.config/llama-swap/dsv41-flash-forward.sh"
 ready_port = 47917
+# Marks it failed once the script's own reconnects stop working (e.g. expired token).
+health_cmd = { run = "curl -skf --max-time 15 -o /dev/null https://127.0.0.1:47917/health", timeout = "20s", retries = 6 }
 retry = true
 boot_start = true
 
@@ -23,7 +25,7 @@ boot_start = true
 # Go on macOS ignores SSL_CERT_FILE, so llama-swap cannot trust that CA itself:
 # this Caddy hop validates it and adds the key.
 [daemons.dsv41-flash-tls]
-run = "exec ~/.config/llama-swap/dsv41-flash-tls.sh"
+run = "exec fnox exec -c ~/.config/llama-swap/fnox.toml --replace -- ~/.config/llama-swap/dsv41-flash-tls.sh"
 ready_port = 47918
 retry = true
 boot_start = true
