@@ -3,29 +3,13 @@
 [settings.general]
 mise = true
 
-# Secrets are age ciphertext in llama-swap/fnox.toml; `fnox exec` decrypts them with the keychain-held age key,
-# so no restart asks 1Password.
-[daemons.llama-swap]
-run = "exec fnox exec -c ~/.config/llama-swap/fnox.toml -P gateway -- ~/.config/llama-swap/llama-swap.sh"
-ready_http = { url = "http://127.0.0.1:47900/health", timeout = "10m" }
-retry = true
-boot_start = true
-
-# The kube token is short-lived: after a re-login,
-# `pitchfork restart dsv41-flash-forward dsv41-flash-tls`.
-[daemons.dsv41-flash-forward]
-run = "exec fnox exec -c ~/.config/llama-swap/fnox.toml --replace -- ~/.config/llama-swap/dsv41-flash-forward.sh"
-ready_port = 47917
-# Marks it failed once the script's own reconnects stop working (e.g. expired token).
-health_cmd = { run = "curl -skf --max-time 15 -o /dev/null https://127.0.0.1:47917/health", timeout = "20s", retries = 6 }
-retry = true
-boot_start = true
-
-# vLLM speaks TLS with a cluster-CA certificate and wants its key as Bearer.
-# Go on macOS ignores SSL_CERT_FILE, so llama-swap cannot trust that CA itself:
-# this Caddy hop validates it and adds the key.
-[daemons.dsv41-flash-tls]
-run = "exec fnox exec -c ~/.config/llama-swap/fnox.toml --replace -- ~/.config/llama-swap/dsv41-flash-tls.sh"
-ready_port = 47918
+[daemons.dam-llm]
+run = """
+set -euo pipefail
+kubectl --context 'dam-dev/api-dam-cl-fmaas-res-ibm-com:6443/Jan.Pokorny@ibm.com' -n dam-dev-gpu get configmap openshift-service-ca.crt --request-timeout=20s -o jsonpath='{.data.service-ca\\.crt}' > "${TMPDIR:-/tmp}/dam-llm-service-ca.crt"
+kubectl --context 'dam-dev/api-dam-cl-fmaas-res-ibm-com:6443/Jan.Pokorny@ibm.com' -n dam-dev-gpu port-forward svc/dsv41-balancer 47919:8443
+"""
+ready_port = 47919
+health_cmd = { run = "curl -skf --max-time 15 -o /dev/null https://127.0.0.1:47919/health", timeout = "20s", retries = 6 }
 retry = true
 boot_start = true

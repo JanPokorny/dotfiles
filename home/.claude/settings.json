@@ -1,0 +1,46 @@
+{
+  "syncClaudeAiSkills": false,
+  "env": {
+    "CLAUDE_CODE_HARBOR_KITE": "0",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "disableClaudeAiConnectors": true,
+  "skillOverrides": {
+    "anthropic-skills:docs": "off",
+    "anthropic-skills:google-workspace": "off",
+    "anthropic-skills:docx": "off",
+    "anthropic-skills:import-memory": "off",
+    "anthropic-skills:morning": "off",
+    "anthropic-skills:pdf": "off",
+    "anthropic-skills:pptx": "off",
+    "anthropic-skills:skill-creator": "off",
+    "anthropic-skills:xlsx": "off"
+  },
+  "disableBundledSkills": true,
+  "disableAgentView": true,
+  "disableRemoteControl": true,
+  "enabledPlugins": {
+    "cc-plugin-you-should-know@builtin": true,
+    "cc-plugin-agents-md@builtin": true,
+    "cc-plugin-telemetry@builtin": false,
+    "cc-plugin-sec-default@builtin": false,
+    "cc-plugin-plugin-authoring@builtin": false,
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "outputStyle": "Concise",
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "crossSessionInbound": "refuse",
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
+  "model": "opus",
+  "hooks": {}
+}

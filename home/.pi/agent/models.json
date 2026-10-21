@@ -1,12 +1,12 @@
 {
   "providers": {
-    "local": {
-      "baseUrl": "http://127.0.0.1:47900/v1",
+    "ete": {
+      "baseUrl": "https://ete-litellm.ai-models.vpc.res.ibm.com/v1",
       "api": "openai-responses",
-      "apiKey": "local",
+      "apiKey": "!fnox get ETE_RITS_RESTRICTED_AGENTIC_API_KEY",
       "models": [
         {
-          "id": "ete/azure/gpt-6-astra",
+          "id": "azure/gpt-6-astra",
           "name": "GPT-6 Astra (ETE)",
           "contextWindow": 1000000,
           "maxTokens": 100000,
@@ -20,10 +20,21 @@
             "output": 0,
             "cacheRead": 0,
             "cacheWrite": 0
+          },
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
           }
-        },
+        }
+      ]
+    },
+    "ete2": {
+      "baseUrl": "https://ete-litellm.ai-models.vpc.res.ibm.com/v1",
+      "api": "openai-responses",
+      "apiKey": "!fnox get ETE_AGENTIC_PLATFORM_DEV_API_KEY",
+      "models": [
         {
-          "id": "ete2/azure/gpt-6.1-sol",
+          "id": "azure/gpt-6.1-sol",
           "name": "GPT-6.1 Sol (ETE)",
           "contextWindow": 922000,
           "maxTokens": 128000,
@@ -37,10 +48,14 @@
             "output": 0,
             "cacheRead": 0,
             "cacheWrite": 0
+          },
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
           }
         },
         {
-          "id": "ete2/azure/gpt-6-luna",
+          "id": "azure/gpt-6-luna",
           "name": "GPT-6 Luna (ETE)",
           "contextWindow": 922000,
           "maxTokens": 128000,
@@ -54,32 +69,22 @@
             "output": 0,
             "cacheRead": 0,
             "cacheWrite": 0
+          },
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
           }
-        },
+        }
+      ]
+    },
+    "ete-claude": {
+      "baseUrl": "https://ete-litellm.ai-models.vpc.res.ibm.com",
+      "api": "anthropic-messages",
+      "apiKey": "!fnox get ETE_RITS_RESTRICTED_AGENTIC_API_KEY",
+      "models": [
         {
-          "id": "ete2/aws/claude-haiku-5-5",
-          "name": "Claude Haiku 5.5 (ETE)",
-          "api": "anthropic-messages",
-          "baseUrl": "http://127.0.0.1:47900",
-          "contextWindow": 1000000,
-          "maxTokens": 32000,
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "id": "ete/aws/claude-opus-5-5",
+          "id": "aws/claude-opus-5-5",
           "name": "Claude Opus 5.5 (ETE)",
-          "api": "anthropic-messages",
-          "baseUrl": "http://127.0.0.1:47900",
           "contextWindow": 1000000,
           "maxTokens": 32000,
           "reasoning": true,
@@ -92,12 +97,92 @@
             "output": 0,
             "cacheRead": 0,
             "cacheWrite": 0
+          },
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
           }
         },
         {
-          "id": "cb/rits/zai-org/glm-5-3",
+          "id": "aws/claude-sonnet-5-5",
+          "name": "Claude Sonnet 5.5 (ETE)",
+          "contextWindow": 1000000,
+          "maxTokens": 32000,
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        },
+        {
+          "id": "aws/claude-sonnet-5",
+          "name": "Claude Sonnet 5 (ETE)",
+          "contextWindow": 1000000,
+          "maxTokens": 32000,
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        }
+      ]
+    },
+    "ete2-claude": {
+      "baseUrl": "https://ete-litellm.ai-models.vpc.res.ibm.com",
+      "api": "anthropic-messages",
+      "apiKey": "!fnox get ETE_AGENTIC_PLATFORM_DEV_API_KEY",
+      "models": [
+        {
+          "id": "aws/claude-haiku-5-5",
+          "name": "Claude Haiku 5.5 (ETE)",
+          "contextWindow": 1000000,
+          "maxTokens": 32000,
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        }
+      ]
+    },
+    "cb": {
+      "baseUrl": "https://litellm.cb.ete.res.ibm.com/v1",
+      "api": "openai-completions",
+      "apiKey": "!fnox get CURVE_BENDER_API_KEY",
+      "models": [
+        {
+          "id": "rits/zai-org/glm-5-3",
           "name": "GLM-5.3 (CurveBender)",
-          "api": "openai-completions",
           "reasoning": true,
           "cost": {
             "input": 0,
@@ -105,9 +190,16 @@
             "cacheRead": 0,
             "cacheWrite": 0
           }
-        },
+        }
+      ]
+    },
+    "dam-dev": {
+      "baseUrl": "https://dsv41-balancer.dam-dev-gpu.svc:47919/v1",
+      "api": "openai-completions",
+      "apiKey": "!fnox get DSV41_KEY",
+      "models": [
         {
-          "id": "dam-dev/deepseek-v4.1-flash",
+          "id": "deepseek-v4.1-flash",
           "name": "DeepSeek-V4.1-Flash-1017 (DAM)",
           "contextWindow": 262144,
           "maxTokens": 32000,
@@ -121,6 +213,17 @@
             "output": 0,
             "cacheRead": 0,
             "cacheWrite": 0
+          },
+          "compat": {
+            "thinkingFormat": "chat-template",
+            "chatTemplateKwargs": {
+              "thinking": {
+                "$var": "thinking.enabled"
+              },
+              "reasoning_effort": {
+                "$var": "thinking.effort"
+              }
+            }
           },
           "thinkingLevelMap": {
             "minimal": "low",

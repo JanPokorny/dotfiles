@@ -1,0 +1,18 @@
+[daemon]
+enabled = true
+idle_timeout = "7d"
+
+[providers.op]
+type = "1password"
+account = "ibm.ent.1password.com"
+
+[providers.k8s]
+type = "kubernetes"
+context = "dam-dev/api-dam-cl-fmaas-res-ibm-com:6443/Jan.Pokorny@ibm.com"
+namespace = "dam-dev-gpu"
+
+[secrets]
+ETE_RITS_RESTRICTED_AGENTIC_API_KEY = { provider = "op", value = "op://rsjz2rywqgfp4o3wmwks7qizea/gf5pvk7rveqittwbpwj3sfhccq/credential" }
+ETE_AGENTIC_PLATFORM_DEV_API_KEY = { provider = "op", value = "op://rsjz2rywqgfp4o3wmwks7qizea/45e5cbsloq3tgenkfaqear4doi/credential" }
+CURVE_BENDER_API_KEY = { provider = "op", value = "op://rsjz2rywqgfp4o3wmwks7qizea/uzmyehjzhl7ri2hd4xx2iyzejq/credential" }
+DSV41_KEY = { provider = "k8s", value = "dsv41-flash-api-key/key" }

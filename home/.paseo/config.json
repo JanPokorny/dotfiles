@@ -8,41 +8,14 @@
     "browserTools": {
       "enabled": true
     },
-    "enableTerminalAgentHooks": true,
-    "terminalProfiles": [
-      {
-        "id": "claude",
-        "name": "Claude Code",
-        "command": "claude",
-        "args": [
-          "{{{prompt}}}"
-        ],
-        "icon": "claude"
-      },
-      {
-        "id": "codex",
-        "name": "Codex",
-        "command": "codex",
-        "args": [
-          "{{{prompt}}}"
-        ],
-        "icon": "codex"
-      },
-      {
-        "id": "pi",
-        "name": "Pi",
-        "command": "pi",
-        "args": [
-          "{{{prompt}}}"
-        ],
-        "icon": "pi"
-      }
-    ],
+    "enableTerminalAgentHooks": false,
+    "terminalProfiles": [],
     "agentProfiles": [
       {
         "id": "agent_profile_mvdx53g6_3ntbc2d2xfp",
         "name": "Planner",
         "icon": "feather",
+        "color": "orange",
         "provider": "claude",
         "model": "claude-opus-5-5",
         "modeId": "auto",
@@ -50,13 +23,23 @@
         "notes": "Plan out high-level implementation"
       },
       {
+        "id": "agent_profile_mvgi8l67_i00p6no3m6g",
+        "name": "Planner (API)",
+        "icon": "feather",
+        "color": "blue",
+        "provider": "pi",
+        "model": "ete-claude/aws/claude-opus-5-5",
+        "thinkingOptionId": "high",
+        "notes": "Only use as a fallback."
+      },
+      {
         "id": "agent_profile_mvdo97m3_oz976isg9ha",
         "name": "Programmer",
         "icon": "hammer",
         "color": "blue",
         "provider": "pi",
-        "model": "local/dam-dev/deepseek-v4.1-flash",
-        "thinkingOptionId": "max",
+        "model": "dam-dev/deepseek-v4.1-flash",
+        "thinkingOptionId": "high",
         "notes": "Write code"
       },
       {
@@ -65,7 +48,7 @@
         "icon": "search",
         "color": "blue",
         "provider": "pi",
-        "model": "local/dam-dev/deepseek-v4.1-flash",
+        "model": "dam-dev/deepseek-v4.1-flash",
         "thinkingOptionId": "medium",
         "notes": "Find where something is implemented"
       },
@@ -81,6 +64,16 @@
         "notes": "Research web for docs and libraries"
       },
       {
+        "id": "agent_profile_mvgi8l67_ryrjkua4njs",
+        "name": "Researcher (API)",
+        "icon": "flask",
+        "color": "blue",
+        "provider": "pi",
+        "model": "ete-claude/aws/claude-opus-5-5",
+        "thinkingOptionId": "low",
+        "notes": "Only use as a fallback."
+      },
+      {
         "id": "agent_profile_mvdo8fa8_7f19j60gxl7",
         "name": "Advisor Claude",
         "icon": "brain",
@@ -92,17 +85,23 @@
         "notes": "Advice from a smart model"
       },
       {
+        "id": "agent_profile_mvgi8l67_otmsyg4o4zc",
+        "name": "Advisor Claude (API)",
+        "icon": "brain",
+        "color": "blue",
+        "provider": "pi",
+        "model": "ete-claude/aws/claude-opus-5-5",
+        "thinkingOptionId": "xhigh",
+        "notes": "Only use as a fallback."
+      },
+      {
         "id": "agent_profile_mvdx2o2u_5l6nws5t1rt",
-        "name": "Advisor Codex",
+        "name": "Advisor GPT",
         "icon": "brain",
         "color": "emerald",
-        "provider": "codex",
-        "model": "gpt-6.1-sol",
-        "modeId": "auto-review",
+        "provider": "pi",
+        "model": "ete2/azure/gpt-6.1-sol",
         "thinkingOptionId": "xhigh",
-        "featureValues": {
-          "plan_mode": false
-        },
         "notes": "Advice from a smart model"
       },
       {
@@ -115,6 +114,16 @@
         "modeId": "auto",
         "thinkingOptionId": "medium",
         "notes": "Visuals and UX"
+      },
+      {
+        "id": "agent_profile_mvgi8l67_rly2eqo16e8",
+        "name": "Designer (API)",
+        "icon": "sparkles",
+        "color": "blue",
+        "provider": "pi",
+        "model": "ete-claude/aws/claude-opus-5-5",
+        "thinkingOptionId": "medium",
+        "notes": "Only use as a fallback."
       }
     ],
     "cors": {
@@ -135,6 +144,11 @@
       "source": "directory",
       "path": "/Users/jp/.paseo/plugins/progress/e13bcb0b-8b14-4fb3-b77b-acb3c9b6ee3d/node_modules/@stevecastaneda/paseo-progress",
       "enabled": true
+    },
+    "firstmate": {
+      "source": "directory",
+      "path": "/Users/jp/.paseo/plugins/firstmate/10b4ae42-afae-4804-b342-52d57ef73d98/node_modules/@gpambrozio/paseo-firstmate",
+      "enabled": true
     }
   },
   "agents": {
@@ -149,6 +163,9 @@
         "enabled": false
       },
       "opencode": {
+        "enabled": false
+      },
+      "codex": {
         "enabled": false
       }
     }

@@ -10,7 +10,6 @@ install_layout = "identity"
 [dotfiles]
 "~" = { source = "home", mode = "copy" }
 "~/.claude/CLAUDE.md" = { source = "AGENTS.md", mode = "copy" }
-"~/.codex/AGENTS.md" = { source = "AGENTS.md", mode = "copy" }
 "~/.pi/agent/AGENTS.md" = { source = "AGENTS.md", mode = "copy" }
 
 [bootstrap.brew]
@@ -24,22 +23,17 @@ adopt = true
 "github:dlvhdr/gh-dash" = "latest"
 "github:docker/buildx" = { version = "latest", rename_exe = "docker-buildx" }
 "github:docker/compose" = { version = "latest", rename_exe = "docker-compose" }
-"github:mostlygeek/llama-swap" = "latest"
 "npm:@getpaseo/cli" = "latest"
 1password = "latest"
-age = "latest"
 agent-browser = "latest"
 ast-grep = "latest"
 bat = "latest"
-caddy = "latest"
 claude = { version = "latest", minimum_release_age = "0s" }
-codex = "latest"
 colima = "latest"
 croc = "latest"
 dive = "latest"
 docker-cli = "latest"
 fd = "latest"
-fnox = "latest"
 gh = "latest"
 git-lfs = "latest"
 gron = "latest"
@@ -60,16 +54,22 @@ television = "latest"
 usage = "latest"
 uv = "latest"
 yq = "latest"
+fnox = { version = "latest", workflow = "release.yml" }
 
 [tasks.bootstrap]
 run = """
 mkdir -p ~/.docker/cli-plugins
 ln -sf ~/.local/share/mise/shims/docker-buildx ~/.docker/cli-plugins/docker-buildx
 ln -sf ~/.local/share/mise/shims/docker-compose ~/.docker/cli-plugins/docker-compose
+
+pitchfork boot enable
+
+grep -qxF '127.0.0.1 dsv41-balancer.dam-dev-gpu.svc' /etc/hosts || echo '127.0.0.1 dsv41-balancer.dam-dev-gpu.svc' | sudo tee -a /etc/hosts >/dev/null
 """
 
 [env]
 XDG_CONFIG_HOME = "{{ env.HOME }}/.config"
+NODE_EXTRA_CA_CERTS = "{{ get_env(name='TMPDIR', default='/tmp') }}/dam-llm-service-ca.crt"
 npm_config_min_release_age = "7"
 npm_config_min_release_age_exclude = "@dam-agents/cli"
 YARN_NPM_MINIMAL_AGE_GATE = "10080"

@@ -1,12 +1,8 @@
 {
   "lastChangelogVersion": "1.3.0",
   "theme": "dark",
-  "defaultProvider": "local",
+  "defaultProvider": "dam-dev",
   "defaultModel": "dam-dev/deepseek-v4.1-flash",
-  "packages": [
-    "npm:@juicesharp/rpiv-todo",
-    "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:pi-goal-x"
-  ],
+  "packages": [],
   "quietStartup": true
 }
