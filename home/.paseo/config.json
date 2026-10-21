@@ -138,19 +138,8 @@
   "app": {
     "baseUrl": "https://app.paseo.sh"
   },
-  "pluginsEnabled": true,
-  "plugins": {
-    "progress": {
-      "source": "directory",
-      "path": "/Users/jp/.paseo/plugins/progress/e13bcb0b-8b14-4fb3-b77b-acb3c9b6ee3d/node_modules/@stevecastaneda/paseo-progress",
-      "enabled": true
-    },
-    "firstmate": {
-      "source": "directory",
-      "path": "/Users/jp/.paseo/plugins/firstmate/10b4ae42-afae-4804-b342-52d57ef73d98/node_modules/@gpambrozio/paseo-firstmate",
-      "enabled": true
-    }
-  },
+  "pluginsEnabled": false,
+  "plugins": {},
   "agents": {
     "providers": {
       "antigravity": {
