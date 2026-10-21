@@ -28,7 +28,7 @@
         "icon": "feather",
         "color": "blue",
         "provider": "pi",
-        "model": "ete-claude/aws/claude-opus-5-5",
+        "model": "ete-apd-claude/aws/claude-opus-5-5",
         "thinkingOptionId": "high",
         "notes": "Only use as a fallback."
       },
@@ -38,7 +38,7 @@
         "icon": "hammer",
         "color": "blue",
         "provider": "pi",
-        "model": "dam-dev/deepseek-v4.1-flash",
+        "model": "dam/deepseek-v4.1-flash",
         "thinkingOptionId": "high",
         "notes": "Write code"
       },
@@ -48,7 +48,7 @@
         "icon": "search",
         "color": "blue",
         "provider": "pi",
-        "model": "dam-dev/deepseek-v4.1-flash",
+        "model": "dam/deepseek-v4.1-flash",
         "thinkingOptionId": "medium",
         "notes": "Find where something is implemented"
       },
@@ -69,7 +69,7 @@
         "icon": "flask",
         "color": "blue",
         "provider": "pi",
-        "model": "ete-claude/aws/claude-opus-5-5",
+        "model": "ete-apd-claude/aws/claude-opus-5-5",
         "thinkingOptionId": "low",
         "notes": "Only use as a fallback."
       },
@@ -90,7 +90,7 @@
         "icon": "brain",
         "color": "blue",
         "provider": "pi",
-        "model": "ete-claude/aws/claude-opus-5-5",
+        "model": "ete-apd-claude/aws/claude-opus-5-5",
         "thinkingOptionId": "xhigh",
         "notes": "Only use as a fallback."
       },
@@ -100,7 +100,7 @@
         "icon": "brain",
         "color": "emerald",
         "provider": "pi",
-        "model": "ete2/azure/gpt-6.1-sol",
+        "model": "ete-apd/azure/gpt-6.1-sol",
         "thinkingOptionId": "xhigh",
         "notes": "Advice from a smart model"
       },
@@ -121,7 +121,7 @@
         "icon": "sparkles",
         "color": "blue",
         "provider": "pi",
-        "model": "ete-claude/aws/claude-opus-5-5",
+        "model": "ete-apd-claude/aws/claude-opus-5-5",
         "thinkingOptionId": "medium",
         "notes": "Only use as a fallback."
       }
