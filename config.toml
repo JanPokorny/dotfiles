@@ -9,8 +9,8 @@ install_layout = "identity"
 
 [dotfiles]
 "~" = { source = "home", mode = "copy" }
-"~/.claude/CLAUDE.md" = { source = "AGENTS.md", mode = "copy" }
-"~/.pi/agent/AGENTS.md" = { source = "AGENTS.md", mode = "copy" }
+"~/.claude/CLAUDE.md" = { source = "etc/AGENTS.md", mode = "copy" }
+"~/.pi/agent/AGENTS.md" = { source = "etc/AGENTS.md", mode = "copy" }
 
 [bootstrap.brew]
 adopt = true
