@@ -6,6 +6,7 @@ login_shell = "/opt/homebrew/bin/fish"
 [bootstrap.packages]
 "brew:bash" = "latest"
 "brew:fish" = "latest"
+"brew:terminal-notifier" = "latest"
 "brew-cask:arc" = "latest"
 "brew-cask:bettercapture" = "latest"
 "brew-cask:deskpad" = "latest"

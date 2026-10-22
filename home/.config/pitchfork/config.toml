@@ -13,3 +13,38 @@ ready_port = 47919
 health_cmd = { run = "curl -skf --max-time 15 -o /dev/null https://127.0.0.1:47919/health", timeout = "20s", retries = 6 }
 retry = true
 boot_start = true
+
+# Meeting alerts 1 min before each event, read from new Outlook's widget cache. Stopgap until
+# macOS Calendar syncs Exchange again (EWS blocked since 2026-10-01, Apple's Graph fix pending).
+# Ceilings: the cache covers today + 4 days and only refreshes while Outlook runs.
+[daemons.outlook-notify]
+run = '''
+set -eu
+store="$HOME/Library/Group Containers/UBF8T346G9.Office/Library/Application Support/Calendar Widget/store.json"
+# Click opens Teams. Falls back to osascript (no click action) if terminal-notifier isn't authorized.
+notify() {
+  terminal-notifier -title "$1" -message "$2" -sound Glass -open https://teams.microsoft.com ||
+    osascript -e 'on run argv' -e 'display notification (item 2 of argv) with title (item 1 of argv) sound name "Glass"' -e 'end run' "$1" "$2"
+}
+tab=$(printf '\t')
+prev=$(date +%s)
+# 15 s polling: alerts land 45-60 s before start. After sleep, alerts still fire for meetings not yet over.
+while sleep 15; do
+  now=$(date +%s)
+  # Store times are seconds since 2001-01-01.
+  due=$(jq -r --argjson prev "$prev" --argjson now "$now" '
+    .dayToAppointments[] | arrays | .[]
+    | select((.isCancelled or .isAllDay) | not)
+    | (.startTime + 978307200) as $start
+    | select($prev < $start - 60 and $start - 60 <= $now and $now < .endTime + 978307200)
+    | [.subject, "\($start | strflocaltime("%H:%M")) \(.location // "")"] | @tsv' "$store") || {
+    notify outlook-notify "Can't read Outlook's calendar widget cache, meeting alerts are off."
+    exit 1
+  }
+  printf '%s\n' "$due" | while IFS=$tab read -r title body; do
+    [ -z "$title" ] || notify "$title" "$body"
+  done
+  prev=$now
+done
+'''
+boot_start = true
