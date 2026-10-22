@@ -52,15 +52,20 @@ Hooks and the `bootstrap` task run on every `mise bs`. Keep them repeatable.
 
 ## Packages
 
-Do not install Homebrew. Do not write `brew` commands, and do not add
-`[bootstrap.brew]`. mise installs formulae and casks itself.
+Do not install Homebrew. Do not run `brew` commands. mise installs formulae and
+casks itself.
+
+mise installs them into the Homebrew prefix (`/opt/homebrew` on macOS), because
+the prebuilt bottles are compiled for that prefix. Paths under `/opt/homebrew`
+are correct and do not mean that Homebrew is installed.
 
 Use these keys in `[bootstrap.packages]`:
 
 - `"brew:<formula>"`: a formula.
 - `"brew-cask:<app>"`: an application.
 
-Font casks work on Linux too.
+Font casks work on Linux too. `[bootstrap.brew]` only configures cask adoption
+and tap URLs; it is not a reason to install Homebrew.
 
 ## Platforms
 
