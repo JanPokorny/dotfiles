@@ -3,6 +3,24 @@
   "theme": "dark",
   "defaultProvider": "cb-rap",
   "defaultModel": "cb-rap/rits/deepseek-ai/DeepSeek-V4.1-Flash-1017",
-  "packages": [],
-  "quietStartup": true
+  "packages": [
+    "npm:pi-doppelclaude"
+  ],
+  "quietStartup": true,
+  "doppelclaude": {
+    "provider": {
+      "systemPromptMode": "pi",
+      "systemPromptReplacements": {
+        "identity": "You are a hands-on software engineer working in the user's terminal. You inspect code, run shell commands, and create or modify files to get the user's task done.",
+        "toolNameNote": "Every tool you call carries an `mcp__custom-tools__` prefix; the list below names them without it. `mcp__custom-tools__read` is the `read` tool, `mcp__custom-tools__edit` is `edit`, and so on.",
+        "documentation": {
+          "heading": "Docs for this terminal assistant itself (consult them only for questions about the assistant, its extensions, themes, skills, SDK, or TUI):",
+          "instructions": [
+            "- Paths such as docs/x.md or examples/y refer to the locations listed above, never to the current project.",
+            "- Before building anything for the assistant, read the matching doc in full and follow the files it links to."
+          ]
+        }
+      }
+    }
+  }
 }
