@@ -12,45 +12,13 @@
     "terminalProfiles": [],
     "agentProfiles": [
       {
-        "id": "agent_profile_mvdx53g6_3ntbc2d2xfp",
-        "name": "Planner",
-        "icon": "feather",
-        "color": "orange",
-        "provider": "claude",
-        "model": "claude-opus-5-5",
-        "modeId": "auto",
-        "thinkingOptionId": "high",
-        "notes": "Plan out high-level implementation"
-      },
-      {
-        "id": "agent_profile_mvgi8l67_i00p6no3m6g",
-        "name": "Planner (API)",
-        "icon": "feather",
-        "color": "blue",
-        "provider": "pi",
-        "model": "ete-apd-claude/aws/claude-opus-5-5",
-        "thinkingOptionId": "high",
-        "notes": "Only use as a fallback."
-      },
-      {
         "id": "agent_profile_mvdo97m3_oz976isg9ha",
-        "name": "Programmer",
+        "name": "Default",
         "icon": "hammer",
         "color": "blue",
         "provider": "pi",
         "model": "dam/deepseek-v4.1-flash",
-        "thinkingOptionId": "high",
-        "notes": "Write code"
-      },
-      {
-        "id": "agent_profile_mvdwya0e_qxofyuztqs",
-        "name": "Sleuth",
-        "icon": "search",
-        "color": "blue",
-        "provider": "pi",
-        "model": "dam/deepseek-v4.1-flash",
-        "thinkingOptionId": "medium",
-        "notes": "Find where something is implemented"
+        "thinkingOptionId": "high"
       },
       {
         "id": "agent_profile_mvdx7a2d_adrow4myort",
@@ -61,17 +29,7 @@
         "model": "claude-opus-5-5",
         "modeId": "auto",
         "thinkingOptionId": "low",
-        "notes": "Research web for docs and libraries"
-      },
-      {
-        "id": "agent_profile_mvgi8l67_ryrjkua4njs",
-        "name": "Researcher (API)",
-        "icon": "flask",
-        "color": "blue",
-        "provider": "pi",
-        "model": "ete-apd-claude/aws/claude-opus-5-5",
-        "thinkingOptionId": "low",
-        "notes": "Only use as a fallback."
+        "notes": "Web search"
       },
       {
         "id": "agent_profile_mvdo8fa8_7f19j60gxl7",
@@ -81,18 +39,16 @@
         "provider": "claude",
         "model": "claude-opus-5-5",
         "modeId": "auto",
-        "thinkingOptionId": "xhigh",
-        "notes": "Advice from a smart model"
+        "thinkingOptionId": "xhigh"
       },
       {
         "id": "agent_profile_mvgi8l67_otmsyg4o4zc",
-        "name": "Advisor Claude (API)",
+        "name": "Advisor Claude (fallback)",
         "icon": "brain",
-        "color": "blue",
+        "color": "orange",
         "provider": "pi",
         "model": "ete-apd-claude/aws/claude-opus-5-5",
-        "thinkingOptionId": "xhigh",
-        "notes": "Only use as a fallback."
+        "thinkingOptionId": "xhigh"
       },
       {
         "id": "agent_profile_mvdx2o2u_5l6nws5t1rt",
@@ -101,29 +57,7 @@
         "color": "emerald",
         "provider": "pi",
         "model": "ete-apd/azure/gpt-6.1-sol",
-        "thinkingOptionId": "xhigh",
-        "notes": "Advice from a smart model"
-      },
-      {
-        "id": "agent_profile_mvdx9skt_v8ikl9eeld7",
-        "name": "Designer",
-        "icon": "sparkles",
-        "color": "orange",
-        "provider": "claude",
-        "model": "claude-opus-5-5",
-        "modeId": "auto",
-        "thinkingOptionId": "medium",
-        "notes": "Visuals and UX"
-      },
-      {
-        "id": "agent_profile_mvgi8l67_rly2eqo16e8",
-        "name": "Designer (API)",
-        "icon": "sparkles",
-        "color": "blue",
-        "provider": "pi",
-        "model": "ete-apd-claude/aws/claude-opus-5-5",
-        "thinkingOptionId": "medium",
-        "notes": "Only use as a fallback."
+        "thinkingOptionId": "xhigh"
       }
     ],
     "cors": {
