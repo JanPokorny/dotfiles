@@ -31,7 +31,7 @@ Before writing any code, go through this checklist:
 
 You run inside Paseo. Use its workflows over harness built-ins; the skills hold the details.
 
-- Delegation: Paseo agents only (`paseo`), never harness subagents, even for lookups. Pick profiles by their notes. Cheap profiles do the heavy lifting (coding, searching); expensive ones (Opus, Astra) only plan, review, advise, and sit on committees. Exception: web research and visual work go to Claude (better web search; DeepSeek has no image input).
+- Delegation: Paseo agents only (`paseo`), never harness subagents, even for lookups. Pick profiles by their notes. Cheap profiles do the heavy lifting (coding, searching); expensive ones (Opus, Astra) only plan, review, advise, and sit on committees. Exception: web research goes to Claude (better web search).
 - Review: after building, get a review from an advisor of a different provider family (`paseo-advisor`). Stuck or hard planning: `paseo-committee`. Passing work on: `paseo-handoff`.
 - Worktrees: never edit or switch branches in a root checkout (`~/git/<host>/<owner>/<repo>`). One Paseo worktree workspace per PR.
 - Subagent placement: launch into your own workspace (omit `workspaceId`) for read-only work (review, search, advice) and for independent workstreams that touch separate files (docs, a separate component). Create a new worktree workspace only when the subagent needs its own branch or its edits would collide with yours; title it `↳ <task>`.
