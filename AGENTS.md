@@ -32,6 +32,17 @@ adopt it or apply it.
 `mise dot apply` overwrites applied files. Local edits to those files are lost
 unless you adopt them first.
 
+## Paseo
+
+`home/.paseo/config.json` is deployed by `mise dot apply`, but the daemon does
+not watch it: it keeps the config it loaded in memory. Only
+`paseo daemon reload` (reloadable paths such as `daemon.agentProfiles`) or a
+restart makes the change live.
+
+Never reload, restart, or stop Paseo from an agent session: agents, including
+the one you are running in, die with it. Apply the file, then tell the user to
+run `paseo daemon reload` themselves.
+
 ## Bootstrap
 
 `mise bootstrap` (short `mise bs`) sets up the machine: packages, dotfiles,
