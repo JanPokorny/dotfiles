@@ -17,7 +17,7 @@
         "icon": "hammer",
         "color": "blue",
         "provider": "pi",
-        "model": "dam/deepseek-v4.1-flash",
+        "model": "cb-rap/rits/deepseek-ai/DeepSeek-V4.1-Flash-1017",
         "thinkingOptionId": "high"
       },
       {

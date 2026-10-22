@@ -1,8 +1,8 @@
 {
   "lastChangelogVersion": "1.3.0",
   "theme": "dark",
-  "defaultProvider": "dam",
-  "defaultModel": "dam/deepseek-v4.1-flash",
+  "defaultProvider": "cb-rap",
+  "defaultModel": "cb-rap/rits/deepseek-ai/DeepSeek-V4.1-Flash-1017",
   "packages": [],
   "quietStartup": true
 }

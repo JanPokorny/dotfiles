@@ -267,7 +267,7 @@
         {
           "id": "rits/deepseek-ai/DeepSeek-V4.1-Flash-1017",
           "name": "DeepSeek-V4.1-Flash-1017 (CB RAP)",
-          "contextWindow": 262144,
+          "contextWindow": 1048576,
           "maxTokens": 32000,
           "reasoning": true,
           "input": [
