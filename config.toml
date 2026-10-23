@@ -23,7 +23,6 @@ adopt = true
 "github:dlvhdr/gh-dash" = "latest"
 "github:docker/buildx" = { version = "latest", rename_exe = "docker-buildx" }
 "github:docker/compose" = { version = "latest", rename_exe = "docker-compose" }
-"npm:@getpaseo/cli" = "latest"
 1password = "latest"
 agent-browser = "latest"
 ast-grep = "latest"
@@ -63,8 +62,6 @@ ln -sf ~/.local/share/mise/shims/docker-buildx ~/.docker/cli-plugins/docker-buil
 ln -sf ~/.local/share/mise/shims/docker-compose ~/.docker/cli-plugins/docker-compose
 
 pitchfork boot enable
-
-grep -qxF '127.0.0.1 dsv41-balancer.dam-dev-gpu.svc' /etc/hosts || echo '127.0.0.1 dsv41-balancer.dam-dev-gpu.svc' | sudo tee -a /etc/hosts >/dev/null
 """
 
 [env]

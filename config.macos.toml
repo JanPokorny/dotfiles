@@ -30,7 +30,11 @@ run_at_load = true
 [env]
 CLAUDE_CODE_SHELL = "/opt/homebrew/bin/bash"
 DOCKER_HOST = "unix://{{ env.HOME }}/.config/colima/default/docker.sock"
-_.path = ["/opt/homebrew/bin", "/opt/homebrew/sbin"]
+_.path = [
+    "/opt/homebrew/bin",
+    "/opt/homebrew/sbin",
+    "/Applications/Paseo.app/Contents/Resources/bin/"
+]
 
 [tools]
 "github:docker/docker-credential-helpers" = { version = "latest", matching = "osxkeychain-v", rename_exe = "docker-credential-osxkeychain" }

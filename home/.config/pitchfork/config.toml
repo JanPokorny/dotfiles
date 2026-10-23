@@ -48,3 +48,9 @@ while sleep 15; do
 done
 '''
 boot_start = true
+
+[daemons.paseo]
+run = "paseo daemon run"
+ready_http = "http://127.0.0.1:6767/api/health"
+retry = true
+boot_start = true
