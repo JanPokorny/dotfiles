@@ -43,8 +43,7 @@ You run inside Paseo. Use its workflows over harness built-ins; the skills hold 
 
 ## Reporting
 
-- `paseo-progress` is the status view for every non-trivial task: PRs as deliverables, blockers as stuck.
-- Questions blocking the immediate work go through the harness's ask-user-question tool; questions about follow-up work go to `paseo-progress`.
+- Questions blocking the immediate work go through the harness's ask-user-question tool; questions about follow-up work go in the final message.
 - Screenshots go in chat as Markdown image embeds with absolute paths.
 
 ## Tools
