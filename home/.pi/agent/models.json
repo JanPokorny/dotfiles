@@ -312,49 +312,6 @@
           }
         }
       ]
-    },
-    "dam": {
-      "baseUrl": "https://dsv41-balancer.dam-dev-gpu.svc:47919/v1",
-      "api": "openai-completions",
-      "apiKey": "!fnox get DSV41_KEY",
-      "models": [
-        {
-          "id": "deepseek-v4.1-flash",
-          "name": "DeepSeek-V4.1-Flash-1017 (DAM)",
-          "contextWindow": 262144,
-          "maxTokens": 32000,
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "compat": {
-            "thinkingFormat": "chat-template",
-            "chatTemplateKwargs": {
-              "thinking": {
-                "$var": "thinking.enabled"
-              },
-              "reasoning_effort": {
-                "$var": "thinking.effort"
-              }
-            }
-          },
-          "thinkingLevelMap": {
-            "minimal": "low",
-            "low": "low",
-            "medium": "high",
-            "high": "high",
-            "xhigh": "xhigh",
-            "max": "max"
-          }
-        }
-      ]
     }
   }
 }

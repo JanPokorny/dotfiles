@@ -3,17 +3,6 @@
 [settings.general]
 mise = true
 
-[daemons.dam-llm]
-run = """
-set -euo pipefail
-kubectl --context 'dam-dev/api-dam-cl-fmaas-res-ibm-com:6443/Jan.Pokorny@ibm.com' -n dam-dev-gpu get configmap openshift-service-ca.crt --request-timeout=20s -o jsonpath='{.data.service-ca\\.crt}' > "${TMPDIR:-/tmp}/dam-llm-service-ca.crt"
-kubectl --context 'dam-dev/api-dam-cl-fmaas-res-ibm-com:6443/Jan.Pokorny@ibm.com' -n dam-dev-gpu port-forward svc/dsv41-balancer 47919:8443
-"""
-ready_port = 47919
-health_cmd = { run = "curl -skf --max-time 15 -o /dev/null https://127.0.0.1:47919/health", timeout = "20s", retries = 6 }
-retry = true
-boot_start = true
-
 # Meeting alerts 1 min before each event, read from new Outlook's widget cache. Stopgap until
 # macOS Calendar syncs Exchange again (EWS blocked since 2026-10-01, Apple's Graph fix pending).
 # Ceilings: the cache covers today + 4 days and only refreshes while Outlook runs.
