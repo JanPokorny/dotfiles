@@ -1,9 +1,9 @@
 import { realpathSync } from "node:fs";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
-// Models anchor every command with `cd <cwd> && …` although each bash call already
-// starts in cwd. Strip that prefix, both before the command runs and from the
-// finalized assistant message, so the timeline shows the command itself.
+// Models anchor every command with `cd <cwd> && …` (or `cd <cwd>; …`) although each
+// bash call already starts in cwd. Strip that prefix, both before the command runs
+// and from the finalized assistant message, so the timeline shows the command itself.
 const real = (p: string) => {
 	try {
 		return realpathSync(p);
@@ -12,8 +12,8 @@ const real = (p: string) => {
 	}
 };
 
-function strip(command: string, cwd: string): string {
-	const m = /^\s*cd\s+(?:"([^"]+)"|'([^']+)'|(\S+))\s*&&\s*/.exec(command);
+export function strip(command: string, cwd: string): string {
+	const m = /^\s*cd\s+(?:"([^"]+)"|'([^']+)'|([^\s;]+))\s*(?:&&|;)\s*/.exec(command);
 	if (!m) return command;
 	const target = (m[1] ?? m[2] ?? m[3]).replace(/^~(?=\/|$)/, process.env.HOME ?? "~");
 	return real(target) === real(cwd) ? command.slice(m[0].length) : command;
