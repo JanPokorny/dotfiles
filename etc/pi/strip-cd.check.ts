@@ -7,6 +7,13 @@ const cases: [string, string][] = [
 	["cd /x; echo a", "echo a"],
 	["cd /x ; echo a", "echo a"],
 	['cd "/x" && echo a', "echo a"],
+	["cd /x\nnpm test", "npm test"],
+	['cd "/x"\nnpm test', "npm test"],
+	["cd /x \r\nnpm test", "npm test"],
+	["cd /x  \nnpm test", "npm test"],
+	["cd /other\nnpm test", "cd /other\nnpm test"],
+	["cd /x", "cd /x"],
+	["cd /x\n", "cd /x\n"],
 	["cd /other && echo a", "cd /other && echo a"],
 	["echo a; cd /x", "echo a; cd /x"],
 ];
