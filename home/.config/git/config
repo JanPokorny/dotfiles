@@ -65,8 +65,8 @@
 [sequence]
     editor = git-interactive-rebase-tool
 
-[include]
-    path = extra
-
 [credential]
+    helper = !gh auth git-credential
+
+[credential "https://github.ibm.com"]
     helper = !gh auth git-credential
