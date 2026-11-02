@@ -1,8 +1,7 @@
 {
   "syncClaudeAiSkills": false,
   "env": {
-    "CLAUDE_CODE_HARBOR_KITE": "0",
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000"
+    "CLAUDE_CODE_HARBOR_KITE": "0"
   },
   "attribution": {
     "commit": "",
@@ -41,6 +40,5 @@
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "model": "opus",
-  "hooks": {}
+  "model": "opus"
 }
