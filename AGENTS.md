@@ -30,7 +30,8 @@ adopt it or apply it.
 - Apply: `mise dot apply --yes`
 
 `mise dot apply` overwrites applied files. Local edits to those files are lost
-unless you adopt them first.
+unless you adopt them first. Removing a file from `home/` does not delete the
+applied copy: declare it `mode = "absent"` (or `rm` it once).
 
 ## Paseo
 
