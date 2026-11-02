@@ -72,8 +72,14 @@
   "app": {
     "baseUrl": "https://app.paseo.sh"
   },
-  "pluginsEnabled": false,
-  "plugins": {},
+  "pluginsEnabled": true,
+  "plugins": {
+    "claude-code-entrypoint-env": {
+      "source": "directory",
+      "path": "/Users/jp/.paseo/plugins/claude-code-entrypoint-env/271ff810-f586-4278-b767-5ba8fad3c2e2/checkout",
+      "enabled": true
+    }
+  },
   "agents": {
     "providers": {
       "antigravity": {
