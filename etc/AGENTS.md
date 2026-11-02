@@ -48,4 +48,4 @@ You run inside Paseo. Use its workflows over harness built-ins; the skills hold 
 
 ## Tools
 
-`ast-grep`, `bat`, `dive`, `fd`, `gh`, `gron`, `heredit` (checked search-replace, see `--help`), `htmlq`, `jq`, `lsd`, `pitchfork`, `rg`, `tv`, `yq`. `uv` and `node` (v26) are global; other runtimes via Mise, e.g. `mise x python@3.15 -- python -m http.server`.
+`ast-grep`, `bat`, `croc`, `dive`, `fd`, `gh`, `gron`, `heredit` (checked search-replace, see `--help`), `hexyl`, `htmlq`, `jq`, `lsd`, `mitmproxy`, `pitchfork`, `rg`, `tv`, `yq`. `uv` and `node` (v26) are global; other runtimes via Mise, e.g. `mise x python@3.15 -- python -m http.server`.
