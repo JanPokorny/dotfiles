@@ -9,8 +9,6 @@ Bootstrap with:
 curl https://mise.run | sh
 ~/.local/bin/mise bootstrap --adopt JanPokorny/dotfiles --yes
 
-# for forwarded LLM:
+# fnox secrets come from 1Password:
 op signin --account ibm.ent.1password.com
-oc login --web --server https://api.dam-cl.fmaas.res.ibm.com:6443
-pitchfork restart dam-llm
 ```
