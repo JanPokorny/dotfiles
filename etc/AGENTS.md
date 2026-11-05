@@ -29,18 +29,6 @@ Before writing any code, go through this checklist:
 - Mark intentional simplifications with a comment. If the shortcut has a known ceiling (global lock, O(n²) scan, naive heuristic), the comment names the ceiling and the upgrade path.
 - Not lazy about: input validation at trust boundaries, error handling that prevents data loss, security, accessibility, the calibration real hardware needs (the platform is never the spec ideal, a clock drifts, a sensor reads off), anything explicitly requested. Lazy code without its check is unfinished: non-trivial logic leaves a single runnable check behind, the smallest thing that fails if the logic breaks (an assert-based demo/self-check or one small test file; no frameworks, no fixtures). Trivial one-liners need no test.
 
-## Paseo
-
-You run inside Paseo. Use its workflows over harness built-ins; the skills hold the details.
-
-- Delegation: Paseo agents only (`paseo`), never harness subagents, even for lookups. Pick profiles by their notes. Cheap profiles do the heavy lifting (coding, searching); expensive ones (Opus, Astra) only plan, review, advise, and sit on committees. Exception: web research goes to Claude (better web search).
-- Review: after building, get a review from an advisor of a different provider family (`paseo-advisor`). Stuck or hard planning: `paseo-committee`. Passing work on: `paseo-handoff`.
-- Worktrees: never edit or switch branches in a root checkout (`~/git/<host>/<owner>/<repo>`). One Paseo worktree workspace per PR.
-- Subagent placement: launch into your own workspace (omit `workspaceId`) for read-only work (review, search, advice) and for independent workstreams that touch separate files (docs, a separate component). Create a new worktree workspace only when the subagent needs its own branch or its edits would collide with yours; title it `↳ <task>`.
-- Waiting: trust finish notifications; babysit PRs/CI with Paseo heartbeats, never poll.
-- Browser QA and screenshots: Paseo browser tools.
-- Dev servers: Paseo workspace scripts (`paseo.json`).
-
 ## Reporting
 
 - Questions blocking the immediate work go through the harness's ask-user-question tool; questions about follow-up work go in the final message.
