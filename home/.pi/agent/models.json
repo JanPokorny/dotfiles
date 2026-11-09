@@ -309,6 +309,24 @@
             "output": 0,
             "cacheRead": 0,
             "cacheWrite": 0
+          },
+          "contextWindow": 1048576,
+          "maxTokens": 32768,
+          "input": [
+            "text"
+          ],
+          "compat": {
+            "supportsReasoningEffort": true,
+            "thinkingFormat": "openai"
+          },
+          "thinkingLevelMap": {
+            "off": "none",
+            "minimal": "low",
+            "low": "low",
+            "medium": "low",
+            "high": "low",
+            "xhigh": "max",
+            "max": "max"
           }
         }
       ]
