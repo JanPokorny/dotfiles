@@ -21,6 +21,16 @@
         "thinkingOptionId": "high"
       },
       {
+        "id": "agent_profile_mw1s1yvc_mj45ka8i0ui",
+        "name": "UI",
+        "icon": "palette",
+        "provider": "claude",
+        "model": "claude-opus-5-5",
+        "modeId": "auto",
+        "thinkingOptionId": "high",
+        "notes": "Visual and UI work"
+      },
+      {
         "id": "agent_profile_mvdx7a2d_adrow4myort",
         "name": "Researcher",
         "icon": "flask",
