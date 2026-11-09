@@ -1,7 +1,10 @@
 {
   "mcpServers": {
     "Figma": {
-      "url": "https://mcp.figma.com/mcp"
+      "url": "https://mcp.figma.com/mcp",
+      "oauth": {
+        "clientName": "Claude Code"
+      }
     }
   }
 }
