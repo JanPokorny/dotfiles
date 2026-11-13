@@ -269,13 +269,6 @@
           "name": "GLM 5.3 (CurveBender)",
           "reasoning": true,
           "contextWindow": 1048576,
-          "maxTokens": 32768,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
           "thinkingLevelMap": {
             "off": "none",
             "xhigh": "xhigh",
@@ -287,17 +280,10 @@
           "name": "DeepSeek 4.1 Flash (CurveBender)",
           "reasoning": true,
           "contextWindow": 1048576,
-          "maxTokens": 32000,
           "input": [
             "text",
             "image"
           ],
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
           "thinkingLevelMap": {
             "off": "none",
             "max": "max"
