@@ -265,11 +265,29 @@
       "apiKey": "!fnox get CURVE_BENDER_API_KEY",
       "models": [
         {
+          "id": "rits/zai-org/glm-5-3",
+          "name": "GLM 5.3 (CurveBender)",
+          "reasoning": true,
+          "contextWindow": 1048576,
+          "maxTokens": 32768,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "thinkingLevelMap": {
+            "off": "none",
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        },
+        {
           "id": "rits/deepseek-ai/DeepSeek-V4.1-Flash-1017",
-          "name": "DeepSeek-V4.1-Flash-1017 (CB RAP)",
+          "name": "DeepSeek 4.1 Flash (CurveBender)",
+          "reasoning": true,
           "contextWindow": 1048576,
           "maxTokens": 32000,
-          "reasoning": true,
           "input": [
             "text",
             "image"
@@ -280,53 +298,34 @@
             "cacheRead": 0,
             "cacheWrite": 0
           },
-          "compat": {
-            "thinkingFormat": "chat-template",
-            "chatTemplateKwargs": {
-              "thinking": {
-                "$var": "thinking.enabled"
-              },
-              "reasoning_effort": {
-                "$var": "thinking.effort"
-              }
-            }
-          },
           "thinkingLevelMap": {
-            "minimal": "low",
-            "low": "low",
-            "medium": "high",
-            "high": "high",
-            "xhigh": "xhigh",
+            "off": "none",
             "max": "max"
           }
         },
         {
-          "id": "rits/zai-org/glm-5-3",
-          "name": "GLM-5.3 (CB RAP)",
+          "id": "rits/meta-models/Muse-Spark-Open-816B-A42B-NVFP4",
+          "name": "Muse Spark (CurveBender)",
           "reasoning": true,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
           "contextWindow": 1048576,
-          "maxTokens": 32768,
           "input": [
-            "text"
+            "text",
+            "image"
           ],
-          "compat": {
-            "supportsReasoningEffort": true,
-            "thinkingFormat": "openai"
-          },
           "thinkingLevelMap": {
-            "off": "none",
+            "off": null,
             "minimal": "low",
-            "low": "low",
-            "medium": "low",
-            "high": "low",
-            "xhigh": "max",
-            "max": "max"
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "id": "rits/ibm-research/granite-5.0-230b-preview-r261008a",
+          "name": "Granite 5.0-230B Preview (CurveBender)",
+          "reasoning": true,
+          "contextWindow": 524288,
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": "low"
           }
         }
       ]
